@@ -12,6 +12,7 @@ public sealed class Game : GameBase
 {
     // 変数の宣言
     int sec = 0;
+    int status = 0;
 
     /// <summary>
     /// 初期化処理
@@ -29,6 +30,12 @@ public sealed class Game : GameBase
     {
         // 起動からの経過時間を取得します
         sec = (int)gc.TimeSinceStartup;
+
+        if (status == 0) {
+            if (gc.GetPointerFrameCount(0)==1) {
+                status = 1;
+            }
+        }
     }
 
     /// <summary>
@@ -39,16 +46,17 @@ public sealed class Game : GameBase
         // 画面を白で塗りつぶします
         gc.ClearScreen();
 
-        // 青空の画像を描画します
-        gc.DrawImage(GcImage.BlueSky, 0, 0);
+        if (status == 0) {
+            gc.SetColor(0, 0, 0);
+            gc.SetFontSize(120);
+            gc.SetStringAnchor(GcAnchor.UpperLeft);
+            gc.DrawString("FLAVOR", 180, 160);
+            gc.DrawString("SPLASH", 180, 270);
+            gc.SetFontSize(60);
+            gc.SetStringAnchor(GcAnchor.UpperLeft);
+            gc.DrawString("TAP TO START", 170, 840);
+        } else {
 
-        // 黒の文字を描画します
-        gc.SetColor(0, 0, 0);
-        gc.SetFontSize(48);
-        gc.SetStringAnchor(GcAnchor.UpperLeft);
-        gc.DrawString("この文字と青空の画像が", 40, 160);
-        gc.DrawString("見えていれば成功です", 40, 270);
-        gc.SetStringAnchor(GcAnchor.UpperRight);
-        gc.DrawString($"{sec}s", 630, 10);
+        }
     }
 }
