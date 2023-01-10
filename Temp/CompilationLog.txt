@@ -1,2 +1,0 @@
-# Starting compiling GameCanvas.dll
-/Applications/Unity/Hub/Editor/2020.3.40f1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-abbc231fbfd904ef48581d0d445ab28b
