@@ -13,9 +13,11 @@ namespace GameCanvas
 {
     public readonly partial struct GcImage : System.IEquatable<GcImage>
     {
-        internal const int __Length__ = 3;
+        internal const int __Length__ = 5;
+        public static readonly GcImage Background = new GcImage("Background", 720, 1280);
         public static readonly GcImage BallRed = new GcImage("BallRed", 24, 24);
         public static readonly GcImage BallYellow = new GcImage("BallYellow", 24, 24);
         public static readonly GcImage BlueSky = new GcImage("BlueSky", 640, 480);
+        public static readonly GcImage Dp = new GcImage("dp", 348, 348);
     }
 }

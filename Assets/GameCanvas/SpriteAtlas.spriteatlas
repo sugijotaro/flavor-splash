@@ -37,13 +37,17 @@ SpriteAtlas:
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: 21300000, guid: 6b74f34110ab647bd9fde68fe5a60d9b, type: 3}
   - {fileID: 21300000, guid: b7fd20551d34df04684ac005d1b54c14, type: 3}
   - {fileID: 21300000, guid: 3212428bff945a84cb1e2c2aaf887e2d, type: 3}
   - {fileID: 21300000, guid: 42005afb256654d4db0ccb3704572942, type: 3}
+  - {fileID: 21300000, guid: 95b6e41c537e944db898a68fd891bb0b, type: 3}
   m_PackedSpriteNamesToIndex:
+  - dp
   - BallYellow
   - BlueSky
   - BallRed
+  - Background
   m_RenderDataMap: {}
   m_Tag: SpriteAtlas
   m_IsVariant: 0

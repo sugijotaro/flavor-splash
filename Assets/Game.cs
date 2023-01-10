@@ -48,6 +48,7 @@ public sealed class Game : GameBase
 
         if (status == 0) {
             gc.SetColor(0, 0, 0);
+            gc.DrawImage(GcImage.Background, 0, 0);
             gc.SetFontSize(120);
             gc.SetStringAnchor(GcAnchor.UpperLeft);
             gc.DrawString("FLAVOR", 180, 160);
