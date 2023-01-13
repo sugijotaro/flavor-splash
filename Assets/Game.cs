@@ -16,6 +16,8 @@ public sealed class Game : GameBase
     int splashIntervalCount = 15;
     bool isSplashInterval = false;
 
+    bool preFrameTapped = false;
+
     public override void InitGame()
     {
         gc.ChangeCanvasSize(720, 1280);
@@ -48,10 +50,26 @@ public sealed class Game : GameBase
                 status = 1;
             }
         }
-        checkTap(gc.GetPointerX(1), gc.GetPointerY(1));
+        else if (status == 1)
+        {
+            if (!preFrameTapped)
+            {
+                checkTap(gc.GetPointerX(1), gc.GetPointerY(1));
+            }
 
-        Debug.Log(splashIntervalCount);
+            Debug.Log(splashIntervalCount);
+        }
+
+        if (gc.GetPointerFrameCount(0) >= 1)
+        {
+            preFrameTapped = true;
+        }
+        else
+        {
+            preFrameTapped = false;
+        }
     }
+
     void checkTap(float x, float y)
     {
         if (120 < x && x < 260 && 1000 < y && y < 1188)
