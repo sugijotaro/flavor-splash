@@ -51,11 +51,12 @@ public sealed class Game : GameBase
             gc.DrawImage(GcImage.Background, 0, 0);
             gc.SetFontSize(120);
             gc.SetStringAnchor(GcAnchor.UpperLeft);
-            gc.DrawString("FLAVOR", 180, 160);
-            gc.DrawString("SPLASH", 180, 270);
+            gc.DrawString("FLAVOR", 185, 280);
+            gc.DrawString("SPLASH", 185, 390);
             gc.SetFontSize(60);
             gc.SetStringAnchor(GcAnchor.UpperLeft);
-            gc.DrawString("TAP TO START", 170, 840);
+            gc.SetColor(256, 256, 256);
+            gc.DrawString("TAP TO START", 180, 1000);
         } else {
 
         }
