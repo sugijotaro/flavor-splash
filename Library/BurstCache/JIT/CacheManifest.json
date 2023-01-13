@@ -62,10 +62,10 @@
       ]
     },
     {
-      "FullName": "System.Void Unity.Jobs.IJobExtensions/JobStruct`1<Unity.Collections.NativeListDisposeJob>::Execute(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)",
+      "FullName": "System.Void Unity.Jobs.IJobExtensions/JobStruct`1<Unity.Collections.NativeQueueDisposeJob>::Execute(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)",
       "ModuleOptionsHash": 11834165633931345063,
-      "ModuleHash": "b0bddb2e46ab8c8d0aac43988be4c13e",
-      "LinkName": "352B6D5D03F8F621",
+      "ModuleHash": "f4f29f893cd90293c48bc7afec210085",
+      "LinkName": "8F02018D2DAA4F36",
       "AssemblyDependencyIndices": [
         3,
         4,
@@ -79,10 +79,10 @@
       ]
     },
     {
-      "FullName": "System.Void Unity.Jobs.IJobExtensions/JobStruct`1<Unity.Collections.NativeQueueDisposeJob>::Execute(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)",
+      "FullName": "System.Void Unity.Jobs.IJobExtensions/JobStruct`1<Unity.Collections.NativeListDisposeJob>::Execute(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)",
       "ModuleOptionsHash": 11834165633931345063,
-      "ModuleHash": "f4f29f893cd90293c48bc7afec210085",
-      "LinkName": "8F02018D2DAA4F36",
+      "ModuleHash": "b0bddb2e46ab8c8d0aac43988be4c13e",
+      "LinkName": "352B6D5D03F8F621",
       "AssemblyDependencyIndices": [
         3,
         4,
