@@ -13,16 +13,13 @@ namespace GameCanvas
 {
     public readonly partial struct GcImage : System.IEquatable<GcImage>
     {
-        internal const int __Length__ = 10;
+        internal const int __Length__ = 7;
         public static readonly GcImage Background = new GcImage("Background", 720, 1280);
-        public static readonly GcImage BallRed = new GcImage("BallRed", 24, 24);
-        public static readonly GcImage BallYellow = new GcImage("BallYellow", 24, 24);
-        public static readonly GcImage BlueSky = new GcImage("BlueSky", 640, 480);
-        public static readonly GcImage DP = new GcImage("DP", 348, 348);
-        public static readonly GcImage Frappucino = new GcImage("Frappucino", 50, 50);
-        public static readonly GcImage FrappucinoSplashed = new GcImage("FrappucinoSplashed", 50, 50);
-        public static readonly GcImage Furikake = new GcImage("Furikake", 22, 28);
-        public static readonly GcImage Rice = new GcImage("Rice", 30, 26);
-        public static readonly GcImage RiceSplashed = new GcImage("RiceSplashed", 30, 26);
+        public static readonly GcImage DP = new GcImage("DP", 92, 191);
+        public static readonly GcImage Frappucino = new GcImage("Frappucino", 393, 634);
+        public static readonly GcImage FrappucinoSplashed = new GcImage("FrappucinoSplashed", 393, 634);
+        public static readonly GcImage Furikake = new GcImage("Furikake", 150, 191);
+        public static readonly GcImage Rice = new GcImage("Rice", 620, 537);
+        public static readonly GcImage RiceSplashed = new GcImage("RiceSplashed", 620, 537);
     }
 }

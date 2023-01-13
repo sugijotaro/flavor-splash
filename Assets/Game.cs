@@ -28,6 +28,8 @@ public sealed class Game : GameBase
                 status = 1;
             }
         }
+        Debug.Log(gc.GetPointerX(1));
+        Debug.Log(gc.GetPointerY(1));
     }
 
     public override void DrawGame()
@@ -51,7 +53,8 @@ public sealed class Game : GameBase
         else if (status == 1)
         {
             gc.DrawImage(GcImage.Background, 0, 0);
-            gc.DrawImage(GcImage.Furikake, 30, 1200);
+            gc.DrawImage(GcImage.Furikake, 120, 1000);
+            gc.DrawImage(GcImage.DP, 500, 1000);
         }
     }
 }
