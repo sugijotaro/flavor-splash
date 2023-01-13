@@ -19,6 +19,8 @@ public sealed class Game : GameBase
 
     bool preFrameTapped = false;
 
+    float shakeThreshold = 2.0f;
+
     public override void InitGame()
     {
         gc.ChangeCanvasSize(720, 1280);
@@ -67,6 +69,28 @@ public sealed class Game : GameBase
             if (!preFrameTapped)
             {
                 checkTap(gc.GetPointerX(1), gc.GetPointerY(1));
+            }
+        }
+        else if (status == 2)
+        {
+            if (sec > clearTime + 180)
+            {
+                if (gc.GetPointerFrameCount(0) == 1)
+                {
+                    sec = 0;
+                    clearTime = 0;
+                    selectedCondiments = 2;
+
+                    foodsArray = new int[30];
+                    progress = 0;
+
+                    splashIntervalCount = 15;
+                    isSplashInterval = false;
+
+                    preFrameTapped = false;
+
+                    status = 0;
+                }
             }
         }
 
