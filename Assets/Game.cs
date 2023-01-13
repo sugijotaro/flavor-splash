@@ -69,6 +69,7 @@ public sealed class Game : GameBase
             if (!preFrameTapped)
             {
                 checkTap(gc.GetPointerX(1), gc.GetPointerY(1));
+                checkShake();
             }
         }
         else if (status == 2)
@@ -114,8 +115,28 @@ public sealed class Game : GameBase
         {
             selectedCondiments = 3;
         }
-        else if (250 < x && x < 886)
+        else if (250 < y && y < 886)
         {
+            if (!isSplashInterval)
+            {
+                if (progress < 30)
+                {
+                    FoodSplashed();
+                }
+            }
+        }
+    }
+    void checkShake()
+    {
+        float x = gc.AccelerationLastX;
+        float y = gc.AccelerationLastY;
+        float z = gc.AccelerationLastZ;
+
+        float acceleration = Mathf.Sqrt(x * x + y * y + z * z);
+
+        if (acceleration > shakeThreshold)
+        {
+
             if (!isSplashInterval)
             {
                 if (progress < 30)
@@ -146,13 +167,13 @@ public sealed class Game : GameBase
             gc.DrawImage(GcImage.Background, 0, 0);
             gc.SetFontSize(120);
             gc.SetColor(0, 0, 0);
-            gc.SetStringAnchor(GcAnchor.UpperLeft);
-            gc.DrawString("FLAVOR", 185, 280);
-            gc.DrawString("SPLASH", 185, 390);
+            gc.SetStringAnchor(GcAnchor.UpperCenter);
+            gc.DrawString("FLAVOR", 360, 280);
+            gc.DrawString("SPLASH", 360, 390);
             gc.SetFontSize(60);
             gc.SetColor(256, 256, 256);
-            gc.SetStringAnchor(GcAnchor.UpperLeft);
-            gc.DrawString("TAP TO START", 180, 1000);
+            gc.SetStringAnchor(GcAnchor.UpperCenter);
+            gc.DrawString("TAP TO START", 360, 1000);
         }
         else if (status == 1)
         {
@@ -165,6 +186,12 @@ public sealed class Game : GameBase
             {
                 gc.DrawImage(GcImage.SelectedIcon, 447, 1090);
             }
+            gc.SetFontSize(50);
+            gc.SetColor(0, 0, 0);
+            gc.SetStringAnchor(GcAnchor.UpperLeft);
+            gc.DrawString("TASK:" + (progress).ToString() + "/30", 20, 20);
+            gc.SetStringAnchor(GcAnchor.UpperLeft);
+            gc.DrawString("TIME:" + ((float)sec / 60).ToString(), 500, 20);
             gc.DrawImage(GcImage.Furikake, 120, 1000);
             gc.DrawImage(GcImage.DP, 509, 1000);
             if (progress < 30)
@@ -193,14 +220,14 @@ public sealed class Game : GameBase
                     gc.SetFontSize(180);
                     gc.SetColor(0, 0, 0);
                     gc.SetStringAnchor(GcAnchor.UpperLeft);
-                    gc.DrawString(((float)clearTime / 30).ToString("0.00"), 155, 400);
+                    gc.DrawString(((float)clearTime / 60).ToString("0.00"), 155, 400);
                 }
                 if (sec > clearTime + 180)
                 {
                     gc.SetFontSize(40);
                     gc.SetColor(256, 256, 256);
-                    gc.SetStringAnchor(GcAnchor.UpperLeft);
-                    gc.DrawString("TAP TO RETURN TO TITLE SCREEN", 65, 1000);
+                    gc.SetStringAnchor(GcAnchor.UpperCenter);
+                    gc.DrawString("TAP TO RETURN TO TITLE SCREEN", 360, 1000);
                 }
             }
         }
