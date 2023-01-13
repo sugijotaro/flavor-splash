@@ -13,7 +13,7 @@ public sealed class Game : GameBase
     public override void InitGame()
     {
         gc.ChangeCanvasSize(720, 1280);
-        selectedCondiments = -1;
+        selectedCondiments = 0;
     }
 
     public override void UpdateGame()
@@ -28,8 +28,20 @@ public sealed class Game : GameBase
                 status = 1;
             }
         }
-        Debug.Log(gc.GetPointerX(1));
-        Debug.Log(gc.GetPointerY(1));
+        checkTap(gc.GetPointerX(1), gc.GetPointerY(1));
+    }
+    void checkTap(float x, float y)
+    {
+        if (120 < x && x < 260 && 1000 < y && y < 1188)
+        {
+            selectedCondiments = 0;
+            Debug.Log(selectedCondiments);
+        }
+        else if (510 < x && x < 610 && 1000 < y && y < 1188)
+        {
+            selectedCondiments = 1;
+            Debug.Log(selectedCondiments);
+        }
     }
 
     public override void DrawGame()
