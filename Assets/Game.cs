@@ -15,11 +15,13 @@ public sealed class Game : GameBase
     int progress = 0;
 
     int splashIntervalCount = 15;
-    bool isSplashInterval = false;
+    bool isSplashTapInterval = false;
+    bool isSplashShakeInterval = false;
 
     bool preFrameTapped = false;
 
     float shakeThreshold = 2.0f;
+    float acceleration = 0.0f;
 
     public override void InitGame()
     {
@@ -47,13 +49,13 @@ public sealed class Game : GameBase
         }
         else if (status == 1)
         {
-            if (isSplashInterval)
+            if (isSplashTapInterval)
             {
                 splashIntervalCount -= 1;
                 if (splashIntervalCount == 0)
                 {
                     splashIntervalCount = 15;
-                    isSplashInterval = false;
+                    isSplashTapInterval = false;
                     if (progress < 30)
                     {
                         progress += 1;
@@ -70,7 +72,14 @@ public sealed class Game : GameBase
             if (!preFrameTapped)
             {
                 checkTap(gc.GetPointerX(1), gc.GetPointerY(1));
+            }
+            if (acceleration < 2.0f)
+            {
                 checkShake();
+            }
+            else
+            {
+                acceleration = 0.0f;
             }
         }
         else if (status == 2)
@@ -87,7 +96,8 @@ public sealed class Game : GameBase
                     progress = 0;
 
                     splashIntervalCount = 15;
-                    isSplashInterval = false;
+                    isSplashTapInterval = false;
+                    isSplashShakeInterval = false;
 
                     preFrameTapped = false;
 
@@ -116,16 +126,16 @@ public sealed class Game : GameBase
         {
             selectedCondiments = 3;
         }
-        else if (250 < y && y < 886)
-        {
-            if (!isSplashInterval)
-            {
-                if (progress < 30)
-                {
-                    FoodSplashed();
-                }
-            }
-        }
+        // else if (250 < y && y < 886)
+        // {
+        //     if (!isSplashTapInterval)
+        //     {
+        //         if (progress < 30)
+        //         {
+        //             FoodSplashed();
+        //         }
+        //     }
+        // }
     }
     void checkShake()
     {
@@ -133,18 +143,23 @@ public sealed class Game : GameBase
         float y = gc.AccelerationLastY;
         float z = gc.AccelerationLastZ;
 
-        float acceleration = Mathf.Sqrt(x * x + y * y + z * z);
+        acceleration = Mathf.Sqrt(x * x + y * y + z * z);
 
         if (acceleration > shakeThreshold)
         {
 
-            if (!isSplashInterval)
+            if (!isSplashShakeInterval)
             {
                 if (progress < 30)
                 {
                     FoodSplashed();
+                    isSplashShakeInterval = true;
                 }
             }
+        }
+        else
+        {
+            isSplashShakeInterval = false;
         }
         Debug.Log(acceleration);
     }
@@ -153,7 +168,7 @@ public sealed class Game : GameBase
     {
         if (foodsArray[progress] == selectedCondiments)
         {
-            isSplashInterval = true;
+            isSplashTapInterval = true;
             foodsArray[progress] = foodsArray[progress] * 31;
         }
         // else
@@ -194,9 +209,9 @@ public sealed class Game : GameBase
             gc.DrawString("TASK:" + (progress).ToString() + "/30", 20, 20);
             gc.SetStringAnchor(GcAnchor.UpperLeft);
             gc.DrawString("TIME:" + ((float)sec / 60).ToString("0.00"), 490, 20);
-            gc.DrawString("AcceX:" + gc.AccelerationLastX, 50, 0);
-            gc.DrawString("AcceY:" + gc.AccelerationLastY, 50, 40);
-            gc.DrawString("AcceZ:" + gc.AccelerationLastZ, 50, 80);
+            gc.DrawString("AcceX:" + gc.AccelerationLastX, 0, 100);
+            gc.DrawString("AcceY:" + gc.AccelerationLastY, 0, 140);
+            gc.DrawString("AcceZ:" + gc.AccelerationLastZ, 0, 180);
             gc.DrawImage(GcImage.Furikake, 120, 1000);
             gc.DrawImage(GcImage.DP, 509, 1000);
             if (progress < 30)
