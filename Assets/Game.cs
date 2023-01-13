@@ -84,7 +84,6 @@ public sealed class Game : GameBase
         {
             if (!isSplashInterval)
             {
-                isSplashInterval = true;
                 FoodSplashed();
             }
         }
@@ -94,6 +93,7 @@ public sealed class Game : GameBase
     {
         if (foodsArray[progress] == selectedCondiments)
         {
+            isSplashInterval = true;
             foodsArray[progress] = foodsArray[progress] * 31;
         }
         else
@@ -104,9 +104,6 @@ public sealed class Game : GameBase
 
     public override void DrawGame()
     {
-        // 画面を白で塗りつぶします
-        gc.ClearScreen();
-
         if (status == 0)
         {
             gc.DrawImage(GcImage.Background, 0, 0);
