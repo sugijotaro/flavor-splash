@@ -37,12 +37,12 @@ public sealed class Game : GameBase
         {
             if (gc.GetPointerFrameCount(0) == 1)
             {
+                int[] possibleValues = { 2, 3, 5 };
                 for (int i = 0; i < foodsArray.Length; i++)
                 {
-                    foodsArray[i] = UnityEngine.Random.Range(2, 4);
-                    // foodsArray[i] = 2;
+                    int randomIndex = UnityEngine.Random.Range(0, possibleValues.Length);
+                    foodsArray[i] = possibleValues[randomIndex];
                 }
-
                 sec = 0;
                 status = 1;
             }
@@ -118,15 +118,22 @@ public sealed class Game : GameBase
 
     void checkTap(float x, float y)
     {
-        if (120 < x && x < 260 && 1000 < y && y < 1188)
+        if (1000 < y && y < 1188)
         {
-            selectedCondiments = 2;
+            if (57 < x && x < 207)
+            {
+                selectedCondiments = 2;
+            }
+            else if (331 < x && x < 447)
+            {
+                selectedCondiments = 3;
+            }
+            else if (566 < x && x < 663)
+            {
+                selectedCondiments = 5;
+            }
         }
-        else if (510 < x && x < 610 && 1000 < y && y < 1188)
-        {
-            selectedCondiments = 3;
-        }
-        // else if (250 < y && y < 886)
+        // if (250 < y && y < 886)
         // {
         //     if (!isSplashTapInterval)
         //     {
@@ -197,23 +204,26 @@ public sealed class Game : GameBase
             gc.DrawImage(GcImage.Background, 0, 0);
             if (selectedCondiments == 2)
             {
-                gc.DrawImage(GcImage.SelectedIcon, 85, 1090);
+                gc.DrawImage(GcImage.SelectedIcon, 23, 1093);
             }
             else if (selectedCondiments == 3)
             {
-                gc.DrawImage(GcImage.SelectedIcon, 447, 1090);
+                gc.DrawImage(GcImage.SelectedIcon, 266, 1093);
+            }
+            else if (selectedCondiments == 5)
+            {
+                gc.DrawImage(GcImage.SelectedIcon, 505, 1093);
             }
             gc.SetFontSize(50);
             gc.SetColor(0, 0, 0);
             gc.SetStringAnchor(GcAnchor.UpperLeft);
-            gc.DrawString("TASK:" + (progress).ToString() + "/30", 20, 20);
+            gc.DrawString("TASK:" + (progress + 1).ToString() + "/30", 20, 20);
             gc.SetStringAnchor(GcAnchor.UpperLeft);
-            gc.DrawString("TIME:" + ((float)sec / 60).ToString("0.00"), 490, 20);
-            gc.DrawString("AcceX:" + gc.AccelerationLastX, 0, 100);
-            gc.DrawString("AcceY:" + gc.AccelerationLastY, 0, 140);
-            gc.DrawString("AcceZ:" + gc.AccelerationLastZ, 0, 180);
-            gc.DrawImage(GcImage.Furikake, 120, 1000);
-            gc.DrawImage(GcImage.DP, 509, 1000);
+            gc.DrawString("TIME:" + ((float)sec / 60).ToString("0.00"), 450, 20);
+            // gc.DrawString("AcceX:" + gc.AccelerationLastX, 0, 100);
+            // gc.DrawString("AcceY:" + gc.AccelerationLastY, 0, 140);
+            // gc.DrawString("AcceZ:" + gc.AccelerationLastZ, 0, 180);
+            gc.DrawImage(GcImage.Condiments, 57, 1000);
             if (progress < 30)
             {
                 DrawFoods(foodsArray[progress]);
@@ -268,6 +278,12 @@ public sealed class Game : GameBase
                 break;
             case 3 * 31:
                 gc.DrawImage(GcImage.FrappucinoSplashed, 165, 256);
+                break;
+            case 5:
+                gc.DrawImage(GcImage.Watermelon, 59, 424);
+                break;
+            case 5 * 31:
+                gc.DrawImage(GcImage.WatermelonSplashed, 59, 424);
                 break;
             default:
                 break;

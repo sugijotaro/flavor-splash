@@ -427,11 +427,19 @@ static void Game_tBF310511B1E996F85E0F6C8DDB925EB46D2E78EE_CustomAttributesCache
 		NullableAttribute__ctor_m68337A4A4913B9D45F4B7249895084D57F47B445(tmp, 1, NULL);
 	}
 }
+static void U3CPrivateImplementationDetailsU3E_t6BC7664D9CD46304D39A7D175BB8FFBE0B9F4528_CustomAttributesCacheGenerator(CustomAttributesCache* cache)
+{
+	{
+		CompilerGeneratedAttribute_t39106AB982658D7A94C27DEF3C48DB2F5F7CD75C * tmp = (CompilerGeneratedAttribute_t39106AB982658D7A94C27DEF3C48DB2F5F7CD75C *)cache->attributes[0];
+		CompilerGeneratedAttribute__ctor_m9DC3E4E2DA76FE93948D44199213E2E924DCBE35(tmp, NULL);
+	}
+}
 IL2CPP_EXTERN_C const CustomAttributesCacheGenerator g_AssemblyU2DCSharp_AttributeGenerators[];
-const CustomAttributesCacheGenerator g_AssemblyU2DCSharp_AttributeGenerators[4] = 
+const CustomAttributesCacheGenerator g_AssemblyU2DCSharp_AttributeGenerators[5] = 
 {
 	EmbeddedAttribute_tD9AECC2A5FF80678B3EF0F991A8F7864D4D6217B_CustomAttributesCacheGenerator,
 	NullableAttribute_t3A6EA1A3D375C2B41A693078E127AF9C63EF40F4_CustomAttributesCacheGenerator,
+	U3CPrivateImplementationDetailsU3E_t6BC7664D9CD46304D39A7D175BB8FFBE0B9F4528_CustomAttributesCacheGenerator,
 	Game_tBF310511B1E996F85E0F6C8DDB925EB46D2E78EE_CustomAttributesCacheGenerator_foodsArray,
 	AssemblyU2DCSharp_CustomAttributesCacheGenerator,
 };

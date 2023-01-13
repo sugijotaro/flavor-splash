@@ -424,6 +424,13 @@
         {
             "managedAssemblyName": "Unity.InputSystem.dll",
             "nativeClass": "",
+            "fullManagedTypeName": "UnityEngine.InputSystem.EnhancedTouch.TouchSimulation",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "Unity.InputSystem.dll",
+            "nativeClass": "",
             "fullManagedTypeName": "UnityEngine.InputSystem.InputSettings",
             "moduleName": "",
             "usedInScenes": []
