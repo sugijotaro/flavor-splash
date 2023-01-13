@@ -8,39 +8,79 @@ public sealed class Game : GameBase
 {
     int sec = 0;
     int status = 0;
-    int selectedCondiments = -1;
+    int selectedCondiments = 2;
+
+    int[] foodsArray = new int[30];
+    int progress = 0;
+
+    int splashIntervalCount = 15;
+    bool isSplashInterval = false;
 
     public override void InitGame()
     {
         gc.ChangeCanvasSize(720, 1280);
-        selectedCondiments = 0;
     }
 
     public override void UpdateGame()
     {
-        // 起動からの経過時間を取得します
         sec = (int)gc.TimeSinceStartup;
+
+        if (isSplashInterval)
+        {
+            splashIntervalCount -= 1;
+            if (splashIntervalCount == 0)
+            {
+                splashIntervalCount = 15;
+                isSplashInterval = false;
+                progress += 1;
+            }
+        }
 
         if (status == 0)
         {
             if (gc.GetPointerFrameCount(0) == 1)
             {
+                for (int i = 0; i < foodsArray.Length; i++)
+                {
+                    foodsArray[i] = UnityEngine.Random.Range(2, 4);
+                }
+
                 status = 1;
             }
         }
         checkTap(gc.GetPointerX(1), gc.GetPointerY(1));
+
+        Debug.Log(splashIntervalCount);
     }
     void checkTap(float x, float y)
     {
         if (120 < x && x < 260 && 1000 < y && y < 1188)
         {
-            selectedCondiments = 0;
-            Debug.Log(selectedCondiments);
+            selectedCondiments = 2;
         }
         else if (510 < x && x < 610 && 1000 < y && y < 1188)
         {
-            selectedCondiments = 1;
-            Debug.Log(selectedCondiments);
+            selectedCondiments = 3;
+        }
+        else if (250 < x && x < 886)
+        {
+            if (!isSplashInterval)
+            {
+                isSplashInterval = true;
+                FoodSplashed();
+            }
+        }
+    }
+
+    void FoodSplashed()
+    {
+        if (foodsArray[progress] == selectedCondiments)
+        {
+            foodsArray[progress] = foodsArray[progress] * 31;
+        }
+        else
+        {
+            foodsArray[progress] = foodsArray[progress] * 37;
         }
     }
 
@@ -65,8 +105,38 @@ public sealed class Game : GameBase
         else if (status == 1)
         {
             gc.DrawImage(GcImage.Background, 0, 0);
+            if (selectedCondiments == 2)
+            {
+                gc.DrawImage(GcImage.SelectedIcon, 85, 1090);
+            }
+            else if (selectedCondiments == 3)
+            {
+                gc.DrawImage(GcImage.SelectedIcon, 447, 1090);
+            }
             gc.DrawImage(GcImage.Furikake, 120, 1000);
-            gc.DrawImage(GcImage.DP, 500, 1000);
+            gc.DrawImage(GcImage.DP, 509, 1000);
+            DrawFoods(foodsArray[progress]);
+        }
+    }
+
+    void DrawFoods(int id)
+    {
+        switch (id)
+        {
+            case 2:
+                gc.DrawImage(GcImage.Rice, 50, 267);
+                break;
+            case 2 * 31:
+                gc.DrawImage(GcImage.RiceSplashed, 50, 267);
+                break;
+            case 3:
+                gc.DrawImage(GcImage.Frappucino, 165, 256);
+                break;
+            case 3 * 31:
+                gc.DrawImage(GcImage.FrappucinoSplashed, 165, 256);
+                break;
+            default:
+                break;
         }
     }
 }

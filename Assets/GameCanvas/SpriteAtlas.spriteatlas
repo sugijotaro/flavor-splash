@@ -39,6 +39,7 @@ SpriteAtlas:
   m_PackedSprites:
   - {fileID: 21300000, guid: 6b74f34110ab647bd9fde68fe5a60d9b, type: 3}
   - {fileID: 21300000, guid: aeb71881ee3fa401ca409fc899b978a2, type: 3}
+  - {fileID: 21300000, guid: ec6b01e2628344582acb92e077f53ec4, type: 3}
   - {fileID: 21300000, guid: 48ab79b5e2ca6462fb283ad6bd953978, type: 3}
   - {fileID: 21300000, guid: 05435278b9ad847e88ef6d2279a1a673, type: 3}
   - {fileID: 21300000, guid: 66be00d97c37546e299cf73788d71e1d, type: 3}
@@ -47,6 +48,7 @@ SpriteAtlas:
   m_PackedSpriteNamesToIndex:
   - DP
   - FrappucinoSplashed
+  - SelectedIcon
   - Furikake
   - Frappucino
   - Rice
