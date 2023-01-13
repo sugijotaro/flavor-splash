@@ -46,6 +46,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 805f3e2aaad8a4f399d6162344a35456, type: 3}
   - {fileID: 21300000, guid: 95b6e41c537e944db898a68fd891bb0b, type: 3}
   - {fileID: 21300000, guid: 93b92dadaee3146c597a8c5748754998, type: 3}
+  - {fileID: 21300000, guid: d680fa9f292f24f54bb11904091f6756, type: 3}
   m_PackedSpriteNamesToIndex:
   - FrappucinoSplashed
   - SelectedIcon
@@ -56,6 +57,7 @@ SpriteAtlas:
   - Watermelon
   - Background
   - RiceSplashed
+  - Array
   m_RenderDataMap: {}
   m_Tag: SpriteAtlas
   m_IsVariant: 0

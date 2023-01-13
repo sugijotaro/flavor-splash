@@ -9,6 +9,9 @@ public sealed class Game : GameBase
     int sec = 0;
     int clearTime = 0;
     int status = 0;
+    int difficulty = 0;
+    string[] difficulties = { "NORMAL", "HARDCORE" };
+    int missCount = 0;
     int selectedCondiments = 2;
 
     int[] foodsArray = new int[30];
@@ -19,6 +22,8 @@ public sealed class Game : GameBase
     bool isSplashShakeInterval = false;
 
     bool preFrameTapped = false;
+
+    bool isGameFinished = false;
 
     float shakeThreshold = 2.0f;
     float acceleration = 0.0f;
@@ -35,16 +40,28 @@ public sealed class Game : GameBase
 
         if (status == 0)
         {
-            if (gc.GetPointerFrameCount(0) == 1)
+            if (!preFrameTapped)
             {
-                int[] possibleValues = { 2, 3, 5 };
-                for (int i = 0; i < foodsArray.Length; i++)
+                float x = gc.GetPointerX(1);
+                float y = gc.GetPointerY(1);
+                if (890 < y && y < 950)
                 {
-                    int randomIndex = UnityEngine.Random.Range(0, possibleValues.Length);
-                    foodsArray[i] = possibleValues[randomIndex];
+                    if (100 < x && x < 630)
+                    {
+                        difficulty = 1 - difficulty;
+                    }
                 }
-                sec = 0;
-                status = 1;
+                else if (1050 < y && y < 1100)
+                {
+                    int[] possibleValues = { 2, 3, 5 };
+                    for (int i = 0; i < foodsArray.Length; i++)
+                    {
+                        int randomIndex = UnityEngine.Random.Range(0, possibleValues.Length);
+                        foodsArray[i] = possibleValues[randomIndex];
+                    }
+                    sec = 0;
+                    status = 1;
+                }
             }
         }
         else if (status == 1)
@@ -60,8 +77,9 @@ public sealed class Game : GameBase
                     {
                         progress += 1;
                     }
-                    if (progress == 30)
+                    if (isGameFinished || progress == 30)
                     {
+                        isGameFinished = true;
                         clearTime = sec;
                         Debug.Log("clearTime:");
                         Debug.Log(clearTime);
@@ -90,6 +108,8 @@ public sealed class Game : GameBase
                 {
                     sec = 0;
                     clearTime = 0;
+                    difficulty = 0;
+                    missCount = 0;
                     selectedCondiments = 2;
 
                     foodsArray = new int[30];
@@ -98,6 +118,7 @@ public sealed class Game : GameBase
                     splashIntervalCount = 15;
                     isSplashTapInterval = false;
                     isSplashShakeInterval = false;
+                    isGameFinished = false;
 
                     preFrameTapped = false;
 
@@ -133,16 +154,16 @@ public sealed class Game : GameBase
                 selectedCondiments = 5;
             }
         }
-        // if (250 < y && y < 886)
-        // {
-        //     if (!isSplashTapInterval)
-        //     {
-        //         if (progress < 30)
-        //         {
-        //             FoodSplashed();
-        //         }
-        //     }
-        // }
+        if (250 < y && y < 886)
+        {
+            if (!isSplashTapInterval)
+            {
+                if (progress < 30)
+                {
+                    FoodSplashed();
+                }
+            }
+        }
     }
     void checkShake()
     {
@@ -178,10 +199,17 @@ public sealed class Game : GameBase
             isSplashTapInterval = true;
             foodsArray[progress] = foodsArray[progress] * 31;
         }
-        // else
-        // {
-        //     foodsArray[progress] = foodsArray[progress] * 37;
-        // }
+        else
+        {
+            if (difficulty == 1)
+            {
+                splashIntervalCount = 1;
+                isSplashTapInterval = true;
+                isSplashShakeInterval = true;
+                isGameFinished = true;
+            }
+            missCount += 1;
+        }
     }
 
     public override void DrawGame()
@@ -196,8 +224,18 @@ public sealed class Game : GameBase
             gc.DrawString("SPLASH", 360, 390);
             gc.SetFontSize(60);
             gc.SetColor(256, 256, 256);
-            gc.SetStringAnchor(GcAnchor.UpperCenter);
-            gc.DrawString("TAP TO START", 360, 1000);
+            gc.DrawString("NORMAL   HARDCORE", 360, 900);
+            gc.DrawString("TIME ATTACK", 360, 1050);
+            gc.DrawString("TIME LIMIT", 360, 1150);
+
+            if (difficulty == 0)
+            {
+                gc.DrawImage(GcImage.Array, 163, 820);
+            }
+            else if (difficulty == 1)
+            {
+                gc.DrawImage(GcImage.Array, 467, 820);
+            }
         }
         else if (status == 1)
         {
@@ -217,9 +255,17 @@ public sealed class Game : GameBase
             gc.SetFontSize(50);
             gc.SetColor(0, 0, 0);
             gc.SetStringAnchor(GcAnchor.UpperLeft);
-            gc.DrawString("TASK:" + (progress + 1).ToString() + "/30", 20, 20);
-            gc.SetStringAnchor(GcAnchor.UpperLeft);
+            gc.DrawString("TASK:" + progress.ToString() + "/30", 20, 20);
             gc.DrawString("TIME:" + ((float)sec / 60).ToString("0.00"), 450, 20);
+            gc.SetStringAnchor(GcAnchor.UpperCenter);
+            if (difficulty == 0)
+            {
+                gc.DrawString("NORMAL", 360, 60);
+            }
+            else if (difficulty == 1)
+            {
+                gc.DrawString("HARDCORE", 360, 60);
+            }
             // gc.DrawString("AcceX:" + gc.AccelerationLastX, 0, 100);
             // gc.DrawString("AcceY:" + gc.AccelerationLastY, 0, 140);
             // gc.DrawString("AcceZ:" + gc.AccelerationLastZ, 0, 180);
@@ -241,16 +287,29 @@ public sealed class Game : GameBase
             else
             {
                 gc.DrawImage(GcImage.Background, 0, 0);
+                gc.SetFontSize(50);
+                gc.SetColor(0, 0, 0);
+                gc.SetStringAnchor(GcAnchor.UpperCenter);
+                gc.DrawString(difficulties[difficulty], 360, 30);
                 gc.SetFontSize(120);
                 gc.SetColor(0, 0, 0);
-                gc.SetStringAnchor(GcAnchor.UpperLeft);
-                gc.DrawString("RESULT", 185, 100);
+                if (difficulty == 1 && missCount > 0)
+                {
+                    gc.DrawString("FAILURE", 360, 100);
+                }
+                else
+                {
+                    gc.DrawString("RESULT", 360, 100);
+                }
+
                 if (sec > clearTime + 120)
                 {
                     gc.SetFontSize(180);
                     gc.SetColor(0, 0, 0);
-                    gc.SetStringAnchor(GcAnchor.UpperLeft);
-                    gc.DrawString(((float)clearTime / 60).ToString("0.00"), 155, 400);
+                    gc.SetStringAnchor(GcAnchor.UpperCenter);
+                    gc.DrawString(((float)clearTime / 60).ToString("0.00"), 360, 400);
+                    gc.SetFontSize(60);
+                    gc.DrawString("MISS:" + missCount.ToString() + "   SPLASHED:" + progress.ToString(), 360, 610);
                 }
                 if (sec > clearTime + 180)
                 {
