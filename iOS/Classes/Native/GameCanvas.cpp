@@ -25282,6 +25282,20 @@ IL2CPP_EXTERN_C  void GcPointerTrace__ctor_mCF224911579DCBBEDBBF6561C7B274EA5E93
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
+// System.Void GameCanvas.GcProxy::set_IsAccelerometerEnabled(System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GcProxy_set_IsAccelerometerEnabled_mBF2489BBFD028B66D422E10CA6923688BC6E5C27 (GcProxy_t832DFA1A70226659BE781159106088071E92BCBA * __this, bool ___value0, const RuntimeMethod* method)
+{
+	{
+		// set => m_Context.InputAcceleration.IsAccelerometerEnabled = value;
+		GcContext_t4222571B71D4C9FD7F0382D53CC1BE91CA931FBC * L_0 = __this->get_m_Context_0();
+		NullCheck(L_0);
+		GcInputAccelerationEngine_tAD05DD2A5004788FE2B080D1AA03113720680D0A * L_1 = L_0->get_InputAcceleration_2();
+		bool L_2 = ___value0;
+		NullCheck(L_1);
+		GcInputAccelerationEngine_set_IsAccelerometerEnabled_m99BA7332A58A51CD6B9B8ACBD23945498564CE93_inline(L_1, L_2, /*hidden argument*/NULL);
+		return;
+	}
+}
 // System.Double GameCanvas.GcProxy::get_TargetFrameInterval()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR double GcProxy_get_TargetFrameInterval_m0022F93A367D6A93B17F203F8216A489BDD198E5 (GcProxy_t832DFA1A70226659BE781159106088071E92BCBA * __this, const RuntimeMethod* method)
 {

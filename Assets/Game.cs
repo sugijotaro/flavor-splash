@@ -24,6 +24,7 @@ public sealed class Game : GameBase
     public override void InitGame()
     {
         gc.ChangeCanvasSize(720, 1280);
+        gc.IsAccelerometerEnabled = true;
     }
 
     public override void UpdateGame()
@@ -145,6 +146,7 @@ public sealed class Game : GameBase
                 }
             }
         }
+        Debug.Log(acceleration);
     }
 
     void FoodSplashed()
@@ -191,7 +193,10 @@ public sealed class Game : GameBase
             gc.SetStringAnchor(GcAnchor.UpperLeft);
             gc.DrawString("TASK:" + (progress).ToString() + "/30", 20, 20);
             gc.SetStringAnchor(GcAnchor.UpperLeft);
-            gc.DrawString("TIME:" + ((float)sec / 60).ToString(), 500, 20);
+            gc.DrawString("TIME:" + ((float)sec / 60).ToString("0.00"), 490, 20);
+            gc.DrawString("AcceX:" + gc.AccelerationLastX, 50, 0);
+            gc.DrawString("AcceY:" + gc.AccelerationLastY, 50, 40);
+            gc.DrawString("AcceZ:" + gc.AccelerationLastZ, 50, 80);
             gc.DrawImage(GcImage.Furikake, 120, 1000);
             gc.DrawImage(GcImage.DP, 509, 1000);
             if (progress < 30)

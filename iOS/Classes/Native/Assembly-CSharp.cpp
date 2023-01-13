@@ -22,6 +22,17 @@ struct InterfaceActionInvoker2
 		((Action)invokeData.methodPtr)(obj, p1, p2, invokeData.method);
 	}
 };
+template <typename T1>
+struct InterfaceActionInvoker1
+{
+	typedef void (*Action)(void*, T1, const RuntimeMethod*);
+
+	static inline void Invoke (Il2CppMethodSlot slot, RuntimeClass* declaringInterface, RuntimeObject* obj, T1 p1)
+	{
+		const VirtualInvokeData& invokeData = il2cpp_codegen_get_interface_invoke_data(slot, obj, declaringInterface);
+		((Action)invokeData.methodPtr)(obj, p1, invokeData.method);
+	}
+};
 template <typename R, typename T1>
 struct InterfaceFuncInvoker1
 {
@@ -53,17 +64,6 @@ struct InterfaceActionInvoker4
 	{
 		const VirtualInvokeData& invokeData = il2cpp_codegen_get_interface_invoke_data(slot, obj, declaringInterface);
 		((Action)invokeData.methodPtr)(obj, p1, p2, p3, p4, invokeData.method);
-	}
-};
-template <typename T1>
-struct InterfaceActionInvoker1
-{
-	typedef void (*Action)(void*, T1, const RuntimeMethod*);
-
-	static inline void Invoke (Il2CppMethodSlot slot, RuntimeClass* declaringInterface, RuntimeObject* obj, T1 p1)
-	{
-		const VirtualInvokeData& invokeData = il2cpp_codegen_get_interface_invoke_data(slot, obj, declaringInterface);
-		((Action)invokeData.methodPtr)(obj, p1, invokeData.method);
 	}
 };
 
@@ -109,9 +109,11 @@ IL2CPP_EXTERN_C RuntimeClass* Debug_tEB68BCBEB8EFD60F8043C67146DC05E7F50F374B_il
 IL2CPP_EXTERN_C RuntimeClass* GcImage_t8B7ADE72B20507E0971203D9A2E89E5E537BB866_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* IInputAccelerationEx_t2AD6D1948812B141E477368373B2D90BC69C2AAA_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* IInputAcceleration_t4A0FA4CF6724D6A6AA97DB9627BF8D803BB6309B_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* IInputPointerEx_t77FF40CB496C7D889AF48A8B97C1C8583584A3C3_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Int32U5BU5D_t70F1BDC14B1786481B176D6139A5E3B87DC54C32_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Int32_tFDE5F8CD43D10453F6A2E0C77FE48C6CC7009046_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* Single_tE07797BA3C98D4CA9B5A19413C19A76688AB899E_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C String_t* _stringLiteral2EB956CF02CF577C11F0A40987ECCAA2B8B94F82;
 IL2CPP_EXTERN_C String_t* _stringLiteral6CE009FFEA10586D0994B390213905FEAF5D6726;
 IL2CPP_EXTERN_C String_t* _stringLiteral6D74CC8AAE1D4E05C60C34E310631E0CB00221EB;
@@ -119,9 +121,12 @@ IL2CPP_EXTERN_C String_t* _stringLiteral76621E64AB32D71E85DB363EB9042E320A7EADE2
 IL2CPP_EXTERN_C String_t* _stringLiteral86B02B47B04CB284EE80BAD91A6C009CF408644D;
 IL2CPP_EXTERN_C String_t* _stringLiteral99B692431AA4CCD576DB1FD8F1AEF713383B5725;
 IL2CPP_EXTERN_C String_t* _stringLiteralACBD5EC7006E057F50C7BBAFDEC5C5436CA1B3E9;
+IL2CPP_EXTERN_C String_t* _stringLiteralB471CF7BCBE6DE6BF326B3DE779EF756BC3FC33D;
 IL2CPP_EXTERN_C String_t* _stringLiteralB478161F26801FAB994941507C5EDB55D4886BD7;
+IL2CPP_EXTERN_C String_t* _stringLiteralBC47915A67A68D7A16FC1B7191ABCD93A3B66F00;
 IL2CPP_EXTERN_C String_t* _stringLiteralD1858C8257F2FEB15E63392CBF97BE3BC2E2D56D;
 IL2CPP_EXTERN_C String_t* _stringLiteralD4F093A84AE3078D3C42B98B0D4626BD342F7BA0;
+IL2CPP_EXTERN_C String_t* _stringLiteralDC62D921453825AF107E7944219DB44075DF8BEE;
 IL2CPP_EXTERN_C String_t* _stringLiteralE6C01FCABC4827A17323F22937D2E262FC4EEE3D;
 
 struct ByteU5BU5D_tDBBEB0E8362242FA7223000D978B0DD19D4B0726;
@@ -1048,14 +1053,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_FoodSplashed_m6A27AC88E3F690B1964CA
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411 (int32_t* __this, const RuntimeMethod* method);
 // System.String System.String::Concat(System.String,System.String,System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Concat_mC41740F000A5A48F8D313FB4CEE0E35E207A2632 (String_t* ___str00, String_t* ___str11, String_t* ___str22, const RuntimeMethod* method);
-// System.String System.Single::ToString()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Single_ToString_m80E7ABED4F4D73F2BE19DDB80D3D92FCD8DFA010 (float* __this, const RuntimeMethod* method);
-// System.String System.String::Concat(System.String,System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Concat_m10758B01687A2181C8727AD9FD9CCF5325C61C2A (String_t* ___str00, String_t* ___str11, const RuntimeMethod* method);
-// System.Void Game::DrawFoods(System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_DrawFoods_m86400AEAC9CA2BE719C54CFB737EA4795874C84D (Game_tBF310511B1E996F85E0F6C8DDB925EB46D2E78EE * __this, int32_t ___id0, const RuntimeMethod* method);
 // System.String System.Single::ToString(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Single_ToString_m15F10F2AFF80750906CEFCFB456EBA84F9D2E8D7 (float* __this, String_t* ___format0, const RuntimeMethod* method);
+// System.String System.String::Concat(System.String,System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Concat_m10758B01687A2181C8727AD9FD9CCF5325C61C2A (String_t* ___str00, String_t* ___str11, const RuntimeMethod* method);
+// System.String System.Single::ToString()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Single_ToString_m80E7ABED4F4D73F2BE19DDB80D3D92FCD8DFA010 (float* __this, const RuntimeMethod* method);
+// System.Void Game::DrawFoods(System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_DrawFoods_m86400AEAC9CA2BE719C54CFB737EA4795874C84D (Game_tBF310511B1E996F85E0F6C8DDB925EB46D2E78EE * __this, int32_t ___id0, const RuntimeMethod* method);
 // System.Void GameCanvas.GameBase::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameBase__ctor_m3700C4F8A5C2EC74EE84D1761A9B81FA2A96C932 (GameBase_tEF3F937253FD6A261158B06A5A4A128F22B69C85 * __this, const RuntimeMethod* method);
 #ifdef __clang__
@@ -1094,6 +1099,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_InitGame_mFF2A3FFFDCE97D51EECB974B8
 	if (!s_Il2CppMethodInitialized)
 	{
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IInputAcceleration_t4A0FA4CF6724D6A6AA97DB9627BF8D803BB6309B_il2cpp_TypeInfo_var);
 		s_Il2CppMethodInitialized = true;
 	}
 	int32_t V_0 = 0;
@@ -1106,6 +1112,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_InitGame_mFF2A3FFFDCE97D51EECB974B8
 		V_1 = ((int32_t)1280);
 		NullCheck(L_0);
 		InterfaceActionInvoker2< int32_t*, int32_t* >::Invoke(0 /* System.Void GameCanvas.IGraphicsEx::ChangeCanvasSize(System.Int32& modreq(System.Runtime.InteropServices.InAttribute),System.Int32& modreq(System.Runtime.InteropServices.InAttribute)) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_0, (&V_0), (&V_1));
+		// gc.IsAccelerometerEnabled = true;
+		RuntimeObject* L_1;
+		L_1 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
+		NullCheck(L_1);
+		InterfaceActionInvoker1< bool >::Invoke(0 /* System.Void GameCanvas.IInputAcceleration::set_IsAccelerometerEnabled(System.Boolean) */, IInputAcceleration_t4A0FA4CF6724D6A6AA97DB9627BF8D803BB6309B_il2cpp_TypeInfo_var, L_1, (bool)1);
 		// }
 		return;
 	}
@@ -1498,11 +1509,17 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_checkShake_m35C6F46408B4056A8364834
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Debug_tEB68BCBEB8EFD60F8043C67146DC05E7F50F374B_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IInputAccelerationEx_t2AD6D1948812B141E477368373B2D90BC69C2AAA_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Single_tE07797BA3C98D4CA9B5A19413C19A76688AB899E_il2cpp_TypeInfo_var);
 		s_Il2CppMethodInitialized = true;
 	}
 	float V_0 = 0.0f;
 	float V_1 = 0.0f;
+	float G_B4_0 = 0.0f;
+	float G_B1_0 = 0.0f;
+	float G_B2_0 = 0.0f;
+	float G_B3_0 = 0.0f;
 	{
 		// float x = gc.AccelerationLastX;
 		RuntimeObject* L_0;
@@ -1533,35 +1550,48 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_checkShake_m35C6F46408B4056A8364834
 		float L_11;
 		L_11 = sqrtf(((float)il2cpp_codegen_add((float)((float)il2cpp_codegen_add((float)((float)il2cpp_codegen_multiply((float)L_6, (float)L_6)), (float)((float)il2cpp_codegen_multiply((float)L_7, (float)L_8)))), (float)((float)il2cpp_codegen_multiply((float)L_9, (float)L_10)))));
 		// if (acceleration > shakeThreshold)
-		float L_12 = __this->get_shakeThreshold_17();
-		if ((!(((float)L_11) > ((float)L_12))))
+		float L_12 = L_11;
+		float L_13 = __this->get_shakeThreshold_17();
+		G_B1_0 = L_12;
+		if ((!(((float)L_12) > ((float)L_13))))
 		{
-			goto IL_0052;
+			G_B4_0 = L_12;
+			goto IL_0053;
 		}
 	}
 	{
 		// if (!isSplashInterval)
-		bool L_13 = __this->get_isSplashInterval_15();
-		if (L_13)
+		bool L_14 = __this->get_isSplashInterval_15();
+		G_B2_0 = G_B1_0;
+		if (L_14)
 		{
-			goto IL_0052;
+			G_B4_0 = G_B1_0;
+			goto IL_0053;
 		}
 	}
 	{
 		// if (progress < 30)
-		int32_t L_14 = __this->get_progress_13();
-		if ((((int32_t)L_14) >= ((int32_t)((int32_t)30))))
+		int32_t L_15 = __this->get_progress_13();
+		G_B3_0 = G_B2_0;
+		if ((((int32_t)L_15) >= ((int32_t)((int32_t)30))))
 		{
-			goto IL_0052;
+			G_B4_0 = G_B2_0;
+			goto IL_0053;
 		}
 	}
 	{
 		// FoodSplashed();
 		Game_FoodSplashed_m6A27AC88E3F690B1964CAF0FA5F89E0E01752EDC(__this, /*hidden argument*/NULL);
+		G_B4_0 = G_B3_0;
 	}
 
-IL_0052:
+IL_0053:
 	{
+		// Debug.Log(acceleration);
+		float L_16 = G_B4_0;
+		RuntimeObject * L_17 = Box(Single_tE07797BA3C98D4CA9B5A19413C19A76688AB899E_il2cpp_TypeInfo_var, &L_16);
+		IL2CPP_RUNTIME_CLASS_INIT(Debug_tEB68BCBEB8EFD60F8043C67146DC05E7F50F374B_il2cpp_TypeInfo_var);
+		Debug_Log_mF2A2ACB1738BA264EF07744AAF260BC5DDD2A11A(L_17, /*hidden argument*/NULL);
 		// }
 		return;
 	}
@@ -1611,6 +1641,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_DrawGame_mB9E4FFB9F2AD666C0AF2A1B2F
 	{
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&GcImage_t8B7ADE72B20507E0971203D9A2E89E5E537BB866_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IInputAccelerationEx_t2AD6D1948812B141E477368373B2D90BC69C2AAA_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral2EB956CF02CF577C11F0A40987ECCAA2B8B94F82);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral6CE009FFEA10586D0994B390213905FEAF5D6726);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral6D74CC8AAE1D4E05C60C34E310631E0CB00221EB);
@@ -1618,8 +1649,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_DrawGame_mB9E4FFB9F2AD666C0AF2A1B2F
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral86B02B47B04CB284EE80BAD91A6C009CF408644D);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral99B692431AA4CCD576DB1FD8F1AEF713383B5725);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralACBD5EC7006E057F50C7BBAFDEC5C5436CA1B3E9);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralB471CF7BCBE6DE6BF326B3DE779EF756BC3FC33D);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralB478161F26801FAB994941507C5EDB55D4886BD7);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralBC47915A67A68D7A16FC1B7191ABCD93A3B66F00);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralD1858C8257F2FEB15E63392CBF97BE3BC2E2D56D);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralDC62D921453825AF107E7944219DB44075DF8BEE);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralE6C01FCABC4827A17323F22937D2E262FC4EEE3D);
 		s_Il2CppMethodInitialized = true;
 	}
@@ -1723,7 +1757,7 @@ IL_0133:
 		int32_t L_11 = __this->get_status_10();
 		if ((!(((uint32_t)L_11) == ((uint32_t)1))))
 		{
-			goto IL_02fc;
+			goto IL_03c4;
 		}
 	}
 	{
@@ -1816,228 +1850,282 @@ IL_01c2:
 		V_6 = 0;
 		NullCheck(L_24);
 		InterfaceActionInvoker1< int32_t* >::Invoke(6 /* System.Void GameCanvas.IGraphicsEx::SetStringAnchor(GameCanvas.GcAnchor& modreq(System.Runtime.InteropServices.InAttribute)) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_24, (&V_6));
-		// gc.DrawString("TIME:" + ((float)sec / 60).ToString(), 500, 20);
+		// gc.DrawString("TIME:" + ((float)sec / 60).ToString("0.00"), 490, 20);
 		RuntimeObject* L_25;
 		L_25 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
 		int32_t L_26 = __this->get_sec_8();
 		V_0 = ((float)((float)((float)((float)L_26))/(float)(60.0f)));
 		String_t* L_27;
-		L_27 = Single_ToString_m80E7ABED4F4D73F2BE19DDB80D3D92FCD8DFA010((float*)(&V_0), /*hidden argument*/NULL);
+		L_27 = Single_ToString_m15F10F2AFF80750906CEFCFB456EBA84F9D2E8D7((float*)(&V_0), _stringLiteral86B02B47B04CB284EE80BAD91A6C009CF408644D, /*hidden argument*/NULL);
 		String_t* L_28;
 		L_28 = String_Concat_m10758B01687A2181C8727AD9FD9CCF5325C61C2A(_stringLiteral76621E64AB32D71E85DB363EB9042E320A7EADE2, L_27, /*hidden argument*/NULL);
 		V_7 = L_28;
-		V_0 = (500.0f);
+		V_0 = (490.0f);
 		V_1 = (20.0f);
 		NullCheck(L_25);
 		InterfaceActionInvoker4< String_t**, float*, float*, float >::Invoke(2 /* System.Void GameCanvas.IGraphicsEx::DrawString(System.String& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_25, (&V_7), (&V_0), (&V_1), (0.0f));
-		// gc.DrawImage(GcImage.Furikake, 120, 1000);
+		// gc.DrawString("AcceX:" + gc.AccelerationLastX, 50, 0);
 		RuntimeObject* L_29;
 		L_29 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
+		RuntimeObject* L_30;
+		L_30 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
+		NullCheck(L_30);
+		float L_31;
+		L_31 = InterfaceFuncInvoker0< float >::Invoke(0 /* System.Single GameCanvas.IInputAccelerationEx::get_AccelerationLastX() */, IInputAccelerationEx_t2AD6D1948812B141E477368373B2D90BC69C2AAA_il2cpp_TypeInfo_var, L_30);
+		V_0 = L_31;
+		String_t* L_32;
+		L_32 = Single_ToString_m80E7ABED4F4D73F2BE19DDB80D3D92FCD8DFA010((float*)(&V_0), /*hidden argument*/NULL);
+		String_t* L_33;
+		L_33 = String_Concat_m10758B01687A2181C8727AD9FD9CCF5325C61C2A(_stringLiteralDC62D921453825AF107E7944219DB44075DF8BEE, L_32, /*hidden argument*/NULL);
+		V_7 = L_33;
+		V_0 = (50.0f);
+		V_1 = (0.0f);
+		NullCheck(L_29);
+		InterfaceActionInvoker4< String_t**, float*, float*, float >::Invoke(2 /* System.Void GameCanvas.IGraphicsEx::DrawString(System.String& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_29, (&V_7), (&V_0), (&V_1), (0.0f));
+		// gc.DrawString("AcceY:" + gc.AccelerationLastY, 50, 40);
+		RuntimeObject* L_34;
+		L_34 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
+		RuntimeObject* L_35;
+		L_35 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
+		NullCheck(L_35);
+		float L_36;
+		L_36 = InterfaceFuncInvoker0< float >::Invoke(1 /* System.Single GameCanvas.IInputAccelerationEx::get_AccelerationLastY() */, IInputAccelerationEx_t2AD6D1948812B141E477368373B2D90BC69C2AAA_il2cpp_TypeInfo_var, L_35);
+		V_0 = L_36;
+		String_t* L_37;
+		L_37 = Single_ToString_m80E7ABED4F4D73F2BE19DDB80D3D92FCD8DFA010((float*)(&V_0), /*hidden argument*/NULL);
+		String_t* L_38;
+		L_38 = String_Concat_m10758B01687A2181C8727AD9FD9CCF5325C61C2A(_stringLiteralBC47915A67A68D7A16FC1B7191ABCD93A3B66F00, L_37, /*hidden argument*/NULL);
+		V_7 = L_38;
+		V_0 = (50.0f);
+		V_1 = (40.0f);
+		NullCheck(L_34);
+		InterfaceActionInvoker4< String_t**, float*, float*, float >::Invoke(2 /* System.Void GameCanvas.IGraphicsEx::DrawString(System.String& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_34, (&V_7), (&V_0), (&V_1), (0.0f));
+		// gc.DrawString("AcceZ:" + gc.AccelerationLastZ, 50, 80);
+		RuntimeObject* L_39;
+		L_39 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
+		RuntimeObject* L_40;
+		L_40 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
+		NullCheck(L_40);
+		float L_41;
+		L_41 = InterfaceFuncInvoker0< float >::Invoke(2 /* System.Single GameCanvas.IInputAccelerationEx::get_AccelerationLastZ() */, IInputAccelerationEx_t2AD6D1948812B141E477368373B2D90BC69C2AAA_il2cpp_TypeInfo_var, L_40);
+		V_0 = L_41;
+		String_t* L_42;
+		L_42 = Single_ToString_m80E7ABED4F4D73F2BE19DDB80D3D92FCD8DFA010((float*)(&V_0), /*hidden argument*/NULL);
+		String_t* L_43;
+		L_43 = String_Concat_m10758B01687A2181C8727AD9FD9CCF5325C61C2A(_stringLiteralB471CF7BCBE6DE6BF326B3DE779EF756BC3FC33D, L_42, /*hidden argument*/NULL);
+		V_7 = L_43;
+		V_0 = (50.0f);
+		V_1 = (80.0f);
+		NullCheck(L_39);
+		InterfaceActionInvoker4< String_t**, float*, float*, float >::Invoke(2 /* System.Void GameCanvas.IGraphicsEx::DrawString(System.String& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_39, (&V_7), (&V_0), (&V_1), (0.0f));
+		// gc.DrawImage(GcImage.Furikake, 120, 1000);
+		RuntimeObject* L_44;
+		L_44 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
 		IL2CPP_RUNTIME_CLASS_INIT(GcImage_t8B7ADE72B20507E0971203D9A2E89E5E537BB866_il2cpp_TypeInfo_var);
 		V_0 = (120.0f);
 		V_1 = (1000.0f);
-		NullCheck(L_29);
-		InterfaceActionInvoker4< GcImage_t8B7ADE72B20507E0971203D9A2E89E5E537BB866 *, float*, float*, float >::Invoke(1 /* System.Void GameCanvas.IGraphicsEx::DrawImage(GameCanvas.GcImage& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_29, (((GcImage_t8B7ADE72B20507E0971203D9A2E89E5E537BB866_StaticFields*)il2cpp_codegen_static_fields_for(GcImage_t8B7ADE72B20507E0971203D9A2E89E5E537BB866_il2cpp_TypeInfo_var))->get_address_of_Furikake_4()), (&V_0), (&V_1), (0.0f));
+		NullCheck(L_44);
+		InterfaceActionInvoker4< GcImage_t8B7ADE72B20507E0971203D9A2E89E5E537BB866 *, float*, float*, float >::Invoke(1 /* System.Void GameCanvas.IGraphicsEx::DrawImage(GameCanvas.GcImage& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_44, (((GcImage_t8B7ADE72B20507E0971203D9A2E89E5E537BB866_StaticFields*)il2cpp_codegen_static_fields_for(GcImage_t8B7ADE72B20507E0971203D9A2E89E5E537BB866_il2cpp_TypeInfo_var))->get_address_of_Furikake_4()), (&V_0), (&V_1), (0.0f));
 		// gc.DrawImage(GcImage.DP, 509, 1000);
-		RuntimeObject* L_30;
-		L_30 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
+		RuntimeObject* L_45;
+		L_45 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
 		V_0 = (509.0f);
 		V_1 = (1000.0f);
-		NullCheck(L_30);
-		InterfaceActionInvoker4< GcImage_t8B7ADE72B20507E0971203D9A2E89E5E537BB866 *, float*, float*, float >::Invoke(1 /* System.Void GameCanvas.IGraphicsEx::DrawImage(GameCanvas.GcImage& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_30, (((GcImage_t8B7ADE72B20507E0971203D9A2E89E5E537BB866_StaticFields*)il2cpp_codegen_static_fields_for(GcImage_t8B7ADE72B20507E0971203D9A2E89E5E537BB866_il2cpp_TypeInfo_var))->get_address_of_DP_1()), (&V_0), (&V_1), (0.0f));
+		NullCheck(L_45);
+		InterfaceActionInvoker4< GcImage_t8B7ADE72B20507E0971203D9A2E89E5E537BB866 *, float*, float*, float >::Invoke(1 /* System.Void GameCanvas.IGraphicsEx::DrawImage(GameCanvas.GcImage& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_45, (((GcImage_t8B7ADE72B20507E0971203D9A2E89E5E537BB866_StaticFields*)il2cpp_codegen_static_fields_for(GcImage_t8B7ADE72B20507E0971203D9A2E89E5E537BB866_il2cpp_TypeInfo_var))->get_address_of_DP_1()), (&V_0), (&V_1), (0.0f));
 		// if (progress < 30)
-		int32_t L_31 = __this->get_progress_13();
-		if ((((int32_t)L_31) >= ((int32_t)((int32_t)30))))
+		int32_t L_46 = __this->get_progress_13();
+		if ((((int32_t)L_46) >= ((int32_t)((int32_t)30))))
 		{
-			goto IL_0523;
+			goto IL_05eb;
 		}
 	}
 	{
 		// DrawFoods(foodsArray[progress]);
-		Int32U5BU5D_t70F1BDC14B1786481B176D6139A5E3B87DC54C32* L_32 = __this->get_foodsArray_12();
-		int32_t L_33 = __this->get_progress_13();
-		NullCheck(L_32);
-		int32_t L_34 = L_33;
-		int32_t L_35 = (L_32)->GetAt(static_cast<il2cpp_array_size_t>(L_34));
-		Game_DrawFoods_m86400AEAC9CA2BE719C54CFB737EA4795874C84D(__this, L_35, /*hidden argument*/NULL);
+		Int32U5BU5D_t70F1BDC14B1786481B176D6139A5E3B87DC54C32* L_47 = __this->get_foodsArray_12();
+		int32_t L_48 = __this->get_progress_13();
+		NullCheck(L_47);
+		int32_t L_49 = L_48;
+		int32_t L_50 = (L_47)->GetAt(static_cast<il2cpp_array_size_t>(L_49));
+		Game_DrawFoods_m86400AEAC9CA2BE719C54CFB737EA4795874C84D(__this, L_50, /*hidden argument*/NULL);
 		// }
 		return;
 	}
 
-IL_02fc:
+IL_03c4:
 	{
 		// else if (status == 2)
-		int32_t L_36 = __this->get_status_10();
-		if ((!(((uint32_t)L_36) == ((uint32_t)2))))
+		int32_t L_51 = __this->get_status_10();
+		if ((!(((uint32_t)L_51) == ((uint32_t)2))))
 		{
-			goto IL_0523;
+			goto IL_05eb;
 		}
 	}
 	{
 		// if (sec < clearTime + 60)
-		int32_t L_37 = __this->get_sec_8();
-		int32_t L_38 = __this->get_clearTime_9();
-		if ((((int32_t)L_37) >= ((int32_t)((int32_t)il2cpp_codegen_add((int32_t)L_38, (int32_t)((int32_t)60))))))
+		int32_t L_52 = __this->get_sec_8();
+		int32_t L_53 = __this->get_clearTime_9();
+		if ((((int32_t)L_52) >= ((int32_t)((int32_t)il2cpp_codegen_add((int32_t)L_53, (int32_t)((int32_t)60))))))
 		{
-			goto IL_0381;
+			goto IL_0449;
 		}
 	}
 	{
 		// gc.SetFontSize(120);
-		RuntimeObject* L_39;
-		L_39 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
+		RuntimeObject* L_54;
+		L_54 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
 		V_2 = ((int32_t)120);
-		NullCheck(L_39);
-		InterfaceActionInvoker1< int32_t* >::Invoke(5 /* System.Void GameCanvas.IGraphicsEx::SetFontSize(System.Int32& modreq(System.Runtime.InteropServices.InAttribute)) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_39, (&V_2));
+		NullCheck(L_54);
+		InterfaceActionInvoker1< int32_t* >::Invoke(5 /* System.Void GameCanvas.IGraphicsEx::SetFontSize(System.Int32& modreq(System.Runtime.InteropServices.InAttribute)) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_54, (&V_2));
 		// gc.SetColor(0, 0, 0);
-		RuntimeObject* L_40;
-		L_40 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
+		RuntimeObject* L_55;
+		L_55 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
 		V_3 = (uint8_t)0;
 		V_4 = (uint8_t)0;
 		V_5 = (uint8_t)0;
-		NullCheck(L_40);
-		InterfaceActionInvoker4< uint8_t*, uint8_t*, uint8_t*, uint8_t >::Invoke(4 /* System.Void GameCanvas.IGraphicsEx::SetColor(System.Byte& modreq(System.Runtime.InteropServices.InAttribute),System.Byte& modreq(System.Runtime.InteropServices.InAttribute),System.Byte& modreq(System.Runtime.InteropServices.InAttribute),System.Byte) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_40, (&V_3), (&V_4), (&V_5), (uint8_t)((int32_t)255));
+		NullCheck(L_55);
+		InterfaceActionInvoker4< uint8_t*, uint8_t*, uint8_t*, uint8_t >::Invoke(4 /* System.Void GameCanvas.IGraphicsEx::SetColor(System.Byte& modreq(System.Runtime.InteropServices.InAttribute),System.Byte& modreq(System.Runtime.InteropServices.InAttribute),System.Byte& modreq(System.Runtime.InteropServices.InAttribute),System.Byte) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_55, (&V_3), (&V_4), (&V_5), (uint8_t)((int32_t)255));
 		// gc.SetStringAnchor(GcAnchor.UpperLeft);
-		RuntimeObject* L_41;
-		L_41 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
+		RuntimeObject* L_56;
+		L_56 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
 		V_6 = 0;
-		NullCheck(L_41);
-		InterfaceActionInvoker1< int32_t* >::Invoke(6 /* System.Void GameCanvas.IGraphicsEx::SetStringAnchor(GameCanvas.GcAnchor& modreq(System.Runtime.InteropServices.InAttribute)) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_41, (&V_6));
+		NullCheck(L_56);
+		InterfaceActionInvoker1< int32_t* >::Invoke(6 /* System.Void GameCanvas.IGraphicsEx::SetStringAnchor(GameCanvas.GcAnchor& modreq(System.Runtime.InteropServices.InAttribute)) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_56, (&V_6));
 		// gc.DrawString("FINISH", 185, 280);
-		RuntimeObject* L_42;
-		L_42 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
+		RuntimeObject* L_57;
+		L_57 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
 		V_7 = _stringLiteralACBD5EC7006E057F50C7BBAFDEC5C5436CA1B3E9;
 		V_0 = (185.0f);
 		V_1 = (280.0f);
-		NullCheck(L_42);
-		InterfaceActionInvoker4< String_t**, float*, float*, float >::Invoke(2 /* System.Void GameCanvas.IGraphicsEx::DrawString(System.String& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_42, (&V_7), (&V_0), (&V_1), (0.0f));
+		NullCheck(L_57);
+		InterfaceActionInvoker4< String_t**, float*, float*, float >::Invoke(2 /* System.Void GameCanvas.IGraphicsEx::DrawString(System.String& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_57, (&V_7), (&V_0), (&V_1), (0.0f));
 		// }
 		return;
 	}
 
-IL_0381:
+IL_0449:
 	{
 		// gc.DrawImage(GcImage.Background, 0, 0);
-		RuntimeObject* L_43;
-		L_43 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
+		RuntimeObject* L_58;
+		L_58 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
 		IL2CPP_RUNTIME_CLASS_INIT(GcImage_t8B7ADE72B20507E0971203D9A2E89E5E537BB866_il2cpp_TypeInfo_var);
 		V_0 = (0.0f);
 		V_1 = (0.0f);
-		NullCheck(L_43);
-		InterfaceActionInvoker4< GcImage_t8B7ADE72B20507E0971203D9A2E89E5E537BB866 *, float*, float*, float >::Invoke(1 /* System.Void GameCanvas.IGraphicsEx::DrawImage(GameCanvas.GcImage& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_43, (((GcImage_t8B7ADE72B20507E0971203D9A2E89E5E537BB866_StaticFields*)il2cpp_codegen_static_fields_for(GcImage_t8B7ADE72B20507E0971203D9A2E89E5E537BB866_il2cpp_TypeInfo_var))->get_address_of_Background_0()), (&V_0), (&V_1), (0.0f));
+		NullCheck(L_58);
+		InterfaceActionInvoker4< GcImage_t8B7ADE72B20507E0971203D9A2E89E5E537BB866 *, float*, float*, float >::Invoke(1 /* System.Void GameCanvas.IGraphicsEx::DrawImage(GameCanvas.GcImage& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_58, (((GcImage_t8B7ADE72B20507E0971203D9A2E89E5E537BB866_StaticFields*)il2cpp_codegen_static_fields_for(GcImage_t8B7ADE72B20507E0971203D9A2E89E5E537BB866_il2cpp_TypeInfo_var))->get_address_of_Background_0()), (&V_0), (&V_1), (0.0f));
 		// gc.SetFontSize(120);
-		RuntimeObject* L_44;
-		L_44 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
+		RuntimeObject* L_59;
+		L_59 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
 		V_2 = ((int32_t)120);
-		NullCheck(L_44);
-		InterfaceActionInvoker1< int32_t* >::Invoke(5 /* System.Void GameCanvas.IGraphicsEx::SetFontSize(System.Int32& modreq(System.Runtime.InteropServices.InAttribute)) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_44, (&V_2));
+		NullCheck(L_59);
+		InterfaceActionInvoker1< int32_t* >::Invoke(5 /* System.Void GameCanvas.IGraphicsEx::SetFontSize(System.Int32& modreq(System.Runtime.InteropServices.InAttribute)) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_59, (&V_2));
 		// gc.SetColor(0, 0, 0);
-		RuntimeObject* L_45;
-		L_45 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
+		RuntimeObject* L_60;
+		L_60 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
 		V_3 = (uint8_t)0;
 		V_4 = (uint8_t)0;
 		V_5 = (uint8_t)0;
-		NullCheck(L_45);
-		InterfaceActionInvoker4< uint8_t*, uint8_t*, uint8_t*, uint8_t >::Invoke(4 /* System.Void GameCanvas.IGraphicsEx::SetColor(System.Byte& modreq(System.Runtime.InteropServices.InAttribute),System.Byte& modreq(System.Runtime.InteropServices.InAttribute),System.Byte& modreq(System.Runtime.InteropServices.InAttribute),System.Byte) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_45, (&V_3), (&V_4), (&V_5), (uint8_t)((int32_t)255));
+		NullCheck(L_60);
+		InterfaceActionInvoker4< uint8_t*, uint8_t*, uint8_t*, uint8_t >::Invoke(4 /* System.Void GameCanvas.IGraphicsEx::SetColor(System.Byte& modreq(System.Runtime.InteropServices.InAttribute),System.Byte& modreq(System.Runtime.InteropServices.InAttribute),System.Byte& modreq(System.Runtime.InteropServices.InAttribute),System.Byte) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_60, (&V_3), (&V_4), (&V_5), (uint8_t)((int32_t)255));
 		// gc.SetStringAnchor(GcAnchor.UpperLeft);
-		RuntimeObject* L_46;
-		L_46 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
+		RuntimeObject* L_61;
+		L_61 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
 		V_6 = 0;
-		NullCheck(L_46);
-		InterfaceActionInvoker1< int32_t* >::Invoke(6 /* System.Void GameCanvas.IGraphicsEx::SetStringAnchor(GameCanvas.GcAnchor& modreq(System.Runtime.InteropServices.InAttribute)) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_46, (&V_6));
+		NullCheck(L_61);
+		InterfaceActionInvoker1< int32_t* >::Invoke(6 /* System.Void GameCanvas.IGraphicsEx::SetStringAnchor(GameCanvas.GcAnchor& modreq(System.Runtime.InteropServices.InAttribute)) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_61, (&V_6));
 		// gc.DrawString("RESULT", 185, 100);
-		RuntimeObject* L_47;
-		L_47 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
+		RuntimeObject* L_62;
+		L_62 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
 		V_7 = _stringLiteral2EB956CF02CF577C11F0A40987ECCAA2B8B94F82;
 		V_0 = (185.0f);
 		V_1 = (100.0f);
-		NullCheck(L_47);
-		InterfaceActionInvoker4< String_t**, float*, float*, float >::Invoke(2 /* System.Void GameCanvas.IGraphicsEx::DrawString(System.String& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_47, (&V_7), (&V_0), (&V_1), (0.0f));
+		NullCheck(L_62);
+		InterfaceActionInvoker4< String_t**, float*, float*, float >::Invoke(2 /* System.Void GameCanvas.IGraphicsEx::DrawString(System.String& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_62, (&V_7), (&V_0), (&V_1), (0.0f));
 		// if (sec > clearTime + 120)
-		int32_t L_48 = __this->get_sec_8();
-		int32_t L_49 = __this->get_clearTime_9();
-		if ((((int32_t)L_48) <= ((int32_t)((int32_t)il2cpp_codegen_add((int32_t)L_49, (int32_t)((int32_t)120))))))
+		int32_t L_63 = __this->get_sec_8();
+		int32_t L_64 = __this->get_clearTime_9();
+		if ((((int32_t)L_63) <= ((int32_t)((int32_t)il2cpp_codegen_add((int32_t)L_64, (int32_t)((int32_t)120))))))
 		{
-			goto IL_049d;
+			goto IL_0565;
 		}
 	}
 	{
 		// gc.SetFontSize(180);
-		RuntimeObject* L_50;
-		L_50 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
+		RuntimeObject* L_65;
+		L_65 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
 		V_2 = ((int32_t)180);
-		NullCheck(L_50);
-		InterfaceActionInvoker1< int32_t* >::Invoke(5 /* System.Void GameCanvas.IGraphicsEx::SetFontSize(System.Int32& modreq(System.Runtime.InteropServices.InAttribute)) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_50, (&V_2));
+		NullCheck(L_65);
+		InterfaceActionInvoker1< int32_t* >::Invoke(5 /* System.Void GameCanvas.IGraphicsEx::SetFontSize(System.Int32& modreq(System.Runtime.InteropServices.InAttribute)) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_65, (&V_2));
 		// gc.SetColor(0, 0, 0);
-		RuntimeObject* L_51;
-		L_51 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
+		RuntimeObject* L_66;
+		L_66 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
 		V_3 = (uint8_t)0;
 		V_4 = (uint8_t)0;
 		V_5 = (uint8_t)0;
-		NullCheck(L_51);
-		InterfaceActionInvoker4< uint8_t*, uint8_t*, uint8_t*, uint8_t >::Invoke(4 /* System.Void GameCanvas.IGraphicsEx::SetColor(System.Byte& modreq(System.Runtime.InteropServices.InAttribute),System.Byte& modreq(System.Runtime.InteropServices.InAttribute),System.Byte& modreq(System.Runtime.InteropServices.InAttribute),System.Byte) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_51, (&V_3), (&V_4), (&V_5), (uint8_t)((int32_t)255));
+		NullCheck(L_66);
+		InterfaceActionInvoker4< uint8_t*, uint8_t*, uint8_t*, uint8_t >::Invoke(4 /* System.Void GameCanvas.IGraphicsEx::SetColor(System.Byte& modreq(System.Runtime.InteropServices.InAttribute),System.Byte& modreq(System.Runtime.InteropServices.InAttribute),System.Byte& modreq(System.Runtime.InteropServices.InAttribute),System.Byte) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_66, (&V_3), (&V_4), (&V_5), (uint8_t)((int32_t)255));
 		// gc.SetStringAnchor(GcAnchor.UpperLeft);
-		RuntimeObject* L_52;
-		L_52 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
+		RuntimeObject* L_67;
+		L_67 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
 		V_6 = 0;
-		NullCheck(L_52);
-		InterfaceActionInvoker1< int32_t* >::Invoke(6 /* System.Void GameCanvas.IGraphicsEx::SetStringAnchor(GameCanvas.GcAnchor& modreq(System.Runtime.InteropServices.InAttribute)) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_52, (&V_6));
+		NullCheck(L_67);
+		InterfaceActionInvoker1< int32_t* >::Invoke(6 /* System.Void GameCanvas.IGraphicsEx::SetStringAnchor(GameCanvas.GcAnchor& modreq(System.Runtime.InteropServices.InAttribute)) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_67, (&V_6));
 		// gc.DrawString(((float)clearTime / 60).ToString("0.00"), 155, 400);
-		RuntimeObject* L_53;
-		L_53 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
-		int32_t L_54 = __this->get_clearTime_9();
-		V_0 = ((float)((float)((float)((float)L_54))/(float)(60.0f)));
-		String_t* L_55;
-		L_55 = Single_ToString_m15F10F2AFF80750906CEFCFB456EBA84F9D2E8D7((float*)(&V_0), _stringLiteral86B02B47B04CB284EE80BAD91A6C009CF408644D, /*hidden argument*/NULL);
-		V_7 = L_55;
+		RuntimeObject* L_68;
+		L_68 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
+		int32_t L_69 = __this->get_clearTime_9();
+		V_0 = ((float)((float)((float)((float)L_69))/(float)(60.0f)));
+		String_t* L_70;
+		L_70 = Single_ToString_m15F10F2AFF80750906CEFCFB456EBA84F9D2E8D7((float*)(&V_0), _stringLiteral86B02B47B04CB284EE80BAD91A6C009CF408644D, /*hidden argument*/NULL);
+		V_7 = L_70;
 		V_0 = (155.0f);
 		V_1 = (400.0f);
-		NullCheck(L_53);
-		InterfaceActionInvoker4< String_t**, float*, float*, float >::Invoke(2 /* System.Void GameCanvas.IGraphicsEx::DrawString(System.String& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_53, (&V_7), (&V_0), (&V_1), (0.0f));
+		NullCheck(L_68);
+		InterfaceActionInvoker4< String_t**, float*, float*, float >::Invoke(2 /* System.Void GameCanvas.IGraphicsEx::DrawString(System.String& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_68, (&V_7), (&V_0), (&V_1), (0.0f));
 	}
 
-IL_049d:
+IL_0565:
 	{
 		// if (sec > clearTime + 180)
-		int32_t L_56 = __this->get_sec_8();
-		int32_t L_57 = __this->get_clearTime_9();
-		if ((((int32_t)L_56) <= ((int32_t)((int32_t)il2cpp_codegen_add((int32_t)L_57, (int32_t)((int32_t)180))))))
+		int32_t L_71 = __this->get_sec_8();
+		int32_t L_72 = __this->get_clearTime_9();
+		if ((((int32_t)L_71) <= ((int32_t)((int32_t)il2cpp_codegen_add((int32_t)L_72, (int32_t)((int32_t)180))))))
 		{
-			goto IL_0523;
+			goto IL_05eb;
 		}
 	}
 	{
 		// gc.SetFontSize(40);
-		RuntimeObject* L_58;
-		L_58 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
+		RuntimeObject* L_73;
+		L_73 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
 		V_2 = ((int32_t)40);
-		NullCheck(L_58);
-		InterfaceActionInvoker1< int32_t* >::Invoke(5 /* System.Void GameCanvas.IGraphicsEx::SetFontSize(System.Int32& modreq(System.Runtime.InteropServices.InAttribute)) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_58, (&V_2));
+		NullCheck(L_73);
+		InterfaceActionInvoker1< int32_t* >::Invoke(5 /* System.Void GameCanvas.IGraphicsEx::SetFontSize(System.Int32& modreq(System.Runtime.InteropServices.InAttribute)) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_73, (&V_2));
 		// gc.SetColor(256, 256, 256);
-		RuntimeObject* L_59;
-		L_59 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
+		RuntimeObject* L_74;
+		L_74 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
 		V_0 = (256.0f);
 		V_1 = (256.0f);
 		V_8 = (256.0f);
-		NullCheck(L_59);
-		InterfaceActionInvoker4< float*, float*, float*, float >::Invoke(3 /* System.Void GameCanvas.IGraphicsEx::SetColor(System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_59, (&V_0), (&V_1), (&V_8), (1.0f));
+		NullCheck(L_74);
+		InterfaceActionInvoker4< float*, float*, float*, float >::Invoke(3 /* System.Void GameCanvas.IGraphicsEx::SetColor(System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_74, (&V_0), (&V_1), (&V_8), (1.0f));
 		// gc.SetStringAnchor(GcAnchor.UpperCenter);
-		RuntimeObject* L_60;
-		L_60 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
+		RuntimeObject* L_75;
+		L_75 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
 		V_6 = 1;
-		NullCheck(L_60);
-		InterfaceActionInvoker1< int32_t* >::Invoke(6 /* System.Void GameCanvas.IGraphicsEx::SetStringAnchor(GameCanvas.GcAnchor& modreq(System.Runtime.InteropServices.InAttribute)) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_60, (&V_6));
+		NullCheck(L_75);
+		InterfaceActionInvoker1< int32_t* >::Invoke(6 /* System.Void GameCanvas.IGraphicsEx::SetStringAnchor(GameCanvas.GcAnchor& modreq(System.Runtime.InteropServices.InAttribute)) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_75, (&V_6));
 		// gc.DrawString("TAP TO RETURN TO TITLE SCREEN", 360, 1000);
-		RuntimeObject* L_61;
-		L_61 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
+		RuntimeObject* L_76;
+		L_76 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
 		V_7 = _stringLiteral6CE009FFEA10586D0994B390213905FEAF5D6726;
 		V_0 = (360.0f);
 		V_1 = (1000.0f);
-		NullCheck(L_61);
-		InterfaceActionInvoker4< String_t**, float*, float*, float >::Invoke(2 /* System.Void GameCanvas.IGraphicsEx::DrawString(System.String& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_61, (&V_7), (&V_0), (&V_1), (0.0f));
+		NullCheck(L_76);
+		InterfaceActionInvoker4< String_t**, float*, float*, float >::Invoke(2 /* System.Void GameCanvas.IGraphicsEx::DrawString(System.String& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_76, (&V_7), (&V_0), (&V_1), (0.0f));
 	}
 
-IL_0523:
+IL_05eb:
 	{
 		// }
 		return;
