@@ -1427,7 +1427,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_UpdateGame_m3CC2EA34259A23A86CB5BE7
 		bool L_2 = __this->get_preFrameTapped_24();
 		if (L_2)
 		{
-			goto IL_0388;
+			goto IL_0398;
 		}
 	}
 	{
@@ -1466,14 +1466,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_UpdateGame_m3CC2EA34259A23A86CB5BE7
 		float L_9 = V_0;
 		if ((!(((float)(100.0f)) < ((float)L_9))))
 		{
-			goto IL_0388;
+			goto IL_0398;
 		}
 	}
 	{
 		float L_10 = V_0;
 		if ((!(((float)L_10) < ((float)(630.0f)))))
 		{
-			goto IL_0388;
+			goto IL_0398;
 		}
 	}
 	{
@@ -1481,7 +1481,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_UpdateGame_m3CC2EA34259A23A86CB5BE7
 		int32_t L_11 = __this->get_difficulty_15();
 		__this->set_difficulty_15(((int32_t)il2cpp_codegen_subtract((int32_t)1, (int32_t)L_11)));
 		// }
-		goto IL_0388;
+		goto IL_0398;
 	}
 
 IL_007d:
@@ -1546,7 +1546,7 @@ IL_00b6:
 		// status = 1;
 		__this->set_status_14(1);
 		// }
-		goto IL_0388;
+		goto IL_0398;
 	}
 
 IL_00d4:
@@ -1555,14 +1555,14 @@ IL_00d4:
 		float L_25 = V_1;
 		if ((!(((float)(1150.0f)) < ((float)L_25))))
 		{
-			goto IL_0388;
+			goto IL_0398;
 		}
 	}
 	{
 		float L_26 = V_1;
 		if ((!(((float)L_26) < ((float)(1200.0f)))))
 		{
-			goto IL_0388;
+			goto IL_0398;
 		}
 	}
 	{
@@ -1586,7 +1586,7 @@ IL_00d4:
 		// status = 2;
 		__this->set_status_14(2);
 		// }
-		goto IL_0388;
+		goto IL_0398;
 	}
 
 IL_0127:
@@ -1710,7 +1710,7 @@ IL_01ee:
 		// checkShake();
 		Game_checkShake_m35C6F46408B4056A8364834D104D6C7BC0285410(__this, /*hidden argument*/NULL);
 		// }
-		goto IL_0388;
+		goto IL_0398;
 	}
 
 IL_0206:
@@ -1718,7 +1718,7 @@ IL_0206:
 		// acceleration = 0.0f;
 		__this->set_acceleration_27((0.0f));
 		// }
-		goto IL_0388;
+		goto IL_0398;
 	}
 
 IL_0216:
@@ -1829,7 +1829,7 @@ IL_02c6:
 		// checkShake();
 		Game_checkShake_m35C6F46408B4056A8364834D104D6C7BC0285410(__this, /*hidden argument*/NULL);
 		// }
-		goto IL_0388;
+		goto IL_0398;
 	}
 
 IL_02de:
@@ -1837,12 +1837,12 @@ IL_02de:
 		// acceleration = 0.0f;
 		__this->set_acceleration_27((0.0f));
 		// }
-		goto IL_0388;
+		goto IL_0398;
 	}
 
 IL_02ee:
 	{
-		// else if (status == 3 && sec > clearTime + 180 || status == 4)
+		// else if (status == 3 && sec > clearTime + 180 || status == 4 && sec > 180)
 		int32_t L_69 = __this->get_status_14();
 		if ((!(((uint32_t)L_69) == ((uint32_t)3))))
 		{
@@ -1854,7 +1854,7 @@ IL_02ee:
 		int32_t L_71 = __this->get_clearTime_13();
 		if ((((int32_t)L_70) > ((int32_t)((int32_t)il2cpp_codegen_add((int32_t)L_71, (int32_t)((int32_t)180))))))
 		{
-			goto IL_0314;
+			goto IL_0324;
 		}
 	}
 
@@ -1863,22 +1863,29 @@ IL_030b:
 		int32_t L_72 = __this->get_status_14();
 		if ((!(((uint32_t)L_72) == ((uint32_t)4))))
 		{
-			goto IL_0388;
+			goto IL_0398;
+		}
+	}
+	{
+		int32_t L_73 = __this->get_sec_8();
+		if ((((int32_t)L_73) <= ((int32_t)((int32_t)180))))
+		{
+			goto IL_0398;
 		}
 	}
 
-IL_0314:
+IL_0324:
 	{
 		// if (gc.GetPointerFrameCount(0) == 1)
-		RuntimeObject* L_73;
-		L_73 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
+		RuntimeObject* L_74;
+		L_74 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
 		V_2 = 0;
-		NullCheck(L_73);
-		int32_t L_74;
-		L_74 = InterfaceFuncInvoker1< int32_t, int32_t* >::Invoke(0 /* System.Int32 GameCanvas.IInputPointerEx::GetPointerFrameCount(System.Int32& modreq(System.Runtime.InteropServices.InAttribute)) */, IInputPointerEx_t77FF40CB496C7D889AF48A8B97C1C8583584A3C3_il2cpp_TypeInfo_var, L_73, (&V_2));
-		if ((!(((uint32_t)L_74) == ((uint32_t)1))))
+		NullCheck(L_74);
+		int32_t L_75;
+		L_75 = InterfaceFuncInvoker1< int32_t, int32_t* >::Invoke(0 /* System.Int32 GameCanvas.IInputPointerEx::GetPointerFrameCount(System.Int32& modreq(System.Runtime.InteropServices.InAttribute)) */, IInputPointerEx_t77FF40CB496C7D889AF48A8B97C1C8583584A3C3_il2cpp_TypeInfo_var, L_74, (&V_2));
+		if ((!(((uint32_t)L_75) == ((uint32_t)1))))
 		{
-			goto IL_0388;
+			goto IL_0398;
 		}
 	}
 	{
@@ -1893,8 +1900,8 @@ IL_0314:
 		// selectedCondiments = 2;
 		__this->set_selectedCondiments_18(2);
 		// foodsArray = new int[30];
-		Int32U5BU5D_t70F1BDC14B1786481B176D6139A5E3B87DC54C32* L_75 = (Int32U5BU5D_t70F1BDC14B1786481B176D6139A5E3B87DC54C32*)(Int32U5BU5D_t70F1BDC14B1786481B176D6139A5E3B87DC54C32*)SZArrayNew(Int32U5BU5D_t70F1BDC14B1786481B176D6139A5E3B87DC54C32_il2cpp_TypeInfo_var, (uint32_t)((int32_t)30));
-		__this->set_foodsArray_19(L_75);
+		Int32U5BU5D_t70F1BDC14B1786481B176D6139A5E3B87DC54C32* L_76 = (Int32U5BU5D_t70F1BDC14B1786481B176D6139A5E3B87DC54C32*)(Int32U5BU5D_t70F1BDC14B1786481B176D6139A5E3B87DC54C32*)SZArrayNew(Int32U5BU5D_t70F1BDC14B1786481B176D6139A5E3B87DC54C32_il2cpp_TypeInfo_var, (uint32_t)((int32_t)30));
+		__this->set_foodsArray_19(L_76);
 		// progress = 0;
 		__this->set_progress_20(0);
 		// splashIntervalCount = 15;
@@ -1911,18 +1918,18 @@ IL_0314:
 		__this->set_status_14(0);
 	}
 
-IL_0388:
+IL_0398:
 	{
 		// if (gc.GetPointerFrameCount(0) >= 1)
-		RuntimeObject* L_76;
-		L_76 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
+		RuntimeObject* L_77;
+		L_77 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
 		V_2 = 0;
-		NullCheck(L_76);
-		int32_t L_77;
-		L_77 = InterfaceFuncInvoker1< int32_t, int32_t* >::Invoke(0 /* System.Int32 GameCanvas.IInputPointerEx::GetPointerFrameCount(System.Int32& modreq(System.Runtime.InteropServices.InAttribute)) */, IInputPointerEx_t77FF40CB496C7D889AF48A8B97C1C8583584A3C3_il2cpp_TypeInfo_var, L_76, (&V_2));
-		if ((((int32_t)L_77) < ((int32_t)1)))
+		NullCheck(L_77);
+		int32_t L_78;
+		L_78 = InterfaceFuncInvoker1< int32_t, int32_t* >::Invoke(0 /* System.Int32 GameCanvas.IInputPointerEx::GetPointerFrameCount(System.Int32& modreq(System.Runtime.InteropServices.InAttribute)) */, IInputPointerEx_t77FF40CB496C7D889AF48A8B97C1C8583584A3C3_il2cpp_TypeInfo_var, L_77, (&V_2));
+		if ((((int32_t)L_78) < ((int32_t)1)))
 		{
-			goto IL_03a2;
+			goto IL_03b2;
 		}
 	}
 	{
@@ -1932,7 +1939,7 @@ IL_0388:
 		return;
 	}
 
-IL_03a2:
+IL_03b2:
 	{
 		// preFrameTapped = false;
 		__this->set_preFrameTapped_24((bool)0);
@@ -1948,14 +1955,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_checkTap_m8F56B9E90204B383C9B30CCEA
 		float L_0 = ___y1;
 		if ((!(((float)(1000.0f)) < ((float)L_0))))
 		{
-			goto IL_0059;
+			goto IL_0057;
 		}
 	}
 	{
 		float L_1 = ___y1;
 		if ((!(((float)L_1) < ((float)(1188.0f)))))
 		{
-			goto IL_0059;
+			goto IL_0057;
 		}
 	}
 	{
@@ -1963,60 +1970,60 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_checkTap_m8F56B9E90204B383C9B30CCEA
 		float L_2 = ___x0;
 		if ((!(((float)(57.0f)) < ((float)L_2))))
 		{
-			goto IL_0029;
+			goto IL_0028;
 		}
 	}
 	{
 		float L_3 = ___x0;
 		if ((!(((float)L_3) < ((float)(207.0f)))))
 		{
-			goto IL_0029;
+			goto IL_0028;
 		}
 	}
 	{
 		// selectedCondiments = 2;
 		__this->set_selectedCondiments_18(2);
 		// }
-		goto IL_0059;
+		return;
 	}
 
-IL_0029:
+IL_0028:
 	{
 		// else if (331 < x && x < 447)
 		float L_4 = ___x0;
 		if ((!(((float)(331.0f)) < ((float)L_4))))
 		{
-			goto IL_0042;
+			goto IL_0040;
 		}
 	}
 	{
 		float L_5 = ___x0;
 		if ((!(((float)L_5) < ((float)(447.0f)))))
 		{
-			goto IL_0042;
+			goto IL_0040;
 		}
 	}
 	{
 		// selectedCondiments = 3;
 		__this->set_selectedCondiments_18(3);
 		// }
-		goto IL_0059;
+		return;
 	}
 
-IL_0042:
+IL_0040:
 	{
 		// else if (566 < x && x < 663)
 		float L_6 = ___x0;
 		if ((!(((float)(566.0f)) < ((float)L_6))))
 		{
-			goto IL_0059;
+			goto IL_0057;
 		}
 	}
 	{
 		float L_7 = ___x0;
 		if ((!(((float)L_7) < ((float)(663.0f)))))
 		{
-			goto IL_0059;
+			goto IL_0057;
 		}
 	}
 	{
@@ -2024,44 +2031,7 @@ IL_0042:
 		__this->set_selectedCondiments_18(5);
 	}
 
-IL_0059:
-	{
-		// if (250 < y && y < 886)
-		float L_8 = ___y1;
-		if ((!(((float)(250.0f)) < ((float)L_8))))
-		{
-			goto IL_0081;
-		}
-	}
-	{
-		float L_9 = ___y1;
-		if ((!(((float)L_9) < ((float)(886.0f)))))
-		{
-			goto IL_0081;
-		}
-	}
-	{
-		// if (!isSplashTapInterval)
-		bool L_10 = __this->get_isSplashTapInterval_22();
-		if (L_10)
-		{
-			goto IL_0081;
-		}
-	}
-	{
-		// if (progress < 30)
-		int32_t L_11 = __this->get_progress_20();
-		if ((((int32_t)L_11) >= ((int32_t)((int32_t)30))))
-		{
-			goto IL_0081;
-		}
-	}
-	{
-		// FoodSplashed();
-		Game_FoodSplashed_m6A27AC88E3F690B1964CAF0FA5F89E0E01752EDC(__this, /*hidden argument*/NULL);
-	}
-
-IL_0081:
+IL_0057:
 	{
 		// }
 		return;

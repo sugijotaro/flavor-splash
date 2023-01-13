@@ -144,7 +144,7 @@ public sealed class Game : GameBase
                 acceleration = 0.0f;
             }
         }
-        else if (status == 3 && sec > clearTime + 180 || status == 4)
+        else if (status == 3 && sec > clearTime + 180 || status == 4 && sec > 180)
         {
             if (gc.GetPointerFrameCount(0) == 1)
             {
@@ -196,16 +196,16 @@ public sealed class Game : GameBase
                 selectedCondiments = 5;
             }
         }
-        if (250 < y && y < 886)
-        {
-            if (!isSplashTapInterval)
-            {
-                if (progress < 30)
-                {
-                    FoodSplashed();
-                }
-            }
-        }
+        // if (250 < y && y < 886)
+        // {
+        //     if (!isSplashTapInterval)
+        //     {
+        //         if (progress < 30)
+        //         {
+        //             FoodSplashed();
+        //         }
+        //     }
+        // }
     }
     void checkShake()
     {
