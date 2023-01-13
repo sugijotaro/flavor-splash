@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public sealed class Game : GameBase
 {
     int sec = 0;
+    int clearTime = 0;
     int status = 0;
     int selectedCondiments = 2;
 
@@ -25,18 +26,7 @@ public sealed class Game : GameBase
 
     public override void UpdateGame()
     {
-        sec = (int)gc.TimeSinceStartup;
-
-        if (isSplashInterval)
-        {
-            splashIntervalCount -= 1;
-            if (splashIntervalCount == 0)
-            {
-                splashIntervalCount = 15;
-                isSplashInterval = false;
-                progress += 1;
-            }
-        }
+        sec += 1;
 
         if (status == 0)
         {
@@ -45,19 +35,39 @@ public sealed class Game : GameBase
                 for (int i = 0; i < foodsArray.Length; i++)
                 {
                     foodsArray[i] = UnityEngine.Random.Range(2, 4);
+                    // foodsArray[i] = 2;
                 }
 
+                sec = 0;
                 status = 1;
             }
         }
         else if (status == 1)
         {
+            if (isSplashInterval)
+            {
+                splashIntervalCount -= 1;
+                if (splashIntervalCount == 0)
+                {
+                    splashIntervalCount = 15;
+                    isSplashInterval = false;
+                    if (progress < 30)
+                    {
+                        progress += 1;
+                    }
+                    if (progress == 30)
+                    {
+                        clearTime = sec;
+                        Debug.Log("clearTime:");
+                        Debug.Log(clearTime);
+                        status = 2;
+                    }
+                }
+            }
             if (!preFrameTapped)
             {
                 checkTap(gc.GetPointerX(1), gc.GetPointerY(1));
             }
-
-            Debug.Log(splashIntervalCount);
         }
 
         if (gc.GetPointerFrameCount(0) >= 1)
@@ -84,7 +94,10 @@ public sealed class Game : GameBase
         {
             if (!isSplashInterval)
             {
-                FoodSplashed();
+                if (progress < 30)
+                {
+                    FoodSplashed();
+                }
             }
         }
     }
@@ -96,10 +109,10 @@ public sealed class Game : GameBase
             isSplashInterval = true;
             foodsArray[progress] = foodsArray[progress] * 31;
         }
-        else
-        {
-            foodsArray[progress] = foodsArray[progress] * 37;
-        }
+        // else
+        // {
+        //     foodsArray[progress] = foodsArray[progress] * 37;
+        // }
     }
 
     public override void DrawGame()
@@ -130,7 +143,42 @@ public sealed class Game : GameBase
             }
             gc.DrawImage(GcImage.Furikake, 120, 1000);
             gc.DrawImage(GcImage.DP, 509, 1000);
-            DrawFoods(foodsArray[progress]);
+            if (progress < 30)
+            {
+                DrawFoods(foodsArray[progress]);
+            }
+        }
+        else if (status == 2)
+        {
+            if (sec < clearTime + 60)
+            {
+                gc.SetFontSize(120);
+                gc.SetColor(0, 0, 0);
+                gc.SetStringAnchor(GcAnchor.UpperLeft);
+                gc.DrawString("FINISH", 185, 280);
+            }
+            else
+            {
+                gc.DrawImage(GcImage.Background, 0, 0);
+                gc.SetFontSize(120);
+                gc.SetColor(0, 0, 0);
+                gc.SetStringAnchor(GcAnchor.UpperLeft);
+                gc.DrawString("RESULT", 185, 100);
+                if (sec > clearTime + 120)
+                {
+                    gc.SetFontSize(180);
+                    gc.SetColor(0, 0, 0);
+                    gc.SetStringAnchor(GcAnchor.UpperLeft);
+                    gc.DrawString(((float)clearTime / 30).ToString("0.00"), 155, 400);
+                }
+                if (sec > clearTime + 180)
+                {
+                    gc.SetFontSize(40);
+                    gc.SetColor(256, 256, 256);
+                    gc.SetStringAnchor(GcAnchor.UpperLeft);
+                    gc.DrawString("TAP TO RETURN TO TITLE SCREEN", 65, 1000);
+                }
+            }
         }
     }
 
