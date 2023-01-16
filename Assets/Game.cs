@@ -196,16 +196,16 @@ public sealed class Game : GameBase
                 selectedCondiments = 5;
             }
         }
-        // if (250 < y && y < 886)
-        // {
-        //     if (!isSplashTapInterval)
-        //     {
-        //         if (progress < 30)
-        //         {
-        //             FoodSplashed();
-        //         }
-        //     }
-        // }
+        if (250 < y && y < 886)
+        {
+            if (!isSplashTapInterval)
+            {
+                if (progress < 30)
+                {
+                    FoodSplashed();
+                }
+            }
+        }
     }
     void checkShake()
     {
@@ -283,7 +283,7 @@ public sealed class Game : GameBase
     {
         if (status == 0)
         {
-            gc.DrawImage(GcImage.Background, 0, 0);
+            DrawBackground();
             gc.SetFontSize(120);
             gc.SetColor(0, 0, 0);
             gc.SetStringAnchor(GcAnchor.UpperCenter);
@@ -306,7 +306,7 @@ public sealed class Game : GameBase
         }
         else if (status == 1)
         {
-            gc.DrawImage(GcImage.Background, 0, 0);
+            DrawBackground();
             if (selectedCondiments == 2)
             {
                 gc.DrawImage(GcImage.SelectedIcon, 23, 1093);
@@ -344,7 +344,7 @@ public sealed class Game : GameBase
         }
         else if (status == 2)
         {
-            gc.DrawImage(GcImage.Background, 0, 0);
+            DrawBackground();
             if (selectedCondiments == 2)
             {
                 gc.DrawImage(GcImage.SelectedIcon, 23, 1093);
@@ -381,44 +381,21 @@ public sealed class Game : GameBase
         {
             if (sec < clearTime + 60)
             {
-                gc.SetFontSize(120);
-                gc.SetColor(0, 0, 0);
-                gc.SetStringAnchor(GcAnchor.UpperLeft);
-                gc.DrawString("FINISH", 185, 280);
+                DrawFinish();
             }
             else
             {
-                gc.DrawImage(GcImage.Background, 0, 0);
-                gc.SetFontSize(50);
-                gc.SetColor(0, 0, 0);
-                gc.SetStringAnchor(GcAnchor.UpperCenter);
-                gc.DrawString(difficulties[difficulty], 360, 30);
-                gc.SetFontSize(120);
-                gc.SetColor(0, 0, 0);
-                if (difficulty == 1 && missCount > 0)
-                {
-                    gc.DrawString("FAILURE", 360, 100);
-                }
-                else
-                {
-                    gc.DrawString("RESULT", 360, 100);
-                }
-
+                DrawBackground();
+                DrawDifficulty(difficulty);
+                DrawResultText(difficulty, missCount);
                 if (sec > clearTime + 120)
                 {
-                    gc.SetFontSize(180);
-                    gc.SetColor(0, 0, 0);
-                    gc.SetStringAnchor(GcAnchor.UpperCenter);
-                    gc.DrawString(((float)clearTime / 60).ToString("0.00"), 360, 400);
-                    gc.SetFontSize(60);
-                    gc.DrawString("MISS:" + missCount.ToString() + "   SPLASHED:" + progress.ToString(), 360, 610);
+                    DrawTime(clearTime);
+                    DrawMissAndSplashedCount(missCount, progress);
                 }
                 if (sec > clearTime + 180)
                 {
-                    gc.SetFontSize(40);
-                    gc.SetColor(256, 256, 256);
-                    gc.SetStringAnchor(GcAnchor.UpperCenter);
-                    gc.DrawString("TAP TO RETURN TO TITLE SCREEN", 360, 1000);
+                    DrawTapToReturn();
                 }
             }
         }
@@ -426,49 +403,25 @@ public sealed class Game : GameBase
         {
             if (sec < 60)
             {
-                gc.SetFontSize(120);
-                gc.SetColor(0, 0, 0);
-                gc.SetStringAnchor(GcAnchor.UpperLeft);
-                gc.DrawString("FINISH", 185, 280);
+                DrawFinish();
             }
             else
             {
-                gc.DrawImage(GcImage.Background, 0, 0);
-                gc.SetFontSize(50);
-                gc.SetColor(0, 0, 0);
-                gc.SetStringAnchor(GcAnchor.UpperCenter);
-                gc.DrawString(difficulties[difficulty], 360, 30);
-                gc.SetFontSize(120);
-                gc.SetColor(0, 0, 0);
-                if (difficulty == 1 && missCount > 0)
-                {
-                    gc.DrawString("FAILURE", 360, 100);
-                }
-                else
-                {
-                    gc.DrawString("RESULT", 360, 100);
-                }
-
+                DrawBackground();
+                DrawDifficulty(difficulty);
+                DrawResultText(difficulty, missCount);
                 if (sec > 120)
                 {
-                    gc.SetFontSize(180);
-                    gc.SetColor(0, 0, 0);
-                    gc.SetStringAnchor(GcAnchor.UpperCenter);
-                    gc.DrawString(splashedCount.ToString(), 360, 400);
-                    gc.SetFontSize(60);
-                    gc.DrawString("MISS:" + missCount.ToString(), 360, 610);
+                    DrawSplashedCount(splashedCount);
+                    DrawMissCount(missCount);
                 }
                 if (sec > 180)
                 {
-                    gc.SetFontSize(40);
-                    gc.SetColor(256, 256, 256);
-                    gc.SetStringAnchor(GcAnchor.UpperCenter);
-                    gc.DrawString("TAP TO RETURN TO TITLE SCREEN", 360, 1000);
+                    DrawTapToReturn();
                 }
             }
         }
     }
-
     void DrawFoods(int id)
     {
         switch (id)
@@ -495,4 +448,75 @@ public sealed class Game : GameBase
                 break;
         }
     }
+
+    void DrawFinish()
+    {
+        gc.SetFontSize(120);
+        gc.SetColor(0, 0, 0);
+        gc.SetStringAnchor(GcAnchor.UpperLeft);
+        gc.DrawString("FINISH", 185, 280);
+    }
+
+    void DrawBackground()
+    {
+        gc.DrawImage(GcImage.Background, 0, 0);
+    }
+
+    void DrawDifficulty(int difficulty)
+    {
+        gc.SetFontSize(50);
+        gc.SetColor(0, 0, 0);
+        gc.SetStringAnchor(GcAnchor.UpperCenter);
+        gc.DrawString(difficulties[difficulty], 360, 30);
+    }
+
+    void DrawResultText(int difficulty, int missCount)
+    {
+        gc.SetFontSize(120);
+        gc.SetColor(0, 0, 0);
+        if (difficulty == 1 && missCount > 0)
+        {
+            gc.DrawString("FAILURE", 360, 100);
+        }
+        else
+        {
+            gc.DrawString("RESULT", 360, 100);
+        }
+    }
+
+    void DrawSplashedCount(int splashedCount)
+    {
+        gc.SetFontSize(180);
+        gc.SetColor(0, 0, 0);
+        gc.SetStringAnchor(GcAnchor.UpperCenter);
+        gc.DrawString(splashedCount.ToString(), 360, 400);
+    }
+    void DrawTime(int clearTime)
+    {
+        gc.SetFontSize(clearTime);
+        gc.SetColor(0, 0, 0);
+        gc.SetStringAnchor(GcAnchor.UpperCenter);
+        gc.DrawString(((float)clearTime / 60).ToString("0.00"), 360, 400);
+    }
+
+    void DrawMissCount(int missCount)
+    {
+        gc.SetFontSize(60);
+        gc.DrawString("MISS:" + missCount.ToString(), 360, 610);
+    }
+
+    void DrawMissAndSplashedCount(int missCount, int progress)
+    {
+        gc.SetFontSize(60);
+        gc.DrawString("MISS:" + missCount.ToString() + "   SPLASHED:" + progress.ToString(), 360, 610);
+    }
+
+    void DrawTapToReturn()
+    {
+        gc.SetFontSize(40);
+        gc.SetColor(256, 256, 256);
+        gc.SetStringAnchor(GcAnchor.UpperCenter);
+        gc.DrawString("TAP TO RETURN TO TITLE SCREEN", 360, 1000);
+    }
+
 }
