@@ -48,30 +48,17 @@ public sealed class Game : GameBase
             {
                 float x = gc.GetPointerX(1);
                 float y = gc.GetPointerY(1);
-                if (890 < y && y < 950)
+                if (IsOnDifficultyToggle(y))
                 {
-                    if (100 < x && x < 630)
-                    {
-                        difficulty = 1 - difficulty;
-                    }
+                    ToggleDifficulty(x);
                 }
-                else if (1050 < y && y < 1100)
+                else if (IsOnTimeAttack(y))
                 {
-                    for (int i = 0; i < foodsArray.Length; i++)
-                    {
-                        int randomIndex = UnityEngine.Random.Range(0, possibleValues.Length);
-                        foodsArray[i] = possibleValues[randomIndex];
-                    }
-                    sec = 0;
-                    status = 1;
+                    StartRandomizedTimeAttack();
                 }
-                else if (1150 < y && y < 1200)
+                else if (IsOnTimeLimit(y))
                 {
-                    countdown = 30 * 60;
-                    splashedCount = 0;
-                    int randomIndex = UnityEngine.Random.Range(0, possibleValues.Length);
-                    currentFood = possibleValues[randomIndex];
-                    status = 2;
+                    StartTimeLimit();
                 }
             }
         }
@@ -177,6 +164,49 @@ public sealed class Game : GameBase
         {
             preFrameTapped = false;
         }
+    }
+
+    bool IsOnDifficultyToggle(float y)
+    {
+        return 890 < y && y < 950;
+    }
+
+    void ToggleDifficulty(float x)
+    {
+        if (100 < x && x < 630)
+        {
+            difficulty = 1 - difficulty;
+        }
+    }
+
+    bool IsOnTimeAttack(float y)
+    {
+        return 1050 < y && y < 1100;
+    }
+
+    void StartRandomizedTimeAttack()
+    {
+        for (int i = 0; i < foodsArray.Length; i++)
+        {
+            int randomIndex = UnityEngine.Random.Range(0, possibleValues.Length);
+            foodsArray[i] = possibleValues[randomIndex];
+        }
+        sec = 0;
+        status = 1;
+    }
+
+    bool IsOnTimeLimit(float y)
+    {
+        return 1150 < y && y < 1200;
+    }
+
+    void StartTimeLimit()
+    {
+        countdown = 30 * 60;
+        splashedCount = 0;
+        int randomIndex = UnityEngine.Random.Range(0, possibleValues.Length);
+        currentFood = possibleValues[randomIndex];
+        status = 2;
     }
 
     void checkTap(float x, float y)
