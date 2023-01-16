@@ -231,7 +231,6 @@ public sealed class Game : GameBase
         {
             isSplashShakeInterval = false;
         }
-        Debug.Log(acceleration);
     }
 
     void FoodSplashed()
@@ -307,75 +306,27 @@ public sealed class Game : GameBase
         else if (status == 1)
         {
             DrawBackground();
-            if (selectedCondiments == 2)
-            {
-                gc.DrawImage(GcImage.SelectedIcon, 23, 1093);
-            }
-            else if (selectedCondiments == 3)
-            {
-                gc.DrawImage(GcImage.SelectedIcon, 266, 1093);
-            }
-            else if (selectedCondiments == 5)
-            {
-                gc.DrawImage(GcImage.SelectedIcon, 505, 1093);
-            }
-            gc.SetFontSize(50);
-            gc.SetColor(0, 0, 0);
-            gc.SetStringAnchor(GcAnchor.UpperLeft);
-            gc.DrawString("TASK:" + progress.ToString() + "/30", 20, 20);
-            gc.DrawString("TIME:" + ((float)sec / 60).ToString("0.00"), 450, 20);
-            gc.SetStringAnchor(GcAnchor.UpperCenter);
-            if (difficulty == 0)
-            {
-                gc.DrawString("TIME ATTACK  NORMAL", 360, 100);
-            }
-            else if (difficulty == 1)
-            {
-                gc.DrawString("TIME ATTACK  HARDCORE", 360, 100);
-            }
-            // gc.DrawString("AcceX:" + gc.AccelerationLastX, 0, 100);
-            // gc.DrawString("AcceY:" + gc.AccelerationLastY, 0, 140);
-            // gc.DrawString("AcceZ:" + gc.AccelerationLastZ, 0, 180);
-            gc.DrawImage(GcImage.Condiments, 57, 1000);
+            DrawSelectedCondiments(selectedCondiments);
+            DrawProgress(progress);
+            DrawTimeCountDown(sec);
+            DrawDifficultyDuringGame(status, difficulty);
+            DrawCondiments();
             if (progress < 30)
             {
                 DrawFoods(foodsArray[progress]);
             }
+            // DrawAccelerationStatus();
         }
         else if (status == 2)
         {
             DrawBackground();
-            if (selectedCondiments == 2)
-            {
-                gc.DrawImage(GcImage.SelectedIcon, 23, 1093);
-            }
-            else if (selectedCondiments == 3)
-            {
-                gc.DrawImage(GcImage.SelectedIcon, 266, 1093);
-            }
-            else if (selectedCondiments == 5)
-            {
-                gc.DrawImage(GcImage.SelectedIcon, 505, 1093);
-            }
-            gc.SetFontSize(50);
-            gc.SetColor(0, 0, 0);
-            gc.SetStringAnchor(GcAnchor.UpperLeft);
-            gc.DrawString("SPLASHED:" + splashedCount.ToString(), 20, 20);
-            gc.DrawString("TIME:" + ((float)countdown / 60).ToString("0.00"), 450, 20);
-            gc.SetStringAnchor(GcAnchor.UpperCenter);
-            if (difficulty == 0)
-            {
-                gc.DrawString("TIME LIMIT  NORMAL", 360, 100);
-            }
-            else if (difficulty == 1)
-            {
-                gc.DrawString("TIME LIMIT  HARDCORE", 360, 100);
-            }
-            // gc.DrawString("AcceX:" + gc.AccelerationLastX, 0, 100);
-            // gc.DrawString("AcceY:" + gc.AccelerationLastY, 0, 140);
-            // gc.DrawString("AcceZ:" + gc.AccelerationLastZ, 0, 180);
-            gc.DrawImage(GcImage.Condiments, 57, 1000);
+            DrawSelectedCondiments(selectedCondiments);
+            DrawSplashedCountDuringGame(splashedCount);
+            DrawTimeCountDown(countdown);
+            DrawDifficultyDuringGame(status, difficulty);
+            DrawCondiments();
             DrawFoods(currentFood);
+            // DrawAccelerationStatus();
         }
         else if (status == 3)
         {
@@ -422,6 +373,74 @@ public sealed class Game : GameBase
             }
         }
     }
+
+    void DrawSelectedCondiments(int selectedCondiments)
+    {
+        if (selectedCondiments == 2)
+        {
+            gc.DrawImage(GcImage.SelectedIcon, 23, 1093);
+        }
+        else if (selectedCondiments == 3)
+        {
+            gc.DrawImage(GcImage.SelectedIcon, 266, 1093);
+        }
+        else if (selectedCondiments == 5)
+        {
+            gc.DrawImage(GcImage.SelectedIcon, 505, 1093);
+        }
+    }
+    void DrawProgress(int progress)
+    {
+        gc.SetFontSize(50);
+        gc.SetColor(0, 0, 0);
+        gc.SetStringAnchor(GcAnchor.UpperLeft);
+        gc.DrawString("TASK:" + progress.ToString() + "/30", 20, 20);
+    }
+    void DrawSplashedCountDuringGame(int splashedCount)
+    {
+        gc.SetFontSize(50);
+        gc.SetColor(0, 0, 0);
+        gc.SetStringAnchor(GcAnchor.UpperLeft);
+        gc.DrawString("SPLASHED:" + splashedCount.ToString(), 20, 20);
+    }
+
+    void DrawTimeCountDown(int countdown)
+    {
+        gc.DrawString("TIME:" + ((float)countdown / 60).ToString("0.00"), 450, 20);
+    }
+
+    void DrawDifficultyDuringGame(int status, int difficulty)
+    {
+        gc.SetStringAnchor(GcAnchor.UpperCenter);
+        if (status == 1)
+        {
+            gc.SetStringAnchor(GcAnchor.UpperCenter);
+            if (difficulty == 0)
+            {
+                gc.DrawString("TIME ATTACK  NORMAL", 360, 100);
+            }
+            else if (difficulty == 1)
+            {
+                gc.DrawString("TIME ATTACK  HARDCORE", 360, 100);
+            }
+        }
+        else if (status == 2)
+        {
+            if (difficulty == 0)
+            {
+                gc.DrawString("TIME LIMIT  NORMAL", 360, 100);
+            }
+            else if (difficulty == 1)
+            {
+                gc.DrawString("TIME LIMIT  HARDCORE", 360, 100);
+            }
+        }
+    }
+
+    void DrawCondiments()
+    {
+        gc.DrawImage(GcImage.Condiments, 57, 1000);
+    }
     void DrawFoods(int id)
     {
         switch (id)
@@ -447,6 +466,13 @@ public sealed class Game : GameBase
             default:
                 break;
         }
+    }
+
+    void DrawAccelerationStatus()
+    {
+        gc.DrawString("AcceX:" + gc.AccelerationLastX, 0, 100);
+        gc.DrawString("AcceY:" + gc.AccelerationLastY, 0, 140);
+        gc.DrawString("AcceZ:" + gc.AccelerationLastZ, 0, 180);
     }
 
     void DrawFinish()
