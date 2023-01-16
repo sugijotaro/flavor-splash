@@ -283,25 +283,9 @@ public sealed class Game : GameBase
         if (status == 0)
         {
             DrawBackground();
-            gc.SetFontSize(120);
-            gc.SetColor(0, 0, 0);
-            gc.SetStringAnchor(GcAnchor.UpperCenter);
-            gc.DrawString("FLAVOR", 360, 280);
-            gc.DrawString("SPLASH", 360, 390);
-            gc.SetFontSize(60);
-            gc.SetColor(256, 256, 256);
-            gc.DrawString("NORMAL   HARDCORE", 360, 900);
-            gc.DrawString("TIME ATTACK", 360, 1050);
-            gc.DrawString("TIME LIMIT", 360, 1150);
-
-            if (difficulty == 0)
-            {
-                gc.DrawImage(GcImage.Array, 163, 820);
-            }
-            else if (difficulty == 1)
-            {
-                gc.DrawImage(GcImage.Array, 467, 820);
-            }
+            DrawFlavorSplash();
+            DrawDifficultyText();
+            DrawDifficultyIcon(difficulty);
         }
         else if (status == 1)
         {
@@ -371,6 +355,36 @@ public sealed class Game : GameBase
                     DrawTapToReturn();
                 }
             }
+        }
+    }
+
+    void DrawFlavorSplash()
+    {
+        gc.SetFontSize(120);
+        gc.SetColor(0, 0, 0);
+        gc.SetStringAnchor(GcAnchor.UpperCenter);
+        gc.DrawString("FLAVOR", 360, 280);
+        gc.DrawString("SPLASH", 360, 390);
+    }
+
+    void DrawDifficultyText()
+    {
+        gc.SetFontSize(60);
+        gc.SetColor(256, 256, 256);
+        gc.DrawString("NORMAL   HARDCORE", 360, 900);
+        gc.DrawString("TIME ATTACK", 360, 1050);
+        gc.DrawString("TIME LIMIT", 360, 1150);
+    }
+
+    void DrawDifficultyIcon(int difficulty)
+    {
+        if (difficulty == 0)
+        {
+            gc.DrawImage(GcImage.Array, 163, 820);
+        }
+        else if (difficulty == 1)
+        {
+            gc.DrawImage(GcImage.Array, 467, 820);
         }
     }
 
