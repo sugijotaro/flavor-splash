@@ -13,10 +13,11 @@ namespace GameCanvas
 {
     public readonly partial struct GcSound : System.IEquatable<GcSound>
     {
-        internal const int __Length__ = 4;
+        internal const int __Length__ = 5;
         public static readonly GcSound Click1 = new GcSound("GcSoundClick1");
         public static readonly GcSound GameBGM = new GcSound("GcSoundGameBGM");
         public static readonly GcSound Shake = new GcSound("GcSoundShake");
         public static readonly GcSound TitleBGM = new GcSound("GcSoundTitleBGM");
+        public static readonly GcSound Whistle = new GcSound("GcSoundWhistle");
     }
 }

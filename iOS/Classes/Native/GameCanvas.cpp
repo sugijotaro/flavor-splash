@@ -626,6 +626,7 @@ IL2CPP_EXTERN_C String_t* _stringLiteral00B28FF06B788B9B67C6B259800F404F9F3761FD
 IL2CPP_EXTERN_C String_t* _stringLiteral027E436F160D66C7C9AAB397A30D68CCEE7E819A;
 IL2CPP_EXTERN_C String_t* _stringLiteral052803F0C063CEB20D2E3F6CE64AD5A1B4BE6895;
 IL2CPP_EXTERN_C String_t* _stringLiteral06F5746D6B190E1800A1D8D67A8DD53200CBDC89;
+IL2CPP_EXTERN_C String_t* _stringLiteral0A8BBC8C9DE213CC82C3FD8AFFFB911DFA985117;
 IL2CPP_EXTERN_C String_t* _stringLiteral130D4DB56BC0E0668E95FD16F388025654FF74EF;
 IL2CPP_EXTERN_C String_t* _stringLiteral1365986D9BB845344842469CC49BAB1A7D21F675;
 IL2CPP_EXTERN_C String_t* _stringLiteral15B3E3E6A669AB43ED8585429554E8ACDE58BB8E;
@@ -4730,16 +4731,16 @@ struct GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F
 {
 public:
 	// System.String GameCanvas.GcSound::m_Path
-	String_t* ___m_Path_7;
+	String_t* ___m_Path_8;
 
 public:
-	inline static int32_t get_offset_of_m_Path_7() { return static_cast<int32_t>(offsetof(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F, ___m_Path_7)); }
-	inline String_t* get_m_Path_7() const { return ___m_Path_7; }
-	inline String_t** get_address_of_m_Path_7() { return &___m_Path_7; }
-	inline void set_m_Path_7(String_t* value)
+	inline static int32_t get_offset_of_m_Path_8() { return static_cast<int32_t>(offsetof(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F, ___m_Path_8)); }
+	inline String_t* get_m_Path_8() const { return ___m_Path_8; }
+	inline String_t** get_address_of_m_Path_8() { return &___m_Path_8; }
+	inline void set_m_Path_8(String_t* value)
 	{
-		___m_Path_7 = value;
-		Il2CppCodeGenWriteBarrier((void**)(&___m_Path_7), (void*)value);
+		___m_Path_8 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&___m_Path_8), (void*)value);
 	}
 };
 
@@ -4754,10 +4755,12 @@ public:
 	GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  ___Shake_3;
 	// GameCanvas.GcSound GameCanvas.GcSound::TitleBGM
 	GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  ___TitleBGM_4;
+	// GameCanvas.GcSound GameCanvas.GcSound::Whistle
+	GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  ___Whistle_5;
 	// GameCanvas.GcSound GameCanvas.GcSound::External
-	GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  ___External_5;
+	GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  ___External_6;
 	// GameCanvas.GcSound GameCanvas.GcSound::Null
-	GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  ___Null_6;
+	GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  ___Null_7;
 
 public:
 	inline static int32_t get_offset_of_Click1_1() { return static_cast<int32_t>(offsetof(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_StaticFields, ___Click1_1)); }
@@ -4766,7 +4769,7 @@ public:
 	inline void set_Click1_1(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  value)
 	{
 		___Click1_1 = value;
-		Il2CppCodeGenWriteBarrier((void**)&(((&___Click1_1))->___m_Path_7), (void*)NULL);
+		Il2CppCodeGenWriteBarrier((void**)&(((&___Click1_1))->___m_Path_8), (void*)NULL);
 	}
 
 	inline static int32_t get_offset_of_GameBGM_2() { return static_cast<int32_t>(offsetof(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_StaticFields, ___GameBGM_2)); }
@@ -4775,7 +4778,7 @@ public:
 	inline void set_GameBGM_2(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  value)
 	{
 		___GameBGM_2 = value;
-		Il2CppCodeGenWriteBarrier((void**)&(((&___GameBGM_2))->___m_Path_7), (void*)NULL);
+		Il2CppCodeGenWriteBarrier((void**)&(((&___GameBGM_2))->___m_Path_8), (void*)NULL);
 	}
 
 	inline static int32_t get_offset_of_Shake_3() { return static_cast<int32_t>(offsetof(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_StaticFields, ___Shake_3)); }
@@ -4784,7 +4787,7 @@ public:
 	inline void set_Shake_3(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  value)
 	{
 		___Shake_3 = value;
-		Il2CppCodeGenWriteBarrier((void**)&(((&___Shake_3))->___m_Path_7), (void*)NULL);
+		Il2CppCodeGenWriteBarrier((void**)&(((&___Shake_3))->___m_Path_8), (void*)NULL);
 	}
 
 	inline static int32_t get_offset_of_TitleBGM_4() { return static_cast<int32_t>(offsetof(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_StaticFields, ___TitleBGM_4)); }
@@ -4793,37 +4796,46 @@ public:
 	inline void set_TitleBGM_4(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  value)
 	{
 		___TitleBGM_4 = value;
-		Il2CppCodeGenWriteBarrier((void**)&(((&___TitleBGM_4))->___m_Path_7), (void*)NULL);
+		Il2CppCodeGenWriteBarrier((void**)&(((&___TitleBGM_4))->___m_Path_8), (void*)NULL);
 	}
 
-	inline static int32_t get_offset_of_External_5() { return static_cast<int32_t>(offsetof(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_StaticFields, ___External_5)); }
-	inline GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  get_External_5() const { return ___External_5; }
-	inline GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F * get_address_of_External_5() { return &___External_5; }
-	inline void set_External_5(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  value)
+	inline static int32_t get_offset_of_Whistle_5() { return static_cast<int32_t>(offsetof(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_StaticFields, ___Whistle_5)); }
+	inline GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  get_Whistle_5() const { return ___Whistle_5; }
+	inline GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F * get_address_of_Whistle_5() { return &___Whistle_5; }
+	inline void set_Whistle_5(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  value)
 	{
-		___External_5 = value;
-		Il2CppCodeGenWriteBarrier((void**)&(((&___External_5))->___m_Path_7), (void*)NULL);
+		___Whistle_5 = value;
+		Il2CppCodeGenWriteBarrier((void**)&(((&___Whistle_5))->___m_Path_8), (void*)NULL);
 	}
 
-	inline static int32_t get_offset_of_Null_6() { return static_cast<int32_t>(offsetof(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_StaticFields, ___Null_6)); }
-	inline GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  get_Null_6() const { return ___Null_6; }
-	inline GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F * get_address_of_Null_6() { return &___Null_6; }
-	inline void set_Null_6(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  value)
+	inline static int32_t get_offset_of_External_6() { return static_cast<int32_t>(offsetof(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_StaticFields, ___External_6)); }
+	inline GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  get_External_6() const { return ___External_6; }
+	inline GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F * get_address_of_External_6() { return &___External_6; }
+	inline void set_External_6(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  value)
 	{
-		___Null_6 = value;
-		Il2CppCodeGenWriteBarrier((void**)&(((&___Null_6))->___m_Path_7), (void*)NULL);
+		___External_6 = value;
+		Il2CppCodeGenWriteBarrier((void**)&(((&___External_6))->___m_Path_8), (void*)NULL);
+	}
+
+	inline static int32_t get_offset_of_Null_7() { return static_cast<int32_t>(offsetof(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_StaticFields, ___Null_7)); }
+	inline GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  get_Null_7() const { return ___Null_7; }
+	inline GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F * get_address_of_Null_7() { return &___Null_7; }
+	inline void set_Null_7(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  value)
+	{
+		___Null_7 = value;
+		Il2CppCodeGenWriteBarrier((void**)&(((&___Null_7))->___m_Path_8), (void*)NULL);
 	}
 };
 
 // Native definition for P/Invoke marshalling of GameCanvas.GcSound
 struct GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_marshaled_pinvoke
 {
-	char* ___m_Path_7;
+	char* ___m_Path_8;
 };
 // Native definition for COM marshalling of GameCanvas.GcSound
 struct GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_marshaled_com
 {
-	Il2CppChar* ___m_Path_7;
+	Il2CppChar* ___m_Path_8;
 };
 
 // GameCanvas.GcTapSettings
@@ -14081,7 +14093,7 @@ public:
 	{
 		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
 		m_Items[index] = value;
-		Il2CppCodeGenWriteBarrier((void**)&((m_Items + index)->___m_Path_7), (void*)NULL);
+		Il2CppCodeGenWriteBarrier((void**)&((m_Items + index)->___m_Path_8), (void*)NULL);
 	}
 	inline GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  GetAtUnchecked(il2cpp_array_size_t index) const
 	{
@@ -14094,7 +14106,7 @@ public:
 	inline void SetAtUnchecked(il2cpp_array_size_t index, GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  value)
 	{
 		m_Items[index] = value;
-		Il2CppCodeGenWriteBarrier((void**)&((m_Items + index)->___m_Path_7), (void*)NULL);
+		Il2CppCodeGenWriteBarrier((void**)&((m_Items + index)->___m_Path_8), (void*)NULL);
 	}
 };
 // System.Byte[]
@@ -27343,32 +27355,32 @@ IL_0060:
 // Conversion methods for marshalling of: GameCanvas.GcSound
 IL2CPP_EXTERN_C void GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_marshal_pinvoke(const GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F& unmarshaled, GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_marshaled_pinvoke& marshaled)
 {
-	marshaled.___m_Path_7 = il2cpp_codegen_marshal_string(unmarshaled.get_m_Path_7());
+	marshaled.___m_Path_8 = il2cpp_codegen_marshal_string(unmarshaled.get_m_Path_8());
 }
 IL2CPP_EXTERN_C void GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_marshal_pinvoke_back(const GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_marshaled_pinvoke& marshaled, GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F& unmarshaled)
 {
-	unmarshaled.set_m_Path_7(il2cpp_codegen_marshal_string_result(marshaled.___m_Path_7));
+	unmarshaled.set_m_Path_8(il2cpp_codegen_marshal_string_result(marshaled.___m_Path_8));
 }
 // Conversion method for clean up from marshalling of: GameCanvas.GcSound
 IL2CPP_EXTERN_C void GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_marshal_pinvoke_cleanup(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_marshaled_pinvoke& marshaled)
 {
-	il2cpp_codegen_marshal_free(marshaled.___m_Path_7);
-	marshaled.___m_Path_7 = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___m_Path_8);
+	marshaled.___m_Path_8 = NULL;
 }
 // Conversion methods for marshalling of: GameCanvas.GcSound
 IL2CPP_EXTERN_C void GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_marshal_com(const GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F& unmarshaled, GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_marshaled_com& marshaled)
 {
-	marshaled.___m_Path_7 = il2cpp_codegen_marshal_bstring(unmarshaled.get_m_Path_7());
+	marshaled.___m_Path_8 = il2cpp_codegen_marshal_bstring(unmarshaled.get_m_Path_8());
 }
 IL2CPP_EXTERN_C void GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_marshal_com_back(const GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_marshaled_com& marshaled, GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F& unmarshaled)
 {
-	unmarshaled.set_m_Path_7(il2cpp_codegen_marshal_bstring_result(marshaled.___m_Path_7));
+	unmarshaled.set_m_Path_8(il2cpp_codegen_marshal_bstring_result(marshaled.___m_Path_8));
 }
 // Conversion method for clean up from marshalling of: GameCanvas.GcSound
 IL2CPP_EXTERN_C void GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_marshal_com_cleanup(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_marshaled_com& marshaled)
 {
-	il2cpp_codegen_marshal_free_bstring(marshaled.___m_Path_7);
-	marshaled.___m_Path_7 = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___m_Path_8);
+	marshaled.___m_Path_8 = NULL;
 }
 // System.Void GameCanvas.GcSound::.ctor(System.String&)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GcSound__ctor_m59541C0204B0E110CE5469D98E4FCDDBF28EBAAF (GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F * __this, String_t** ___path0, const RuntimeMethod* method)
@@ -27377,7 +27389,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GcSound__ctor_m59541C0204B0E110CE5469D98
 		// private GcSound(in string path) { m_Path = path; }
 		String_t** L_0 = ___path0;
 		String_t* L_1 = *((String_t**)L_0);
-		__this->set_m_Path_7(L_1);
+		__this->set_m_Path_8(L_1);
 		// private GcSound(in string path) { m_Path = path; }
 		return;
 	}
@@ -27415,16 +27427,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool GcSound_Equals_mD70E7260C3127529CDDE9912
 {
 	{
 		// => (m_Path == null) ? (other.m_Path == null) : m_Path.Equals(other.m_Path);
-		String_t* L_0 = __this->get_m_Path_7();
+		String_t* L_0 = __this->get_m_Path_8();
 		if (!L_0)
 		{
 			goto IL_001a;
 		}
 	}
 	{
-		String_t* L_1 = __this->get_m_Path_7();
+		String_t* L_1 = __this->get_m_Path_8();
 		GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  L_2 = ___other0;
-		String_t* L_3 = L_2.get_m_Path_7();
+		String_t* L_3 = L_2.get_m_Path_8();
 		NullCheck(L_1);
 		bool L_4;
 		L_4 = String_Equals_m8A062B96B61A7D652E7D73C9B3E904F6B0E5F41D(L_1, L_3, /*hidden argument*/NULL);
@@ -27434,7 +27446,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool GcSound_Equals_mD70E7260C3127529CDDE9912
 IL_001a:
 	{
 		GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  L_5 = ___other0;
-		String_t* L_6 = L_5.get_m_Path_7();
+		String_t* L_6 = L_5.get_m_Path_8();
 		return (bool)((((RuntimeObject*)(String_t*)L_6) == ((RuntimeObject*)(RuntimeObject *)NULL))? 1 : 0);
 	}
 }
@@ -27494,7 +27506,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t GcSound_GetHashCode_m57FCEC34E2CCF52C
 	String_t* G_B1_0 = NULL;
 	{
 		// public override int GetHashCode() => m_Path?.GetHashCode() ?? 0;
-		String_t* L_0 = __this->get_m_Path_7();
+		String_t* L_0 = __this->get_m_Path_8();
 		String_t* L_1 = L_0;
 		G_B1_0 = L_1;
 		if (L_1)
@@ -27535,7 +27547,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* GcSound_ToString_mE1377328B554F3E4D
 	}
 	{
 		// public override string ToString() => $"{nameof(GcSound)} [{m_Path}]";
-		String_t* L_0 = __this->get_m_Path_7();
+		String_t* L_0 = __this->get_m_Path_8();
 		String_t* L_1;
 		L_1 = String_Concat_mC41740F000A5A48F8D313FB4CEE0E35E207A2632(_stringLiteral8B8F25539C02DB26EF60FA9AD02D44245F1FB024, L_0, _stringLiteralE166C9564FBDE461738077E3B1B506525EB6ACCC, /*hidden argument*/NULL);
 		return L_1;
@@ -27556,6 +27568,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GcSound__cctor_m96FF0E1A323CD1B937CDC243
 	if (!s_Il2CppMethodInitialized)
 	{
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral0A8BBC8C9DE213CC82C3FD8AFFFB911DFA985117);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral48BEEFF1C21B4FBC2D73B0748C5D03BF60D9F97B);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral4F9224D89BB557F24324C74AAA9BD5C5D0A5AA0E);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralB67BC1BF1072747372A6102AC6834B9CC7CA5DBA);
@@ -27589,14 +27602,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GcSound__cctor_m96FF0E1A323CD1B937CDC243
 		memset((&L_3), 0, sizeof(L_3));
 		GcSound__ctor_m59541C0204B0E110CE5469D98E4FCDDBF28EBAAF((&L_3), (String_t**)(&V_0), /*hidden argument*/NULL);
 		((GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_StaticFields*)il2cpp_codegen_static_fields_for(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_il2cpp_TypeInfo_var))->set_TitleBGM_4(L_3);
-		// internal static readonly GcSound External = new GcSound("@External");
-		V_0 = _stringLiteralFE095D4C493F243A909D0B6B43351066CDA440C2;
+		// public static readonly GcSound Whistle = new GcSound("GcSoundWhistle");
+		V_0 = _stringLiteral0A8BBC8C9DE213CC82C3FD8AFFFB911DFA985117;
 		GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  L_4;
 		memset((&L_4), 0, sizeof(L_4));
 		GcSound__ctor_m59541C0204B0E110CE5469D98E4FCDDBF28EBAAF((&L_4), (String_t**)(&V_0), /*hidden argument*/NULL);
-		((GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_StaticFields*)il2cpp_codegen_static_fields_for(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_il2cpp_TypeInfo_var))->set_External_5(L_4);
+		((GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_StaticFields*)il2cpp_codegen_static_fields_for(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_il2cpp_TypeInfo_var))->set_Whistle_5(L_4);
+		// internal static readonly GcSound External = new GcSound("@External");
+		V_0 = _stringLiteralFE095D4C493F243A909D0B6B43351066CDA440C2;
+		GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  L_5;
+		memset((&L_5), 0, sizeof(L_5));
+		GcSound__ctor_m59541C0204B0E110CE5469D98E4FCDDBF28EBAAF((&L_5), (String_t**)(&V_0), /*hidden argument*/NULL);
+		((GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_StaticFields*)il2cpp_codegen_static_fields_for(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_il2cpp_TypeInfo_var))->set_External_6(L_5);
 		// internal static readonly GcSound Null = default;
-		il2cpp_codegen_initobj((((GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_StaticFields*)il2cpp_codegen_static_fields_for(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_il2cpp_TypeInfo_var))->get_address_of_Null_6()), sizeof(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F ));
+		il2cpp_codegen_initobj((((GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_StaticFields*)il2cpp_codegen_static_fields_for(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_il2cpp_TypeInfo_var))->get_address_of_Null_7()), sizeof(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F ));
 		return;
 	}
 }
@@ -27660,7 +27679,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GcSoundEngine__ctor_m1B8E1EB27EFD1DD94A8
 		__this->set_m_PausingId_4(L_4);
 		// m_Sound = new Dictionary<GcSound, GcReferenceSound>(GcSound.__Length__);
 		Dictionary_2_t25D2376CDC4C7E988F5140A61D432A3A6F8B3B75 * L_5 = (Dictionary_2_t25D2376CDC4C7E988F5140A61D432A3A6F8B3B75 *)il2cpp_codegen_object_new(Dictionary_2_t25D2376CDC4C7E988F5140A61D432A3A6F8B3B75_il2cpp_TypeInfo_var);
-		Dictionary_2__ctor_m6FCC006FE43EA8FDCFD0BFC51577130AA42C4103(L_5, 4, /*hidden argument*/Dictionary_2__ctor_m6FCC006FE43EA8FDCFD0BFC51577130AA42C4103_RuntimeMethod_var);
+		Dictionary_2__ctor_m6FCC006FE43EA8FDCFD0BFC51577130AA42C4103(L_5, 5, /*hidden argument*/Dictionary_2__ctor_m6FCC006FE43EA8FDCFD0BFC51577130AA42C4103_RuntimeMethod_var);
 		__this->set_m_Sound_6(L_5);
 		// m_Sources = new AudioSource[k_TrackNum];
 		AudioSourceU5BU5D_t29E81D0D3B6FB9B7E7DDDBDDA32E38026AA4D12B* L_6 = (AudioSourceU5BU5D_t29E81D0D3B6FB9B7E7DDDBDDA32E38026AA4D12B*)(AudioSourceU5BU5D_t29E81D0D3B6FB9B7E7DDDBDDA32E38026AA4D12B*)SZArrayNew(AudioSourceU5BU5D_t29E81D0D3B6FB9B7E7DDDBDDA32E38026AA4D12B_il2cpp_TypeInfo_var, (uint32_t)4);
@@ -28164,7 +28183,7 @@ IL_0081:
 		GcSoundU5BU5D_tBDDE746DB8EFA4BA1EA1CA62A219AA1442D34304* L_38 = __this->get_m_PausingId_4();
 		int32_t L_39 = V_0;
 		IL2CPP_RUNTIME_CLASS_INIT(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_il2cpp_TypeInfo_var);
-		GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  L_40 = ((GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_StaticFields*)il2cpp_codegen_static_fields_for(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_il2cpp_TypeInfo_var))->get_Null_6();
+		GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  L_40 = ((GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_StaticFields*)il2cpp_codegen_static_fields_for(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_il2cpp_TypeInfo_var))->get_Null_7();
 		NullCheck(L_38);
 		(L_38)->SetAt(static_cast<il2cpp_array_size_t>(L_39), (GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F )L_40);
 		// m_Sources[i].loop = loop;
@@ -28257,13 +28276,13 @@ IL_0007:
 		GcSoundU5BU5D_tBDDE746DB8EFA4BA1EA1CA62A219AA1442D34304* L_2 = __this->get_m_PlayingId_5();
 		int32_t L_3 = V_0;
 		IL2CPP_RUNTIME_CLASS_INIT(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_il2cpp_TypeInfo_var);
-		GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  L_4 = ((GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_StaticFields*)il2cpp_codegen_static_fields_for(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_il2cpp_TypeInfo_var))->get_Null_6();
+		GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  L_4 = ((GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_StaticFields*)il2cpp_codegen_static_fields_for(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_il2cpp_TypeInfo_var))->get_Null_7();
 		NullCheck(L_2);
 		(L_2)->SetAt(static_cast<il2cpp_array_size_t>(L_3), (GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F )L_4);
 		// m_PausingId[i] = GcSound.Null;
 		GcSoundU5BU5D_tBDDE746DB8EFA4BA1EA1CA62A219AA1442D34304* L_5 = __this->get_m_PausingId_4();
 		int32_t L_6 = V_0;
-		GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  L_7 = ((GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_StaticFields*)il2cpp_codegen_static_fields_for(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_il2cpp_TypeInfo_var))->get_Null_6();
+		GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  L_7 = ((GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_StaticFields*)il2cpp_codegen_static_fields_for(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_il2cpp_TypeInfo_var))->get_Null_7();
 		NullCheck(L_5);
 		(L_5)->SetAt(static_cast<il2cpp_array_size_t>(L_6), (GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F )L_7);
 		// if (m_Sources[i].isPlaying)
@@ -28332,7 +28351,7 @@ IL_0007:
 		int32_t L_4 = L_3;
 		GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  L_5 = (L_2)->GetAt(static_cast<il2cpp_array_size_t>(L_4));
 		IL2CPP_RUNTIME_CLASS_INIT(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_il2cpp_TypeInfo_var);
-		GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  L_6 = ((GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_StaticFields*)il2cpp_codegen_static_fields_for(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_il2cpp_TypeInfo_var))->get_Null_6();
+		GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  L_6 = ((GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_StaticFields*)il2cpp_codegen_static_fields_for(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_il2cpp_TypeInfo_var))->get_Null_7();
 		bool L_7;
 		L_7 = GcSound_op_Inequality_m330AE472BD9466322155AE71B146308236B1C9E6(L_5, L_6, /*hidden argument*/NULL);
 		if (!L_7)
@@ -28355,7 +28374,7 @@ IL_0007:
 		GcSoundU5BU5D_tBDDE746DB8EFA4BA1EA1CA62A219AA1442D34304* L_14 = __this->get_m_PausingId_4();
 		int32_t L_15 = V_0;
 		IL2CPP_RUNTIME_CLASS_INIT(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_il2cpp_TypeInfo_var);
-		GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  L_16 = ((GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_StaticFields*)il2cpp_codegen_static_fields_for(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_il2cpp_TypeInfo_var))->get_Null_6();
+		GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  L_16 = ((GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_StaticFields*)il2cpp_codegen_static_fields_for(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_il2cpp_TypeInfo_var))->get_Null_7();
 		NullCheck(L_14);
 		(L_14)->SetAt(static_cast<il2cpp_array_size_t>(L_15), (GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F )L_16);
 		// m_Sources[i].UnPause();
@@ -28501,7 +28520,7 @@ IL_0004:
 		int32_t L_2 = L_1;
 		GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  L_3 = (L_0)->GetAt(static_cast<il2cpp_array_size_t>(L_2));
 		IL2CPP_RUNTIME_CLASS_INIT(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_il2cpp_TypeInfo_var);
-		GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  L_4 = ((GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_StaticFields*)il2cpp_codegen_static_fields_for(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_il2cpp_TypeInfo_var))->get_Null_6();
+		GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  L_4 = ((GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_StaticFields*)il2cpp_codegen_static_fields_for(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_il2cpp_TypeInfo_var))->get_Null_7();
 		bool L_5;
 		L_5 = GcSound_op_Inequality_m330AE472BD9466322155AE71B146308236B1C9E6(L_3, L_4, /*hidden argument*/NULL);
 		if (!L_5)
@@ -28528,7 +28547,7 @@ IL_0004:
 		GcSoundU5BU5D_tBDDE746DB8EFA4BA1EA1CA62A219AA1442D34304* L_11 = __this->get_m_PlayingId_5();
 		int32_t L_12 = V_0;
 		IL2CPP_RUNTIME_CLASS_INIT(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_il2cpp_TypeInfo_var);
-		GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  L_13 = ((GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_StaticFields*)il2cpp_codegen_static_fields_for(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_il2cpp_TypeInfo_var))->get_Null_6();
+		GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  L_13 = ((GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_StaticFields*)il2cpp_codegen_static_fields_for(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_il2cpp_TypeInfo_var))->get_Null_7();
 		NullCheck(L_11);
 		(L_11)->SetAt(static_cast<il2cpp_array_size_t>(L_12), (GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F )L_13);
 	}
@@ -28642,7 +28661,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool GcSoundEngine_TryGetAuidoClip_mF691CE343
 		GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F * L_0 = ___sound0;
 		GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  L_1 = (*(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F *)L_0);
 		IL2CPP_RUNTIME_CLASS_INIT(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_il2cpp_TypeInfo_var);
-		GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  L_2 = ((GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_StaticFields*)il2cpp_codegen_static_fields_for(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_il2cpp_TypeInfo_var))->get_Null_6();
+		GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  L_2 = ((GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_StaticFields*)il2cpp_codegen_static_fields_for(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_il2cpp_TypeInfo_var))->get_Null_7();
 		bool L_3;
 		L_3 = GcSound_op_Equality_m7DE27E1B8DED068658DF8E867190CF8F88B5F4D1(L_1, L_2, /*hidden argument*/NULL);
 		if (L_3)
@@ -28654,7 +28673,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool GcSoundEngine_TryGetAuidoClip_mF691CE343
 		GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F * L_4 = ___sound0;
 		GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  L_5 = (*(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F *)L_4);
 		IL2CPP_RUNTIME_CLASS_INIT(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_il2cpp_TypeInfo_var);
-		GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  L_6 = ((GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_StaticFields*)il2cpp_codegen_static_fields_for(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_il2cpp_TypeInfo_var))->get_External_5();
+		GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  L_6 = ((GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_StaticFields*)il2cpp_codegen_static_fields_for(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_il2cpp_TypeInfo_var))->get_External_6();
 		bool L_7;
 		L_7 = GcSound_op_Equality_m7DE27E1B8DED068658DF8E867190CF8F88B5F4D1(L_5, L_6, /*hidden argument*/NULL);
 		if (!L_7)
@@ -28690,7 +28709,7 @@ IL_0029:
 	{
 		// res = GcReferenceSound.Load(sound.m_Path);
 		GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F * L_13 = ___sound0;
-		String_t** L_14 = L_13->get_address_of_m_Path_7();
+		String_t** L_14 = L_13->get_address_of_m_Path_8();
 		GcReferenceSound_tD600C9DB8DA17B69DFA2703EE9297C74A70BCEA0 * L_15;
 		L_15 = GcReference_2_Load_m62483AEB0C0A1BF1673FFCCF23ED0706745F850F((String_t**)L_14, /*hidden argument*/GcReference_2_Load_m62483AEB0C0A1BF1673FFCCF23ED0706745F850F_RuntimeMethod_var);
 		V_0 = L_15;

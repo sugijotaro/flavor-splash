@@ -367,6 +367,7 @@ public sealed class Game : GameBase
             if (sec < clearTime + 60)
             {
                 DrawFinish();
+                gc.PlaySE(GcSound.Whistle);
             }
             else
             {
@@ -389,6 +390,7 @@ public sealed class Game : GameBase
             if (sec < 60)
             {
                 DrawFinish();
+                gc.PlaySE(GcSound.Whistle);
             }
             else
             {

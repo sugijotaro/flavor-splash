@@ -2754,16 +2754,16 @@ struct GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F
 {
 public:
 	// System.String GameCanvas.GcSound::m_Path
-	String_t* ___m_Path_7;
+	String_t* ___m_Path_8;
 
 public:
-	inline static int32_t get_offset_of_m_Path_7() { return static_cast<int32_t>(offsetof(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F, ___m_Path_7)); }
-	inline String_t* get_m_Path_7() const { return ___m_Path_7; }
-	inline String_t** get_address_of_m_Path_7() { return &___m_Path_7; }
-	inline void set_m_Path_7(String_t* value)
+	inline static int32_t get_offset_of_m_Path_8() { return static_cast<int32_t>(offsetof(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F, ___m_Path_8)); }
+	inline String_t* get_m_Path_8() const { return ___m_Path_8; }
+	inline String_t** get_address_of_m_Path_8() { return &___m_Path_8; }
+	inline void set_m_Path_8(String_t* value)
 	{
-		___m_Path_7 = value;
-		Il2CppCodeGenWriteBarrier((void**)(&___m_Path_7), (void*)value);
+		___m_Path_8 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&___m_Path_8), (void*)value);
 	}
 };
 
@@ -2778,10 +2778,12 @@ public:
 	GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  ___Shake_3;
 	// GameCanvas.GcSound GameCanvas.GcSound::TitleBGM
 	GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  ___TitleBGM_4;
+	// GameCanvas.GcSound GameCanvas.GcSound::Whistle
+	GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  ___Whistle_5;
 	// GameCanvas.GcSound GameCanvas.GcSound::External
-	GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  ___External_5;
+	GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  ___External_6;
 	// GameCanvas.GcSound GameCanvas.GcSound::Null
-	GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  ___Null_6;
+	GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  ___Null_7;
 
 public:
 	inline static int32_t get_offset_of_Click1_1() { return static_cast<int32_t>(offsetof(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_StaticFields, ___Click1_1)); }
@@ -2790,7 +2792,7 @@ public:
 	inline void set_Click1_1(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  value)
 	{
 		___Click1_1 = value;
-		Il2CppCodeGenWriteBarrier((void**)&(((&___Click1_1))->___m_Path_7), (void*)NULL);
+		Il2CppCodeGenWriteBarrier((void**)&(((&___Click1_1))->___m_Path_8), (void*)NULL);
 	}
 
 	inline static int32_t get_offset_of_GameBGM_2() { return static_cast<int32_t>(offsetof(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_StaticFields, ___GameBGM_2)); }
@@ -2799,7 +2801,7 @@ public:
 	inline void set_GameBGM_2(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  value)
 	{
 		___GameBGM_2 = value;
-		Il2CppCodeGenWriteBarrier((void**)&(((&___GameBGM_2))->___m_Path_7), (void*)NULL);
+		Il2CppCodeGenWriteBarrier((void**)&(((&___GameBGM_2))->___m_Path_8), (void*)NULL);
 	}
 
 	inline static int32_t get_offset_of_Shake_3() { return static_cast<int32_t>(offsetof(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_StaticFields, ___Shake_3)); }
@@ -2808,7 +2810,7 @@ public:
 	inline void set_Shake_3(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  value)
 	{
 		___Shake_3 = value;
-		Il2CppCodeGenWriteBarrier((void**)&(((&___Shake_3))->___m_Path_7), (void*)NULL);
+		Il2CppCodeGenWriteBarrier((void**)&(((&___Shake_3))->___m_Path_8), (void*)NULL);
 	}
 
 	inline static int32_t get_offset_of_TitleBGM_4() { return static_cast<int32_t>(offsetof(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_StaticFields, ___TitleBGM_4)); }
@@ -2817,37 +2819,46 @@ public:
 	inline void set_TitleBGM_4(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  value)
 	{
 		___TitleBGM_4 = value;
-		Il2CppCodeGenWriteBarrier((void**)&(((&___TitleBGM_4))->___m_Path_7), (void*)NULL);
+		Il2CppCodeGenWriteBarrier((void**)&(((&___TitleBGM_4))->___m_Path_8), (void*)NULL);
 	}
 
-	inline static int32_t get_offset_of_External_5() { return static_cast<int32_t>(offsetof(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_StaticFields, ___External_5)); }
-	inline GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  get_External_5() const { return ___External_5; }
-	inline GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F * get_address_of_External_5() { return &___External_5; }
-	inline void set_External_5(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  value)
+	inline static int32_t get_offset_of_Whistle_5() { return static_cast<int32_t>(offsetof(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_StaticFields, ___Whistle_5)); }
+	inline GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  get_Whistle_5() const { return ___Whistle_5; }
+	inline GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F * get_address_of_Whistle_5() { return &___Whistle_5; }
+	inline void set_Whistle_5(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  value)
 	{
-		___External_5 = value;
-		Il2CppCodeGenWriteBarrier((void**)&(((&___External_5))->___m_Path_7), (void*)NULL);
+		___Whistle_5 = value;
+		Il2CppCodeGenWriteBarrier((void**)&(((&___Whistle_5))->___m_Path_8), (void*)NULL);
 	}
 
-	inline static int32_t get_offset_of_Null_6() { return static_cast<int32_t>(offsetof(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_StaticFields, ___Null_6)); }
-	inline GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  get_Null_6() const { return ___Null_6; }
-	inline GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F * get_address_of_Null_6() { return &___Null_6; }
-	inline void set_Null_6(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  value)
+	inline static int32_t get_offset_of_External_6() { return static_cast<int32_t>(offsetof(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_StaticFields, ___External_6)); }
+	inline GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  get_External_6() const { return ___External_6; }
+	inline GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F * get_address_of_External_6() { return &___External_6; }
+	inline void set_External_6(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  value)
 	{
-		___Null_6 = value;
-		Il2CppCodeGenWriteBarrier((void**)&(((&___Null_6))->___m_Path_7), (void*)NULL);
+		___External_6 = value;
+		Il2CppCodeGenWriteBarrier((void**)&(((&___External_6))->___m_Path_8), (void*)NULL);
+	}
+
+	inline static int32_t get_offset_of_Null_7() { return static_cast<int32_t>(offsetof(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_StaticFields, ___Null_7)); }
+	inline GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  get_Null_7() const { return ___Null_7; }
+	inline GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F * get_address_of_Null_7() { return &___Null_7; }
+	inline void set_Null_7(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  value)
+	{
+		___Null_7 = value;
+		Il2CppCodeGenWriteBarrier((void**)&(((&___Null_7))->___m_Path_8), (void*)NULL);
 	}
 };
 
 // Native definition for P/Invoke marshalling of GameCanvas.GcSound
 struct GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_marshaled_pinvoke
 {
-	char* ___m_Path_7;
+	char* ___m_Path_8;
 };
 // Native definition for COM marshalling of GameCanvas.GcSound
 struct GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_marshaled_com
 {
-	Il2CppChar* ___m_Path_7;
+	Il2CppChar* ___m_Path_8;
 };
 
 // System.Int32
@@ -3023,7 +3034,7 @@ public:
 	inline void set_key_2(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  value)
 	{
 		___key_2 = value;
-		Il2CppCodeGenWriteBarrier((void**)&(((&___key_2))->___m_Path_7), (void*)NULL);
+		Il2CppCodeGenWriteBarrier((void**)&(((&___key_2))->___m_Path_8), (void*)NULL);
 	}
 
 	inline static int32_t get_offset_of_value_3() { return static_cast<int32_t>(offsetof(Entry_t7643571F200018A8253224048D8E5335E687054C, ___value_3)); }
@@ -3461,7 +3472,7 @@ public:
 	inline void set_key_0(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F  value)
 	{
 		___key_0 = value;
-		Il2CppCodeGenWriteBarrier((void**)&(((&___key_0))->___m_Path_7), (void*)NULL);
+		Il2CppCodeGenWriteBarrier((void**)&(((&___key_0))->___m_Path_8), (void*)NULL);
 	}
 
 	inline static int32_t get_offset_of_value_1() { return static_cast<int32_t>(offsetof(KeyValuePair_2_t064AE9551F6A42CA1F1B6FBADFB06034555490A4, ___value_1)); }
@@ -3889,7 +3900,7 @@ public:
 	inline void set_current_3(KeyValuePair_2_t064AE9551F6A42CA1F1B6FBADFB06034555490A4  value)
 	{
 		___current_3 = value;
-		Il2CppCodeGenWriteBarrier((void**)&((&(((&___current_3))->___key_0))->___m_Path_7), (void*)NULL);
+		Il2CppCodeGenWriteBarrier((void**)&((&(((&___current_3))->___key_0))->___m_Path_8), (void*)NULL);
 		#if IL2CPP_ENABLE_STRICT_WRITE_BARRIERS
 		Il2CppCodeGenWriteBarrier((void**)&(((&___current_3))->___value_1), (void*)NULL);
 		#endif
@@ -4330,7 +4341,7 @@ public:
 	{
 		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
 		m_Items[index] = value;
-		Il2CppCodeGenWriteBarrier((void**)&((&((m_Items + index)->___key_2))->___m_Path_7), (void*)NULL);
+		Il2CppCodeGenWriteBarrier((void**)&((&((m_Items + index)->___key_2))->___m_Path_8), (void*)NULL);
 		#if IL2CPP_ENABLE_STRICT_WRITE_BARRIERS
 		Il2CppCodeGenWriteBarrier((void**)&((m_Items + index)->___value_3), (void*)NULL);
 		#endif
@@ -4346,7 +4357,7 @@ public:
 	inline void SetAtUnchecked(il2cpp_array_size_t index, Entry_t7643571F200018A8253224048D8E5335E687054C  value)
 	{
 		m_Items[index] = value;
-		Il2CppCodeGenWriteBarrier((void**)&((&((m_Items + index)->___key_2))->___m_Path_7), (void*)NULL);
+		Il2CppCodeGenWriteBarrier((void**)&((&((m_Items + index)->___key_2))->___m_Path_8), (void*)NULL);
 		#if IL2CPP_ENABLE_STRICT_WRITE_BARRIERS
 		Il2CppCodeGenWriteBarrier((void**)&((m_Items + index)->___value_3), (void*)NULL);
 		#endif
@@ -4408,7 +4419,7 @@ public:
 	{
 		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
 		m_Items[index] = value;
-		Il2CppCodeGenWriteBarrier((void**)&((&((m_Items + index)->___key_0))->___m_Path_7), (void*)NULL);
+		Il2CppCodeGenWriteBarrier((void**)&((&((m_Items + index)->___key_0))->___m_Path_8), (void*)NULL);
 		#if IL2CPP_ENABLE_STRICT_WRITE_BARRIERS
 		Il2CppCodeGenWriteBarrier((void**)&((m_Items + index)->___value_1), (void*)NULL);
 		#endif
@@ -4424,7 +4435,7 @@ public:
 	inline void SetAtUnchecked(il2cpp_array_size_t index, KeyValuePair_2_t064AE9551F6A42CA1F1B6FBADFB06034555490A4  value)
 	{
 		m_Items[index] = value;
-		Il2CppCodeGenWriteBarrier((void**)&((&((m_Items + index)->___key_0))->___m_Path_7), (void*)NULL);
+		Il2CppCodeGenWriteBarrier((void**)&((&((m_Items + index)->___key_0))->___m_Path_8), (void*)NULL);
 		#if IL2CPP_ENABLE_STRICT_WRITE_BARRIERS
 		Il2CppCodeGenWriteBarrier((void**)&((m_Items + index)->___value_1), (void*)NULL);
 		#endif
