@@ -15803,6 +15803,8 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void GcProxy_SetStringAnchor_m87A
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void GcProxy_PlaySE_m2CAFEB97D8D49E4CBB8EC6A3727A982CAA6AA603_inline (GcProxy_t832DFA1A70226659BE781159106088071E92BCBA * __this, GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F * ___sound0, const RuntimeMethod* method);
 // System.Void GameCanvas.GcProxy::PlaySound(GameCanvas.GcSound&,GameCanvas.GcSoundTrack,System.Boolean)
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void GcProxy_PlaySound_mEDE06B1BAFBDA0188C96ED1151F8535C389A3D84_inline (GcProxy_t832DFA1A70226659BE781159106088071E92BCBA * __this, GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F * ___sound0, uint8_t ___track1, bool ___loop2, const RuntimeMethod* method);
+// System.Single GameCanvas.GcProxy::GetPointerDuration(System.Int32&)
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float GcProxy_GetPointerDuration_mB67A5DC8C5617C1A61145E8FC987641419FF09DB_inline (GcProxy_t832DFA1A70226659BE781159106088071E92BCBA * __this, int32_t* ___i0, const RuntimeMethod* method);
 // System.Int32 GameCanvas.GcProxy::GetPointerFrameCount(System.Int32&)
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t GcProxy_GetPointerFrameCount_mED8F79FC999C2204E8BDFFF8DF654101ACC52E64_inline (GcProxy_t832DFA1A70226659BE781159106088071E92BCBA * __this, int32_t* ___i0, const RuntimeMethod* method);
 // System.Single GameCanvas.GcProxy::GetPointerX(System.Int32&)
@@ -25750,6 +25752,36 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float GcProxy_get_AccelerationLastZ_mB66E6869
 		return L_4;
 	}
 }
+// System.Single GameCanvas.GcProxy::GetPointerDuration(System.Int32&)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float GcProxy_GetPointerDuration_mB67A5DC8C5617C1A61145E8FC987641419FF09DB (GcProxy_t832DFA1A70226659BE781159106088071E92BCBA * __this, int32_t* ___i0, const RuntimeMethod* method)
+{
+	GcPointerTrace_tF19B90DD9E026AB797DBD08D5A786B6217D893FF  V_0;
+	memset((&V_0), 0, sizeof(V_0));
+	{
+		// => m_Context.InputPointer.TryGetPointerTrace(i, out var t) ? t.Duration : 0f;
+		GcContext_t4222571B71D4C9FD7F0382D53CC1BE91CA931FBC * L_0 = __this->get_m_Context_0();
+		NullCheck(L_0);
+		GcInputPointerEngine_t2AFD7043D82AA448F6D21566B4F6BCB2D9BCDAA5 * L_1 = L_0->get_InputPointer_6();
+		int32_t* L_2 = ___i0;
+		NullCheck(L_1);
+		bool L_3;
+		L_3 = GcInputPointerEngine_TryGetPointerTrace_mEE06B86A04282F8EA421931212DEB341153E2DC5(L_1, (int32_t*)L_2, (GcPointerTrace_tF19B90DD9E026AB797DBD08D5A786B6217D893FF *)(&V_0), /*hidden argument*/NULL);
+		if (L_3)
+		{
+			goto IL_001b;
+		}
+	}
+	{
+		return (0.0f);
+	}
+
+IL_001b:
+	{
+		GcPointerTrace_tF19B90DD9E026AB797DBD08D5A786B6217D893FF  L_4 = V_0;
+		float L_5 = L_4.get_Duration_3();
+		return L_5;
+	}
+}
 // System.Int32 GameCanvas.GcProxy::GetPointerFrameCount(System.Int32&)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t GcProxy_GetPointerFrameCount_mED8F79FC999C2204E8BDFFF8DF654101ACC52E64 (GcProxy_t832DFA1A70226659BE781159106088071E92BCBA * __this, int32_t* ___i0, const RuntimeMethod* method)
 {
@@ -26275,6 +26307,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GcProxy_GameCanvas_ISound_PlaySound_mD6D
 		bool L_2 = ___loop2;
 		GcProxy_PlaySound_mEDE06B1BAFBDA0188C96ED1151F8535C389A3D84_inline(__this, (GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F *)L_0, L_1, L_2, /*hidden argument*/NULL);
 		return;
+	}
+}
+// System.Single GameCanvas.GcProxy::GameCanvas.IInputPointerEx.GetPointerDuration(System.Int32& modreq(System.Runtime.InteropServices.InAttribute))
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float GcProxy_GameCanvas_IInputPointerEx_GetPointerDuration_m87F22EB9FF9ABB0A56F45608BC9863C6C94323A2 (GcProxy_t832DFA1A70226659BE781159106088071E92BCBA * __this, int32_t* ___i0, const RuntimeMethod* method)
+{
+	{
+		int32_t* L_0 = ___i0;
+		float L_1;
+		L_1 = GcProxy_GetPointerDuration_mB67A5DC8C5617C1A61145E8FC987641419FF09DB_inline(__this, (int32_t*)L_0, /*hidden argument*/NULL);
+		return L_1;
 	}
 }
 // System.Int32 GameCanvas.GcProxy::GameCanvas.IInputPointerEx.GetPointerFrameCount(System.Int32& modreq(System.Runtime.InteropServices.InAttribute))
@@ -32033,6 +32075,35 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void GcProxy_PlaySound_mEDE06B1BA
 		NullCheck(L_1);
 		GcSoundEngine_PlaySound_m92D963C385A9F127F7CD93552D4C5EFFEFFA5664(L_1, (GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F *)L_2, L_3, L_4, /*hidden argument*/NULL);
 		return;
+	}
+}
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float GcProxy_GetPointerDuration_mB67A5DC8C5617C1A61145E8FC987641419FF09DB_inline (GcProxy_t832DFA1A70226659BE781159106088071E92BCBA * __this, int32_t* ___i0, const RuntimeMethod* method)
+{
+	GcPointerTrace_tF19B90DD9E026AB797DBD08D5A786B6217D893FF  V_0;
+	memset((&V_0), 0, sizeof(V_0));
+	{
+		// => m_Context.InputPointer.TryGetPointerTrace(i, out var t) ? t.Duration : 0f;
+		GcContext_t4222571B71D4C9FD7F0382D53CC1BE91CA931FBC * L_0 = __this->get_m_Context_0();
+		NullCheck(L_0);
+		GcInputPointerEngine_t2AFD7043D82AA448F6D21566B4F6BCB2D9BCDAA5 * L_1 = L_0->get_InputPointer_6();
+		int32_t* L_2 = ___i0;
+		NullCheck(L_1);
+		bool L_3;
+		L_3 = GcInputPointerEngine_TryGetPointerTrace_mEE06B86A04282F8EA421931212DEB341153E2DC5(L_1, (int32_t*)L_2, (GcPointerTrace_tF19B90DD9E026AB797DBD08D5A786B6217D893FF *)(&V_0), /*hidden argument*/NULL);
+		if (L_3)
+		{
+			goto IL_001b;
+		}
+	}
+	{
+		return (0.0f);
+	}
+
+IL_001b:
+	{
+		GcPointerTrace_tF19B90DD9E026AB797DBD08D5A786B6217D893FF  L_4 = V_0;
+		float L_5 = L_4.get_Duration_3();
+		return L_5;
 	}
 }
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t GcProxy_GetPointerFrameCount_mED8F79FC999C2204E8BDFFF8DF654101ACC52E64_inline (GcProxy_t832DFA1A70226659BE781159106088071E92BCBA * __this, int32_t* ___i0, const RuntimeMethod* method)

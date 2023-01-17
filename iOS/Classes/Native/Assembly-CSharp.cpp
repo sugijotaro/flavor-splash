@@ -1478,10 +1478,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Game_IsOnTimeLimit_m58B122DB7FEBF8DC4C6F
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_StartTimeLimit_mDFACBBFB142CBCC8DA385A91493048239121425A (Game_tBF310511B1E996F85E0F6C8DDB925EB46D2E78EE * __this, const RuntimeMethod* method);
 // System.Void UnityEngine.Debug::Log(System.Object)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Debug_Log_mF2A2ACB1738BA264EF07744AAF260BC5DDD2A11A (RuntimeObject * ___message0, const RuntimeMethod* method);
-// System.Void Game::checkTap(System.Single,System.Single)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_checkTap_m8F56B9E90204B383C9B30CCEAA3D98896B44FAA6 (Game_tBF310511B1E996F85E0F6C8DDB925EB46D2E78EE * __this, float ___x0, float ___y1, const RuntimeMethod* method);
-// System.Void Game::checkShake()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_checkShake_m35C6F46408B4056A8364834D104D6C7BC0285410 (Game_tBF310511B1E996F85E0F6C8DDB925EB46D2E78EE * __this, const RuntimeMethod* method);
+// System.Void Game::CheckTap(System.Single,System.Single)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_CheckTap_m58ED0110B8C786950A319704ADF990CA6006B3C2 (Game_tBF310511B1E996F85E0F6C8DDB925EB46D2E78EE * __this, float ___x0, float ___y1, const RuntimeMethod* method);
+// System.Void Game::CheckShake()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_CheckShake_m20C5E1AF1C607D9FB6FC339501555B2A67382BBC (Game_tBF310511B1E996F85E0F6C8DDB925EB46D2E78EE * __this, const RuntimeMethod* method);
+// System.Void Game::BackToTitle()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_BackToTitle_m9182AE88378488E8050E5B118D9A2308BA564981 (Game_tBF310511B1E996F85E0F6C8DDB925EB46D2E78EE * __this, const RuntimeMethod* method);
 // System.Int32 UnityEngine.Random::Range(System.Int32,System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Random_Range_mCD7505433C26B6FA511AC1EA07E58AEF7ED1C213 (int32_t ___minInclusive0, int32_t ___maxExclusive1, const RuntimeMethod* method);
 // System.Void Game::FoodSplashed()
@@ -1622,8 +1624,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_UpdateGame_m3CC2EA34259A23A86CB5BE7
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IInputPointerEx_t77FF40CB496C7D889AF48A8B97C1C8583584A3C3_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ISoundEx_tD25BD54686D9B9B56DECF8BEC2D915B0A0D66F3F_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ISound_t57F3CA00C15A73B3DAD63859FFFFE14289427309_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Int32U5BU5D_t70F1BDC14B1786481B176D6139A5E3B87DC54C32_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Int32_tFDE5F8CD43D10453F6A2E0C77FE48C6CC7009046_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralD4F093A84AE3078D3C42B98B0D4626BD342F7BA0);
 		s_Il2CppMethodInitialized = true;
@@ -1649,7 +1649,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_UpdateGame_m3CC2EA34259A23A86CB5BE7
 		bool L_2 = __this->get_preFrameTapped_24();
 		if (L_2)
 		{
-			goto IL_0324;
+			goto IL_02d3;
 		}
 	}
 	{
@@ -1659,7 +1659,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_UpdateGame_m3CC2EA34259A23A86CB5BE7
 		V_2 = 1;
 		NullCheck(L_3);
 		float L_4;
-		L_4 = InterfaceFuncInvoker1< float, int32_t* >::Invoke(1 /* System.Single GameCanvas.IInputPointerEx::GetPointerX(System.Int32& modreq(System.Runtime.InteropServices.InAttribute)) */, IInputPointerEx_t77FF40CB496C7D889AF48A8B97C1C8583584A3C3_il2cpp_TypeInfo_var, L_3, (&V_2));
+		L_4 = InterfaceFuncInvoker1< float, int32_t* >::Invoke(2 /* System.Single GameCanvas.IInputPointerEx::GetPointerX(System.Int32& modreq(System.Runtime.InteropServices.InAttribute)) */, IInputPointerEx_t77FF40CB496C7D889AF48A8B97C1C8583584A3C3_il2cpp_TypeInfo_var, L_3, (&V_2));
 		V_0 = L_4;
 		// float y = gc.GetPointerY(1);
 		RuntimeObject* L_5;
@@ -1667,7 +1667,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_UpdateGame_m3CC2EA34259A23A86CB5BE7
 		V_2 = 1;
 		NullCheck(L_5);
 		float L_6;
-		L_6 = InterfaceFuncInvoker1< float, int32_t* >::Invoke(2 /* System.Single GameCanvas.IInputPointerEx::GetPointerY(System.Int32& modreq(System.Runtime.InteropServices.InAttribute)) */, IInputPointerEx_t77FF40CB496C7D889AF48A8B97C1C8583584A3C3_il2cpp_TypeInfo_var, L_5, (&V_2));
+		L_6 = InterfaceFuncInvoker1< float, int32_t* >::Invoke(3 /* System.Single GameCanvas.IInputPointerEx::GetPointerY(System.Int32& modreq(System.Runtime.InteropServices.InAttribute)) */, IInputPointerEx_t77FF40CB496C7D889AF48A8B97C1C8583584A3C3_il2cpp_TypeInfo_var, L_5, (&V_2));
 		V_1 = L_6;
 		// if (IsOnDifficultyToggle(y))
 		float L_7 = V_1;
@@ -1689,7 +1689,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_UpdateGame_m3CC2EA34259A23A86CB5BE7
 		NullCheck(L_10);
 		InterfaceActionInvoker1< GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F * >::Invoke(0 /* System.Void GameCanvas.ISoundEx::PlaySE(GameCanvas.GcSound& modreq(System.Runtime.InteropServices.InAttribute)) */, ISoundEx_tD25BD54686D9B9B56DECF8BEC2D915B0A0D66F3F_il2cpp_TypeInfo_var, L_10, (((GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_StaticFields*)il2cpp_codegen_static_fields_for(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_il2cpp_TypeInfo_var))->get_address_of_Click1_1()));
 		// }
-		goto IL_0324;
+		goto IL_02d3;
 	}
 
 IL_0066:
@@ -1707,7 +1707,7 @@ IL_0066:
 		// StartRandomizedTimeAttack();
 		Game_StartRandomizedTimeAttack_mBC4B4D2DE33583723E9ADF50AB822BF92F589281(__this, /*hidden argument*/NULL);
 		// }
-		goto IL_0324;
+		goto IL_02d3;
 	}
 
 IL_007a:
@@ -1718,14 +1718,14 @@ IL_007a:
 		L_14 = Game_IsOnTimeLimit_m58B122DB7FEBF8DC4C6FCDFC3ED5DCD71C27FCB3(__this, L_13, /*hidden argument*/NULL);
 		if (!L_14)
 		{
-			goto IL_0324;
+			goto IL_02d3;
 		}
 	}
 	{
 		// StartTimeLimit();
 		Game_StartTimeLimit_mDFACBBFB142CBCC8DA385A91493048239121425A(__this, /*hidden argument*/NULL);
 		// }
-		goto IL_0324;
+		goto IL_02d3;
 	}
 
 IL_0091:
@@ -1734,7 +1734,7 @@ IL_0091:
 		int32_t L_15 = __this->get_status_14();
 		if ((!(((uint32_t)L_15) == ((uint32_t)1))))
 		{
-			goto IL_017f;
+			goto IL_019b;
 		}
 	}
 	{
@@ -1820,20 +1820,20 @@ IL_012b:
 		}
 	}
 	{
-		// checkTap(gc.GetPointerX(1), gc.GetPointerY(1));
+		// CheckTap(gc.GetPointerX(1), gc.GetPointerY(1));
 		RuntimeObject* L_28;
 		L_28 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
 		V_2 = 1;
 		NullCheck(L_28);
 		float L_29;
-		L_29 = InterfaceFuncInvoker1< float, int32_t* >::Invoke(1 /* System.Single GameCanvas.IInputPointerEx::GetPointerX(System.Int32& modreq(System.Runtime.InteropServices.InAttribute)) */, IInputPointerEx_t77FF40CB496C7D889AF48A8B97C1C8583584A3C3_il2cpp_TypeInfo_var, L_28, (&V_2));
+		L_29 = InterfaceFuncInvoker1< float, int32_t* >::Invoke(2 /* System.Single GameCanvas.IInputPointerEx::GetPointerX(System.Int32& modreq(System.Runtime.InteropServices.InAttribute)) */, IInputPointerEx_t77FF40CB496C7D889AF48A8B97C1C8583584A3C3_il2cpp_TypeInfo_var, L_28, (&V_2));
 		RuntimeObject* L_30;
 		L_30 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
 		V_3 = 1;
 		NullCheck(L_30);
 		float L_31;
-		L_31 = InterfaceFuncInvoker1< float, int32_t* >::Invoke(2 /* System.Single GameCanvas.IInputPointerEx::GetPointerY(System.Int32& modreq(System.Runtime.InteropServices.InAttribute)) */, IInputPointerEx_t77FF40CB496C7D889AF48A8B97C1C8583584A3C3_il2cpp_TypeInfo_var, L_30, (&V_3));
-		Game_checkTap_m8F56B9E90204B383C9B30CCEAA3D98896B44FAA6(__this, L_29, L_31, /*hidden argument*/NULL);
+		L_31 = InterfaceFuncInvoker1< float, int32_t* >::Invoke(3 /* System.Single GameCanvas.IInputPointerEx::GetPointerY(System.Int32& modreq(System.Runtime.InteropServices.InAttribute)) */, IInputPointerEx_t77FF40CB496C7D889AF48A8B97C1C8583584A3C3_il2cpp_TypeInfo_var, L_30, (&V_3));
+		Game_CheckTap_m58ED0110B8C786950A319704ADF990CA6006B3C2(__this, L_29, L_31, /*hidden argument*/NULL);
 	}
 
 IL_0157:
@@ -1842,42 +1842,61 @@ IL_0157:
 		float L_32 = __this->get_acceleration_27();
 		if ((!(((float)L_32) < ((float)(2.0f)))))
 		{
-			goto IL_016f;
+			goto IL_016c;
 		}
 	}
 	{
-		// checkShake();
-		Game_checkShake_m35C6F46408B4056A8364834D104D6C7BC0285410(__this, /*hidden argument*/NULL);
+		// CheckShake();
+		Game_CheckShake_m20C5E1AF1C607D9FB6FC339501555B2A67382BBC(__this, /*hidden argument*/NULL);
 		// }
-		goto IL_0324;
+		goto IL_0177;
 	}
 
-IL_016f:
+IL_016c:
 	{
 		// acceleration = 0.0f;
 		__this->set_acceleration_27((0.0f));
-		// }
-		goto IL_0324;
 	}
 
-IL_017f:
+IL_0177:
+	{
+		// if (gc.GetPointerDuration(0) >= 2)
+		RuntimeObject* L_33;
+		L_33 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
+		V_2 = 0;
+		NullCheck(L_33);
+		float L_34;
+		L_34 = InterfaceFuncInvoker1< float, int32_t* >::Invoke(0 /* System.Single GameCanvas.IInputPointerEx::GetPointerDuration(System.Int32& modreq(System.Runtime.InteropServices.InAttribute)) */, IInputPointerEx_t77FF40CB496C7D889AF48A8B97C1C8583584A3C3_il2cpp_TypeInfo_var, L_33, (&V_2));
+		if ((!(((float)L_34) >= ((float)(2.0f)))))
+		{
+			goto IL_02d3;
+		}
+	}
+	{
+		// BackToTitle();
+		Game_BackToTitle_m9182AE88378488E8050E5B118D9A2308BA564981(__this, /*hidden argument*/NULL);
+		// }
+		goto IL_02d3;
+	}
+
+IL_019b:
 	{
 		// else if (status == 2)
-		int32_t L_33 = __this->get_status_14();
-		if ((!(((uint32_t)L_33) == ((uint32_t)2))))
+		int32_t L_35 = __this->get_status_14();
+		if ((!(((uint32_t)L_35) == ((uint32_t)2))))
 		{
-			goto IL_0256;
+			goto IL_0288;
 		}
 	}
 	{
 		// countdown -= 1;
-		int32_t L_34 = __this->get_countdown_9();
-		__this->set_countdown_9(((int32_t)il2cpp_codegen_subtract((int32_t)L_34, (int32_t)1)));
+		int32_t L_36 = __this->get_countdown_9();
+		__this->set_countdown_9(((int32_t)il2cpp_codegen_subtract((int32_t)L_36, (int32_t)1)));
 		// if (countdown == 0)
-		int32_t L_35 = __this->get_countdown_9();
-		if (L_35)
+		int32_t L_37 = __this->get_countdown_9();
+		if (L_37)
 		{
-			goto IL_01b6;
+			goto IL_01d2;
 		}
 	}
 	{
@@ -1889,24 +1908,24 @@ IL_017f:
 		__this->set_status_14(4);
 	}
 
-IL_01b6:
+IL_01d2:
 	{
 		// if (isSplashTapInterval)
-		bool L_36 = __this->get_isSplashTapInterval_22();
-		if (!L_36)
+		bool L_38 = __this->get_isSplashTapInterval_22();
+		if (!L_38)
 		{
-			goto IL_0202;
+			goto IL_021e;
 		}
 	}
 	{
 		// splashIntervalCount -= 1;
-		int32_t L_37 = __this->get_splashIntervalCount_21();
-		__this->set_splashIntervalCount_21(((int32_t)il2cpp_codegen_subtract((int32_t)L_37, (int32_t)1)));
+		int32_t L_39 = __this->get_splashIntervalCount_21();
+		__this->set_splashIntervalCount_21(((int32_t)il2cpp_codegen_subtract((int32_t)L_39, (int32_t)1)));
 		// if (splashIntervalCount == 0)
-		int32_t L_38 = __this->get_splashIntervalCount_21();
-		if (L_38)
+		int32_t L_40 = __this->get_splashIntervalCount_21();
+		if (L_40)
 		{
-			goto IL_0202;
+			goto IL_021e;
 		}
 	}
 	{
@@ -1915,171 +1934,154 @@ IL_01b6:
 		// isSplashTapInterval = false;
 		__this->set_isSplashTapInterval_22((bool)0);
 		// int randomIndex = UnityEngine.Random.Range(0, possibleValues.Length);
-		Int32U5BU5D_t70F1BDC14B1786481B176D6139A5E3B87DC54C32* L_39 = __this->get_possibleValues_12();
-		NullCheck(L_39);
-		int32_t L_40;
-		L_40 = Random_Range_mCD7505433C26B6FA511AC1EA07E58AEF7ED1C213(0, ((int32_t)((int32_t)(((RuntimeArray*)L_39)->max_length))), /*hidden argument*/NULL);
-		V_4 = L_40;
-		// currentFood = possibleValues[randomIndex];
 		Int32U5BU5D_t70F1BDC14B1786481B176D6139A5E3B87DC54C32* L_41 = __this->get_possibleValues_12();
-		int32_t L_42 = V_4;
 		NullCheck(L_41);
-		int32_t L_43 = L_42;
-		int32_t L_44 = (L_41)->GetAt(static_cast<il2cpp_array_size_t>(L_43));
-		__this->set_currentFood_11(L_44);
+		int32_t L_42;
+		L_42 = Random_Range_mCD7505433C26B6FA511AC1EA07E58AEF7ED1C213(0, ((int32_t)((int32_t)(((RuntimeArray*)L_41)->max_length))), /*hidden argument*/NULL);
+		V_4 = L_42;
+		// currentFood = possibleValues[randomIndex];
+		Int32U5BU5D_t70F1BDC14B1786481B176D6139A5E3B87DC54C32* L_43 = __this->get_possibleValues_12();
+		int32_t L_44 = V_4;
+		NullCheck(L_43);
+		int32_t L_45 = L_44;
+		int32_t L_46 = (L_43)->GetAt(static_cast<il2cpp_array_size_t>(L_45));
+		__this->set_currentFood_11(L_46);
 	}
 
-IL_0202:
+IL_021e:
 	{
 		// if (!preFrameTapped)
-		bool L_45 = __this->get_preFrameTapped_24();
-		if (L_45)
+		bool L_47 = __this->get_preFrameTapped_24();
+		if (L_47)
 		{
-			goto IL_022e;
+			goto IL_024a;
 		}
 	}
 	{
-		// checkTap(gc.GetPointerX(1), gc.GetPointerY(1));
-		RuntimeObject* L_46;
-		L_46 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
-		V_2 = 1;
-		NullCheck(L_46);
-		float L_47;
-		L_47 = InterfaceFuncInvoker1< float, int32_t* >::Invoke(1 /* System.Single GameCanvas.IInputPointerEx::GetPointerX(System.Int32& modreq(System.Runtime.InteropServices.InAttribute)) */, IInputPointerEx_t77FF40CB496C7D889AF48A8B97C1C8583584A3C3_il2cpp_TypeInfo_var, L_46, (&V_2));
+		// CheckTap(gc.GetPointerX(1), gc.GetPointerY(1));
 		RuntimeObject* L_48;
 		L_48 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
-		V_3 = 1;
+		V_2 = 1;
 		NullCheck(L_48);
 		float L_49;
-		L_49 = InterfaceFuncInvoker1< float, int32_t* >::Invoke(2 /* System.Single GameCanvas.IInputPointerEx::GetPointerY(System.Int32& modreq(System.Runtime.InteropServices.InAttribute)) */, IInputPointerEx_t77FF40CB496C7D889AF48A8B97C1C8583584A3C3_il2cpp_TypeInfo_var, L_48, (&V_3));
-		Game_checkTap_m8F56B9E90204B383C9B30CCEAA3D98896B44FAA6(__this, L_47, L_49, /*hidden argument*/NULL);
+		L_49 = InterfaceFuncInvoker1< float, int32_t* >::Invoke(2 /* System.Single GameCanvas.IInputPointerEx::GetPointerX(System.Int32& modreq(System.Runtime.InteropServices.InAttribute)) */, IInputPointerEx_t77FF40CB496C7D889AF48A8B97C1C8583584A3C3_il2cpp_TypeInfo_var, L_48, (&V_2));
+		RuntimeObject* L_50;
+		L_50 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
+		V_3 = 1;
+		NullCheck(L_50);
+		float L_51;
+		L_51 = InterfaceFuncInvoker1< float, int32_t* >::Invoke(3 /* System.Single GameCanvas.IInputPointerEx::GetPointerY(System.Int32& modreq(System.Runtime.InteropServices.InAttribute)) */, IInputPointerEx_t77FF40CB496C7D889AF48A8B97C1C8583584A3C3_il2cpp_TypeInfo_var, L_50, (&V_3));
+		Game_CheckTap_m58ED0110B8C786950A319704ADF990CA6006B3C2(__this, L_49, L_51, /*hidden argument*/NULL);
 	}
 
-IL_022e:
+IL_024a:
 	{
 		// if (acceleration < 2.0f)
-		float L_50 = __this->get_acceleration_27();
-		if ((!(((float)L_50) < ((float)(2.0f)))))
+		float L_52 = __this->get_acceleration_27();
+		if ((!(((float)L_52) < ((float)(2.0f)))))
 		{
-			goto IL_0246;
+			goto IL_025f;
 		}
 	}
 	{
-		// checkShake();
-		Game_checkShake_m35C6F46408B4056A8364834D104D6C7BC0285410(__this, /*hidden argument*/NULL);
+		// CheckShake();
+		Game_CheckShake_m20C5E1AF1C607D9FB6FC339501555B2A67382BBC(__this, /*hidden argument*/NULL);
 		// }
-		goto IL_0324;
+		goto IL_026a;
 	}
 
-IL_0246:
+IL_025f:
 	{
 		// acceleration = 0.0f;
 		__this->set_acceleration_27((0.0f));
-		// }
-		goto IL_0324;
 	}
 
-IL_0256:
+IL_026a:
+	{
+		// if (gc.GetPointerDuration(0) >= 2)
+		RuntimeObject* L_53;
+		L_53 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
+		V_2 = 0;
+		NullCheck(L_53);
+		float L_54;
+		L_54 = InterfaceFuncInvoker1< float, int32_t* >::Invoke(0 /* System.Single GameCanvas.IInputPointerEx::GetPointerDuration(System.Int32& modreq(System.Runtime.InteropServices.InAttribute)) */, IInputPointerEx_t77FF40CB496C7D889AF48A8B97C1C8583584A3C3_il2cpp_TypeInfo_var, L_53, (&V_2));
+		if ((!(((float)L_54) >= ((float)(2.0f)))))
+		{
+			goto IL_02d3;
+		}
+	}
+	{
+		// BackToTitle();
+		Game_BackToTitle_m9182AE88378488E8050E5B118D9A2308BA564981(__this, /*hidden argument*/NULL);
+		// }
+		goto IL_02d3;
+	}
+
+IL_0288:
 	{
 		// else if (status == 3 && sec > clearTime + 180 || status == 4 && sec > 180)
-		int32_t L_51 = __this->get_status_14();
-		if ((!(((uint32_t)L_51) == ((uint32_t)3))))
+		int32_t L_55 = __this->get_status_14();
+		if ((!(((uint32_t)L_55) == ((uint32_t)3))))
 		{
-			goto IL_0273;
+			goto IL_02a5;
 		}
 	}
 	{
-		int32_t L_52 = __this->get_sec_8();
-		int32_t L_53 = __this->get_clearTime_13();
-		if ((((int32_t)L_52) > ((int32_t)((int32_t)il2cpp_codegen_add((int32_t)L_53, (int32_t)((int32_t)180))))))
+		int32_t L_56 = __this->get_sec_8();
+		int32_t L_57 = __this->get_clearTime_13();
+		if ((((int32_t)L_56) > ((int32_t)((int32_t)il2cpp_codegen_add((int32_t)L_57, (int32_t)((int32_t)180))))))
 		{
-			goto IL_028f;
+			goto IL_02bb;
 		}
 	}
 
-IL_0273:
+IL_02a5:
 	{
-		int32_t L_54 = __this->get_status_14();
-		if ((!(((uint32_t)L_54) == ((uint32_t)4))))
+		int32_t L_58 = __this->get_status_14();
+		if ((!(((uint32_t)L_58) == ((uint32_t)4))))
 		{
-			goto IL_0324;
+			goto IL_02d3;
 		}
 	}
 	{
-		int32_t L_55 = __this->get_sec_8();
-		if ((((int32_t)L_55) <= ((int32_t)((int32_t)180))))
+		int32_t L_59 = __this->get_sec_8();
+		if ((((int32_t)L_59) <= ((int32_t)((int32_t)180))))
 		{
-			goto IL_0324;
+			goto IL_02d3;
 		}
 	}
 
-IL_028f:
+IL_02bb:
 	{
 		// if (gc.GetPointerFrameCount(0) == 1)
-		RuntimeObject* L_56;
-		L_56 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
+		RuntimeObject* L_60;
+		L_60 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
 		V_2 = 0;
-		NullCheck(L_56);
-		int32_t L_57;
-		L_57 = InterfaceFuncInvoker1< int32_t, int32_t* >::Invoke(0 /* System.Int32 GameCanvas.IInputPointerEx::GetPointerFrameCount(System.Int32& modreq(System.Runtime.InteropServices.InAttribute)) */, IInputPointerEx_t77FF40CB496C7D889AF48A8B97C1C8583584A3C3_il2cpp_TypeInfo_var, L_56, (&V_2));
-		if ((!(((uint32_t)L_57) == ((uint32_t)1))))
+		NullCheck(L_60);
+		int32_t L_61;
+		L_61 = InterfaceFuncInvoker1< int32_t, int32_t* >::Invoke(1 /* System.Int32 GameCanvas.IInputPointerEx::GetPointerFrameCount(System.Int32& modreq(System.Runtime.InteropServices.InAttribute)) */, IInputPointerEx_t77FF40CB496C7D889AF48A8B97C1C8583584A3C3_il2cpp_TypeInfo_var, L_60, (&V_2));
+		if ((!(((uint32_t)L_61) == ((uint32_t)1))))
 		{
-			goto IL_0324;
+			goto IL_02d3;
 		}
 	}
 	{
-		// sec = 0;
-		__this->set_sec_8(0);
-		// clearTime = 0;
-		__this->set_clearTime_13(0);
-		// difficulty = 0;
-		__this->set_difficulty_15(0);
-		// missCount = 0;
-		__this->set_missCount_17(0);
-		// selectedCondiments = 2;
-		__this->set_selectedCondiments_18(2);
-		// foodsArray = new int[30];
-		Int32U5BU5D_t70F1BDC14B1786481B176D6139A5E3B87DC54C32* L_58 = (Int32U5BU5D_t70F1BDC14B1786481B176D6139A5E3B87DC54C32*)(Int32U5BU5D_t70F1BDC14B1786481B176D6139A5E3B87DC54C32*)SZArrayNew(Int32U5BU5D_t70F1BDC14B1786481B176D6139A5E3B87DC54C32_il2cpp_TypeInfo_var, (uint32_t)((int32_t)30));
-		__this->set_foodsArray_19(L_58);
-		// progress = 0;
-		__this->set_progress_20(0);
-		// splashIntervalCount = 15;
-		__this->set_splashIntervalCount_21(((int32_t)15));
-		// isSplashTapInterval = false;
-		__this->set_isSplashTapInterval_22((bool)0);
-		// isSplashShakeInterval = false;
-		__this->set_isSplashShakeInterval_23((bool)0);
-		// isGameFinished = false;
-		__this->set_isGameFinished_25((bool)0);
-		// preFrameTapped = false;
-		__this->set_preFrameTapped_24((bool)0);
-		// gc.StopSound(GcSoundTrack.BGM2);
-		RuntimeObject* L_59;
-		L_59 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
-		NullCheck(L_59);
-		InterfaceActionInvoker1< uint8_t >::Invoke(1 /* System.Void GameCanvas.ISound::StopSound(GameCanvas.GcSoundTrack) */, ISound_t57F3CA00C15A73B3DAD63859FFFFE14289427309_il2cpp_TypeInfo_var, L_59, 1);
-		// gc.PlaySound(GcSound.TitleBGM, GcSoundTrack.BGM1, true);
-		RuntimeObject* L_60;
-		L_60 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
-		IL2CPP_RUNTIME_CLASS_INIT(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_il2cpp_TypeInfo_var);
-		NullCheck(L_60);
-		InterfaceActionInvoker3< GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F *, uint8_t, bool >::Invoke(0 /* System.Void GameCanvas.ISound::PlaySound(GameCanvas.GcSound& modreq(System.Runtime.InteropServices.InAttribute),GameCanvas.GcSoundTrack,System.Boolean) */, ISound_t57F3CA00C15A73B3DAD63859FFFFE14289427309_il2cpp_TypeInfo_var, L_60, (((GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_StaticFields*)il2cpp_codegen_static_fields_for(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_il2cpp_TypeInfo_var))->get_address_of_TitleBGM_4()), 0, (bool)1);
-		// status = 0;
-		__this->set_status_14(0);
+		// BackToTitle();
+		Game_BackToTitle_m9182AE88378488E8050E5B118D9A2308BA564981(__this, /*hidden argument*/NULL);
 	}
 
-IL_0324:
+IL_02d3:
 	{
 		// if (gc.GetPointerFrameCount(0) >= 1)
-		RuntimeObject* L_61;
-		L_61 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
+		RuntimeObject* L_62;
+		L_62 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
 		V_2 = 0;
-		NullCheck(L_61);
-		int32_t L_62;
-		L_62 = InterfaceFuncInvoker1< int32_t, int32_t* >::Invoke(0 /* System.Int32 GameCanvas.IInputPointerEx::GetPointerFrameCount(System.Int32& modreq(System.Runtime.InteropServices.InAttribute)) */, IInputPointerEx_t77FF40CB496C7D889AF48A8B97C1C8583584A3C3_il2cpp_TypeInfo_var, L_61, (&V_2));
-		if ((((int32_t)L_62) < ((int32_t)1)))
+		NullCheck(L_62);
+		int32_t L_63;
+		L_63 = InterfaceFuncInvoker1< int32_t, int32_t* >::Invoke(1 /* System.Int32 GameCanvas.IInputPointerEx::GetPointerFrameCount(System.Int32& modreq(System.Runtime.InteropServices.InAttribute)) */, IInputPointerEx_t77FF40CB496C7D889AF48A8B97C1C8583584A3C3_il2cpp_TypeInfo_var, L_62, (&V_2));
+		if ((((int32_t)L_63) < ((int32_t)1)))
 		{
-			goto IL_033e;
+			goto IL_02ed;
 		}
 	}
 	{
@@ -2089,7 +2091,7 @@ IL_0324:
 		return;
 	}
 
-IL_033e:
+IL_02ed:
 	{
 		// preFrameTapped = false;
 		__this->set_preFrameTapped_24((bool)0);
@@ -2308,8 +2310,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_StartTimeLimit_mDFACBBFB142CBCC8DA3
 		return;
 	}
 }
-// System.Void Game::checkTap(System.Single,System.Single)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_checkTap_m8F56B9E90204B383C9B30CCEAA3D98896B44FAA6 (Game_tBF310511B1E996F85E0F6C8DDB925EB46D2E78EE * __this, float ___x0, float ___y1, const RuntimeMethod* method)
+// System.Void Game::CheckTap(System.Single,System.Single)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_CheckTap_m58ED0110B8C786950A319704ADF990CA6006B3C2 (Game_tBF310511B1E996F85E0F6C8DDB925EB46D2E78EE * __this, float ___x0, float ___y1, const RuntimeMethod* method)
 {
 	{
 		// if (1000 < y && y < 1188)
@@ -2443,8 +2445,8 @@ IL_0089:
 		return;
 	}
 }
-// System.Void Game::checkShake()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_checkShake_m35C6F46408B4056A8364834D104D6C7BC0285410 (Game_tBF310511B1E996F85E0F6C8DDB925EB46D2E78EE * __this, const RuntimeMethod* method)
+// System.Void Game::CheckShake()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_CheckShake_m20C5E1AF1C607D9FB6FC339501555B2A67382BBC (Game_tBF310511B1E996F85E0F6C8DDB925EB46D2E78EE * __this, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
@@ -2679,6 +2681,60 @@ IL_00f6:
 
 IL_0104:
 	{
+		// }
+		return;
+	}
+}
+// System.Void Game::BackToTitle()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_BackToTitle_m9182AE88378488E8050E5B118D9A2308BA564981 (Game_tBF310511B1E996F85E0F6C8DDB925EB46D2E78EE * __this, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ISound_t57F3CA00C15A73B3DAD63859FFFFE14289427309_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Int32U5BU5D_t70F1BDC14B1786481B176D6139A5E3B87DC54C32_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		// sec = 0;
+		__this->set_sec_8(0);
+		// clearTime = 0;
+		__this->set_clearTime_13(0);
+		// difficulty = 0;
+		__this->set_difficulty_15(0);
+		// missCount = 0;
+		__this->set_missCount_17(0);
+		// selectedCondiments = 2;
+		__this->set_selectedCondiments_18(2);
+		// foodsArray = new int[30];
+		Int32U5BU5D_t70F1BDC14B1786481B176D6139A5E3B87DC54C32* L_0 = (Int32U5BU5D_t70F1BDC14B1786481B176D6139A5E3B87DC54C32*)(Int32U5BU5D_t70F1BDC14B1786481B176D6139A5E3B87DC54C32*)SZArrayNew(Int32U5BU5D_t70F1BDC14B1786481B176D6139A5E3B87DC54C32_il2cpp_TypeInfo_var, (uint32_t)((int32_t)30));
+		__this->set_foodsArray_19(L_0);
+		// progress = 0;
+		__this->set_progress_20(0);
+		// splashIntervalCount = 15;
+		__this->set_splashIntervalCount_21(((int32_t)15));
+		// isSplashTapInterval = false;
+		__this->set_isSplashTapInterval_22((bool)0);
+		// isSplashShakeInterval = false;
+		__this->set_isSplashShakeInterval_23((bool)0);
+		// isGameFinished = false;
+		__this->set_isGameFinished_25((bool)0);
+		// preFrameTapped = false;
+		__this->set_preFrameTapped_24((bool)0);
+		// gc.StopSound(GcSoundTrack.BGM2);
+		RuntimeObject* L_1;
+		L_1 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
+		NullCheck(L_1);
+		InterfaceActionInvoker1< uint8_t >::Invoke(1 /* System.Void GameCanvas.ISound::StopSound(GameCanvas.GcSoundTrack) */, ISound_t57F3CA00C15A73B3DAD63859FFFFE14289427309_il2cpp_TypeInfo_var, L_1, 1);
+		// gc.PlaySound(GcSound.TitleBGM, GcSoundTrack.BGM1, true);
+		RuntimeObject* L_2;
+		L_2 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
+		IL2CPP_RUNTIME_CLASS_INIT(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_il2cpp_TypeInfo_var);
+		NullCheck(L_2);
+		InterfaceActionInvoker3< GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F *, uint8_t, bool >::Invoke(0 /* System.Void GameCanvas.ISound::PlaySound(GameCanvas.GcSound& modreq(System.Runtime.InteropServices.InAttribute),GameCanvas.GcSoundTrack,System.Boolean) */, ISound_t57F3CA00C15A73B3DAD63859FFFFE14289427309_il2cpp_TypeInfo_var, L_2, (((GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_StaticFields*)il2cpp_codegen_static_fields_for(GcSound_tDD29E42AF7B27D1E9B99407833AB5F0EC625400F_il2cpp_TypeInfo_var))->get_address_of_TitleBGM_4()), 0, (bool)1);
+		// status = 0;
+		__this->set_status_14(0);
 		// }
 		return;
 	}

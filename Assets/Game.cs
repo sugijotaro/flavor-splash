@@ -92,15 +92,19 @@ public sealed class Game : GameBase
             }
             if (!preFrameTapped)
             {
-                checkTap(gc.GetPointerX(1), gc.GetPointerY(1));
+                CheckTap(gc.GetPointerX(1), gc.GetPointerY(1));
             }
             if (acceleration < 2.0f)
             {
-                checkShake();
+                CheckShake();
             }
             else
             {
                 acceleration = 0.0f;
+            }
+            if (gc.GetPointerDuration(0) >= 2)
+            {
+                BackToTitle();
             }
         }
         else if (status == 2)
@@ -125,40 +129,26 @@ public sealed class Game : GameBase
             }
             if (!preFrameTapped)
             {
-                checkTap(gc.GetPointerX(1), gc.GetPointerY(1));
+                CheckTap(gc.GetPointerX(1), gc.GetPointerY(1));
             }
             if (acceleration < 2.0f)
             {
-                checkShake();
+                CheckShake();
             }
             else
             {
                 acceleration = 0.0f;
+            }
+            if (gc.GetPointerDuration(0) >= 2)
+            {
+                BackToTitle();
             }
         }
         else if (status == 3 && sec > clearTime + 180 || status == 4 && sec > 180)
         {
             if (gc.GetPointerFrameCount(0) == 1)
             {
-                sec = 0;
-                clearTime = 0;
-                difficulty = 0;
-                missCount = 0;
-                selectedCondiments = 2;
-
-                foodsArray = new int[30];
-                progress = 0;
-
-                splashIntervalCount = 15;
-                isSplashTapInterval = false;
-                isSplashShakeInterval = false;
-                isGameFinished = false;
-
-                preFrameTapped = false;
-
-                gc.StopSound(GcSoundTrack.BGM2);
-                gc.PlaySound(GcSound.TitleBGM, GcSoundTrack.BGM1, true);
-                status = 0;
+                BackToTitle();
             }
         }
 
@@ -219,7 +209,7 @@ public sealed class Game : GameBase
         status = 2;
     }
 
-    void checkTap(float x, float y)
+    void CheckTap(float x, float y)
     {
         if (1000 < y && y < 1188)
         {
@@ -250,7 +240,7 @@ public sealed class Game : GameBase
             }
         }
     }
-    void checkShake()
+    void CheckShake()
     {
         float x = gc.AccelerationLastX;
         float y = gc.AccelerationLastY;
@@ -277,6 +267,7 @@ public sealed class Game : GameBase
     }
 
     void FoodSplashed()
+
     {
         gc.PlaySE(GcSound.Shake);
         if (status == 1)
@@ -320,6 +311,29 @@ public sealed class Game : GameBase
                 missCount += 1;
             }
         }
+    }
+
+    void BackToTitle()
+    {
+        sec = 0;
+        clearTime = 0;
+        difficulty = 0;
+        missCount = 0;
+        selectedCondiments = 2;
+
+        foodsArray = new int[30];
+        progress = 0;
+
+        splashIntervalCount = 15;
+        isSplashTapInterval = false;
+        isSplashShakeInterval = false;
+        isGameFinished = false;
+
+        preFrameTapped = false;
+
+        gc.StopSound(GcSoundTrack.BGM2);
+        gc.PlaySound(GcSound.TitleBGM, GcSoundTrack.BGM1, true);
+        status = 0;
     }
 
     public override void DrawGame()
