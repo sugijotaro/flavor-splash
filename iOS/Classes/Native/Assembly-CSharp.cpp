@@ -1372,28 +1372,24 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_DrawFinish_m9A50AE98BFE92933E8C6834
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_DrawDifficulty_mC2D07DB107E30CCC8A72F61F7E7EFA05D9EBEE4D (Game_tBF310511B1E996F85E0F6C8DDB925EB46D2E78EE * __this, int32_t ___difficulty0, const RuntimeMethod* method);
 // System.Void Game::DrawResultText(System.Int32,System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_DrawResultText_m02276001AE057A9482A9F4FEA32E0F47D0015F91 (Game_tBF310511B1E996F85E0F6C8DDB925EB46D2E78EE * __this, int32_t ___difficulty0, int32_t ___missCount1, const RuntimeMethod* method);
-// System.Void Game::DrawTime(System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_DrawTime_m550738EF889000A0D190C69CF8178154AE844148 (Game_tBF310511B1E996F85E0F6C8DDB925EB46D2E78EE * __this, int32_t ___clearTime0, const RuntimeMethod* method);
-// System.Void Game::DrawMissAndSplashedCount(System.Int32,System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_DrawMissAndSplashedCount_mA7A041EF2B11818B3189E1A08E76D9D251428D2C (Game_tBF310511B1E996F85E0F6C8DDB925EB46D2E78EE * __this, int32_t ___missCount0, int32_t ___progress1, const RuntimeMethod* method);
-// System.Void Game::DrawTapToReturn()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_DrawTapToReturn_m6F340BCA590D481FAFE3E18C20CCF3245B00EAF1 (Game_tBF310511B1E996F85E0F6C8DDB925EB46D2E78EE * __this, const RuntimeMethod* method);
-// System.Void Game::DrawSplashedCount(System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_DrawSplashedCount_mDDF98FB2BD19D6CD06BA139423E3B19B12472DF0 (Game_tBF310511B1E996F85E0F6C8DDB925EB46D2E78EE * __this, int32_t ___splashedCount0, const RuntimeMethod* method);
-// System.Void Game::DrawMissCount(System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_DrawMissCount_m157C341A10D447D00454C0EAABEE786EE277BD33 (Game_tBF310511B1E996F85E0F6C8DDB925EB46D2E78EE * __this, int32_t ___missCount0, const RuntimeMethod* method);
+// System.String System.Single::ToString(System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Single_ToString_m15F10F2AFF80750906CEFCFB456EBA84F9D2E8D7 (float* __this, String_t* ___format0, const RuntimeMethod* method);
+// System.Void Game::DrawCenter(System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_DrawCenter_mD043E4BD4469F35EBD93AB5F95E44DB0FF73E3F3 (Game_tBF310511B1E996F85E0F6C8DDB925EB46D2E78EE * __this, String_t* ___str0, const RuntimeMethod* method);
 // System.String System.Int32::ToString()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411 (int32_t* __this, const RuntimeMethod* method);
+// System.String System.String::Concat(System.String,System.String,System.String,System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Concat_m5D784E6CEEBE99ED8749AA4B9491D926273FD749 (String_t* ___str00, String_t* ___str11, String_t* ___str22, String_t* ___str33, const RuntimeMethod* method);
+// System.Void Game::DrawCenterSecondary(System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_DrawCenterSecondary_m9164015BE41A89A1E51D61599FBD954FD880EAD4 (Game_tBF310511B1E996F85E0F6C8DDB925EB46D2E78EE * __this, String_t* ___str0, const RuntimeMethod* method);
+// System.Void Game::DrawTapToReturn()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_DrawTapToReturn_m6F340BCA590D481FAFE3E18C20CCF3245B00EAF1 (Game_tBF310511B1E996F85E0F6C8DDB925EB46D2E78EE * __this, const RuntimeMethod* method);
 // System.String System.String::Concat(System.String,System.String,System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Concat_mC41740F000A5A48F8D313FB4CEE0E35E207A2632 (String_t* ___str00, String_t* ___str11, String_t* ___str22, const RuntimeMethod* method);
 // System.String System.String::Concat(System.String,System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Concat_m10758B01687A2181C8727AD9FD9CCF5325C61C2A (String_t* ___str00, String_t* ___str11, const RuntimeMethod* method);
-// System.String System.Single::ToString(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Single_ToString_m15F10F2AFF80750906CEFCFB456EBA84F9D2E8D7 (float* __this, String_t* ___format0, const RuntimeMethod* method);
 // System.String System.Single::ToString()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Single_ToString_m80E7ABED4F4D73F2BE19DDB80D3D92FCD8DFA010 (float* __this, const RuntimeMethod* method);
-// System.String System.String::Concat(System.String,System.String,System.String,System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Concat_m5D784E6CEEBE99ED8749AA4B9491D926273FD749 (String_t* ___str00, String_t* ___str11, String_t* ___str22, String_t* ___str33, const RuntimeMethod* method);
 // System.Void System.Runtime.CompilerServices.RuntimeHelpers::InitializeArray(System.Array,System.RuntimeFieldHandle)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RuntimeHelpers_InitializeArray_m37345890E8136134556D27E57315B584AC51D53F (RuntimeArray * ___array0, RuntimeFieldHandle_t7BE65FC857501059EBAC9772C93B02CD413D9C96  ___fldHandle1, const RuntimeMethod* method);
 // System.Void GameCanvas.GameBase::.ctor()
@@ -2469,6 +2465,15 @@ IL_00f4:
 // System.Void Game::DrawGame()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_DrawGame_mB9E4FFB9F2AD666C0AF2A1B2FC79CD825270C692 (Game_tBF310511B1E996F85E0F6C8DDB925EB46D2E78EE * __this, const RuntimeMethod* method)
 {
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral10291B3A4B1D2933821EE5230552A31F47DBEE6B);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral86B02B47B04CB284EE80BAD91A6C009CF408644D);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralDC27A8C6EC24F2B47A3CCCF2BBD734F3B41F3CBD);
+		s_Il2CppMethodInitialized = true;
+	}
+	float V_0 = 0.0f;
 	{
 		// if (status == 0)
 		int32_t L_0 = __this->get_status_14();
@@ -2541,7 +2546,7 @@ IL_008f:
 		bool L_13 = __this->get_isDebug_28();
 		if (!L_13)
 		{
-			goto IL_020f;
+			goto IL_0249;
 		}
 	}
 	{
@@ -2585,7 +2590,7 @@ IL_00a1:
 		bool L_21 = __this->get_isDebug_28();
 		if (!L_21)
 		{
-			goto IL_020f;
+			goto IL_0249;
 		}
 	}
 	{
@@ -2601,7 +2606,7 @@ IL_010a:
 		int32_t L_22 = __this->get_status_14();
 		if ((!(((uint32_t)L_22) == ((uint32_t)3))))
 		{
-			goto IL_019c;
+			goto IL_01cc;
 		}
 	}
 	{
@@ -2636,27 +2641,36 @@ IL_012e:
 		int32_t L_29 = __this->get_clearTime_13();
 		if ((((int32_t)L_28) <= ((int32_t)((int32_t)il2cpp_codegen_add((int32_t)L_29, (int32_t)((int32_t)120))))))
 		{
-			goto IL_0181;
+			goto IL_01ae;
 		}
 	}
 	{
-		// DrawTime(clearTime);
+		// DrawCenter(((float)clearTime / 60).ToString("0.00"));
 		int32_t L_30 = __this->get_clearTime_13();
-		Game_DrawTime_m550738EF889000A0D190C69CF8178154AE844148(__this, L_30, /*hidden argument*/NULL);
-		// DrawMissAndSplashedCount(missCount, progress);
-		int32_t L_31 = __this->get_missCount_17();
-		int32_t L_32 = __this->get_progress_20();
-		Game_DrawMissAndSplashedCount_mA7A041EF2B11818B3189E1A08E76D9D251428D2C(__this, L_31, L_32, /*hidden argument*/NULL);
+		V_0 = ((float)((float)((float)((float)L_30))/(float)(60.0f)));
+		String_t* L_31;
+		L_31 = Single_ToString_m15F10F2AFF80750906CEFCFB456EBA84F9D2E8D7((float*)(&V_0), _stringLiteral86B02B47B04CB284EE80BAD91A6C009CF408644D, /*hidden argument*/NULL);
+		Game_DrawCenter_mD043E4BD4469F35EBD93AB5F95E44DB0FF73E3F3(__this, L_31, /*hidden argument*/NULL);
+		// DrawCenterSecondary("MISS:" + missCount.ToString() + "   SPLASHED:" + progress.ToString());
+		int32_t* L_32 = __this->get_address_of_missCount_17();
+		String_t* L_33;
+		L_33 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)L_32, /*hidden argument*/NULL);
+		int32_t* L_34 = __this->get_address_of_progress_20();
+		String_t* L_35;
+		L_35 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)L_34, /*hidden argument*/NULL);
+		String_t* L_36;
+		L_36 = String_Concat_m5D784E6CEEBE99ED8749AA4B9491D926273FD749(_stringLiteral10291B3A4B1D2933821EE5230552A31F47DBEE6B, L_33, _stringLiteralDC27A8C6EC24F2B47A3CCCF2BBD734F3B41F3CBD, L_35, /*hidden argument*/NULL);
+		Game_DrawCenterSecondary_m9164015BE41A89A1E51D61599FBD954FD880EAD4(__this, L_36, /*hidden argument*/NULL);
 	}
 
-IL_0181:
+IL_01ae:
 	{
 		// if (sec > clearTime + 180)
-		int32_t L_33 = __this->get_sec_8();
-		int32_t L_34 = __this->get_clearTime_13();
-		if ((((int32_t)L_33) <= ((int32_t)((int32_t)il2cpp_codegen_add((int32_t)L_34, (int32_t)((int32_t)180))))))
+		int32_t L_37 = __this->get_sec_8();
+		int32_t L_38 = __this->get_clearTime_13();
+		if ((((int32_t)L_37) <= ((int32_t)((int32_t)il2cpp_codegen_add((int32_t)L_38, (int32_t)((int32_t)180))))))
 		{
-			goto IL_020f;
+			goto IL_0249;
 		}
 	}
 	{
@@ -2666,21 +2680,21 @@ IL_0181:
 		return;
 	}
 
-IL_019c:
+IL_01cc:
 	{
 		// else if (status == 4)
-		int32_t L_35 = __this->get_status_14();
-		if ((!(((uint32_t)L_35) == ((uint32_t)4))))
+		int32_t L_39 = __this->get_status_14();
+		if ((!(((uint32_t)L_39) == ((uint32_t)4))))
 		{
-			goto IL_020f;
+			goto IL_0249;
 		}
 	}
 	{
 		// if (sec < 60)
-		int32_t L_36 = __this->get_sec_8();
-		if ((((int32_t)L_36) >= ((int32_t)((int32_t)60))))
+		int32_t L_40 = __this->get_sec_8();
+		if ((((int32_t)L_40) >= ((int32_t)((int32_t)60))))
 		{
-			goto IL_01b6;
+			goto IL_01e6;
 		}
 	}
 	{
@@ -2690,40 +2704,44 @@ IL_019c:
 		return;
 	}
 
-IL_01b6:
+IL_01e6:
 	{
 		// DrawBackground();
 		Game_DrawBackground_mC389BAABCF1EFF547CCC3EB6A1837CC8828CA26E(__this, /*hidden argument*/NULL);
 		// DrawDifficulty(difficulty);
-		int32_t L_37 = __this->get_difficulty_15();
-		Game_DrawDifficulty_mC2D07DB107E30CCC8A72F61F7E7EFA05D9EBEE4D(__this, L_37, /*hidden argument*/NULL);
+		int32_t L_41 = __this->get_difficulty_15();
+		Game_DrawDifficulty_mC2D07DB107E30CCC8A72F61F7E7EFA05D9EBEE4D(__this, L_41, /*hidden argument*/NULL);
 		// DrawResultText(difficulty, missCount);
-		int32_t L_38 = __this->get_difficulty_15();
-		int32_t L_39 = __this->get_missCount_17();
-		Game_DrawResultText_m02276001AE057A9482A9F4FEA32E0F47D0015F91(__this, L_38, L_39, /*hidden argument*/NULL);
+		int32_t L_42 = __this->get_difficulty_15();
+		int32_t L_43 = __this->get_missCount_17();
+		Game_DrawResultText_m02276001AE057A9482A9F4FEA32E0F47D0015F91(__this, L_42, L_43, /*hidden argument*/NULL);
 		// if (sec > 120)
-		int32_t L_40 = __this->get_sec_8();
-		if ((((int32_t)L_40) <= ((int32_t)((int32_t)120))))
+		int32_t L_44 = __this->get_sec_8();
+		if ((((int32_t)L_44) <= ((int32_t)((int32_t)120))))
 		{
-			goto IL_01fc;
+			goto IL_0236;
 		}
 	}
 	{
-		// DrawSplashedCount(splashedCount);
-		int32_t L_41 = __this->get_splashedCount_10();
-		Game_DrawSplashedCount_mDDF98FB2BD19D6CD06BA139423E3B19B12472DF0(__this, L_41, /*hidden argument*/NULL);
-		// DrawMissCount(missCount);
-		int32_t L_42 = __this->get_missCount_17();
-		Game_DrawMissCount_m157C341A10D447D00454C0EAABEE786EE277BD33(__this, L_42, /*hidden argument*/NULL);
+		// DrawCenter(splashedCount.ToString());
+		int32_t* L_45 = __this->get_address_of_splashedCount_10();
+		String_t* L_46;
+		L_46 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)L_45, /*hidden argument*/NULL);
+		Game_DrawCenter_mD043E4BD4469F35EBD93AB5F95E44DB0FF73E3F3(__this, L_46, /*hidden argument*/NULL);
+		// DrawCenterSecondary(missCount.ToString());
+		int32_t* L_47 = __this->get_address_of_missCount_17();
+		String_t* L_48;
+		L_48 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)L_47, /*hidden argument*/NULL);
+		Game_DrawCenterSecondary_m9164015BE41A89A1E51D61599FBD954FD880EAD4(__this, L_48, /*hidden argument*/NULL);
 	}
 
-IL_01fc:
+IL_0236:
 	{
 		// if (sec > 180)
-		int32_t L_43 = __this->get_sec_8();
-		if ((((int32_t)L_43) <= ((int32_t)((int32_t)180))))
+		int32_t L_49 = __this->get_sec_8();
+		if ((((int32_t)L_49) <= ((int32_t)((int32_t)180))))
 		{
-			goto IL_020f;
+			goto IL_0249;
 		}
 	}
 	{
@@ -2731,7 +2749,7 @@ IL_01fc:
 		Game_DrawTapToReturn_m6F340BCA590D481FAFE3E18C20CCF3245B00EAF1(__this, /*hidden argument*/NULL);
 	}
 
-IL_020f:
+IL_0249:
 	{
 		// }
 		return;
@@ -3737,125 +3755,72 @@ IL_0060:
 		return;
 	}
 }
-// System.Void Game::DrawSplashedCount(System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_DrawSplashedCount_mDDF98FB2BD19D6CD06BA139423E3B19B12472DF0 (Game_tBF310511B1E996F85E0F6C8DDB925EB46D2E78EE * __this, int32_t ___splashedCount0, const RuntimeMethod* method)
+// System.Void Game::DrawCenter(System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_DrawCenter_mD043E4BD4469F35EBD93AB5F95E44DB0FF73E3F3 (Game_tBF310511B1E996F85E0F6C8DDB925EB46D2E78EE * __this, String_t* ___str0, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	int32_t V_0 = 0;
-	uint8_t V_1 = 0x0;
-	uint8_t V_2 = 0x0;
-	uint8_t V_3 = 0x0;
-	int32_t V_4 = 0;
-	String_t* V_5 = NULL;
-	float V_6 = 0.0f;
-	float V_7 = 0.0f;
-	{
-		// gc.SetFontSize(180);
-		RuntimeObject* L_0;
-		L_0 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
-		V_0 = ((int32_t)180);
-		NullCheck(L_0);
-		InterfaceActionInvoker1< int32_t* >::Invoke(5 /* System.Void GameCanvas.IGraphicsEx::SetFontSize(System.Int32& modreq(System.Runtime.InteropServices.InAttribute)) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_0, (&V_0));
-		// gc.SetColor(0, 0, 0);
-		RuntimeObject* L_1;
-		L_1 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
-		V_1 = (uint8_t)0;
-		V_2 = (uint8_t)0;
-		V_3 = (uint8_t)0;
-		NullCheck(L_1);
-		InterfaceActionInvoker4< uint8_t*, uint8_t*, uint8_t*, uint8_t >::Invoke(4 /* System.Void GameCanvas.IGraphicsEx::SetColor(System.Byte& modreq(System.Runtime.InteropServices.InAttribute),System.Byte& modreq(System.Runtime.InteropServices.InAttribute),System.Byte& modreq(System.Runtime.InteropServices.InAttribute),System.Byte) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_1, (&V_1), (&V_2), (&V_3), (uint8_t)((int32_t)255));
-		// gc.SetStringAnchor(GcAnchor.UpperCenter);
-		RuntimeObject* L_2;
-		L_2 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
-		V_4 = 1;
-		NullCheck(L_2);
-		InterfaceActionInvoker1< int32_t* >::Invoke(6 /* System.Void GameCanvas.IGraphicsEx::SetStringAnchor(GameCanvas.GcAnchor& modreq(System.Runtime.InteropServices.InAttribute)) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_2, (&V_4));
-		// gc.DrawString(splashedCount.ToString(), 360, 400);
-		RuntimeObject* L_3;
-		L_3 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
-		String_t* L_4;
-		L_4 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)(&___splashedCount0), /*hidden argument*/NULL);
-		V_5 = L_4;
-		V_6 = (360.0f);
-		V_7 = (400.0f);
-		NullCheck(L_3);
-		InterfaceActionInvoker4< String_t**, float*, float*, float >::Invoke(2 /* System.Void GameCanvas.IGraphicsEx::DrawString(System.String& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_3, (&V_5), (&V_6), (&V_7), (0.0f));
-		// }
-		return;
-	}
-}
-// System.Void Game::DrawTime(System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_DrawTime_m550738EF889000A0D190C69CF8178154AE844148 (Game_tBF310511B1E996F85E0F6C8DDB925EB46D2E78EE * __this, int32_t ___clearTime0, const RuntimeMethod* method)
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral86B02B47B04CB284EE80BAD91A6C009CF408644D);
 		s_Il2CppMethodInitialized = true;
 	}
 	uint8_t V_0 = 0x0;
 	uint8_t V_1 = 0x0;
 	uint8_t V_2 = 0x0;
 	int32_t V_3 = 0;
-	float V_4 = 0.0f;
-	String_t* V_5 = NULL;
+	int32_t V_4 = 0;
+	float V_5 = 0.0f;
 	float V_6 = 0.0f;
 	{
 		// gc.SetFontSize(clearTime);
 		RuntimeObject* L_0;
 		L_0 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
+		int32_t* L_1 = __this->get_address_of_clearTime_13();
 		NullCheck(L_0);
-		InterfaceActionInvoker1< int32_t* >::Invoke(5 /* System.Void GameCanvas.IGraphicsEx::SetFontSize(System.Int32& modreq(System.Runtime.InteropServices.InAttribute)) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_0, (&___clearTime0));
+		InterfaceActionInvoker1< int32_t* >::Invoke(5 /* System.Void GameCanvas.IGraphicsEx::SetFontSize(System.Int32& modreq(System.Runtime.InteropServices.InAttribute)) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_0, L_1);
 		// gc.SetColor(0, 0, 0);
-		RuntimeObject* L_1;
-		L_1 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
+		RuntimeObject* L_2;
+		L_2 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
 		V_0 = (uint8_t)0;
 		V_1 = (uint8_t)0;
 		V_2 = (uint8_t)0;
-		NullCheck(L_1);
-		InterfaceActionInvoker4< uint8_t*, uint8_t*, uint8_t*, uint8_t >::Invoke(4 /* System.Void GameCanvas.IGraphicsEx::SetColor(System.Byte& modreq(System.Runtime.InteropServices.InAttribute),System.Byte& modreq(System.Runtime.InteropServices.InAttribute),System.Byte& modreq(System.Runtime.InteropServices.InAttribute),System.Byte) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_1, (&V_0), (&V_1), (&V_2), (uint8_t)((int32_t)255));
-		// gc.SetStringAnchor(GcAnchor.UpperCenter);
-		RuntimeObject* L_2;
-		L_2 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
-		V_3 = 1;
 		NullCheck(L_2);
-		InterfaceActionInvoker1< int32_t* >::Invoke(6 /* System.Void GameCanvas.IGraphicsEx::SetStringAnchor(GameCanvas.GcAnchor& modreq(System.Runtime.InteropServices.InAttribute)) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_2, (&V_3));
-		// gc.DrawString(((float)clearTime / 60).ToString("0.00"), 360, 400);
+		InterfaceActionInvoker4< uint8_t*, uint8_t*, uint8_t*, uint8_t >::Invoke(4 /* System.Void GameCanvas.IGraphicsEx::SetColor(System.Byte& modreq(System.Runtime.InteropServices.InAttribute),System.Byte& modreq(System.Runtime.InteropServices.InAttribute),System.Byte& modreq(System.Runtime.InteropServices.InAttribute),System.Byte) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_2, (&V_0), (&V_1), (&V_2), (uint8_t)((int32_t)255));
+		// gc.SetStringAnchor(GcAnchor.UpperCenter);
 		RuntimeObject* L_3;
 		L_3 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
-		int32_t L_4 = ___clearTime0;
-		V_4 = ((float)((float)((float)((float)L_4))/(float)(60.0f)));
-		String_t* L_5;
-		L_5 = Single_ToString_m15F10F2AFF80750906CEFCFB456EBA84F9D2E8D7((float*)(&V_4), _stringLiteral86B02B47B04CB284EE80BAD91A6C009CF408644D, /*hidden argument*/NULL);
-		V_5 = L_5;
-		V_4 = (360.0f);
-		V_6 = (400.0f);
+		V_3 = 1;
 		NullCheck(L_3);
-		InterfaceActionInvoker4< String_t**, float*, float*, float >::Invoke(2 /* System.Void GameCanvas.IGraphicsEx::DrawString(System.String& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_3, (&V_5), (&V_4), (&V_6), (0.0f));
+		InterfaceActionInvoker1< int32_t* >::Invoke(6 /* System.Void GameCanvas.IGraphicsEx::SetStringAnchor(GameCanvas.GcAnchor& modreq(System.Runtime.InteropServices.InAttribute)) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_3, (&V_3));
+		// gc.SetFontSize(180);
+		RuntimeObject* L_4;
+		L_4 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
+		V_4 = ((int32_t)180);
+		NullCheck(L_4);
+		InterfaceActionInvoker1< int32_t* >::Invoke(5 /* System.Void GameCanvas.IGraphicsEx::SetFontSize(System.Int32& modreq(System.Runtime.InteropServices.InAttribute)) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_4, (&V_4));
+		// gc.DrawString(str, 360, 400);
+		RuntimeObject* L_5;
+		L_5 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
+		V_5 = (360.0f);
+		V_6 = (400.0f);
+		NullCheck(L_5);
+		InterfaceActionInvoker4< String_t**, float*, float*, float >::Invoke(2 /* System.Void GameCanvas.IGraphicsEx::DrawString(System.String& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_5, (&___str0), (&V_5), (&V_6), (0.0f));
 		// }
 		return;
 	}
 }
-// System.Void Game::DrawMissCount(System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_DrawMissCount_m157C341A10D447D00454C0EAABEE786EE277BD33 (Game_tBF310511B1E996F85E0F6C8DDB925EB46D2E78EE * __this, int32_t ___missCount0, const RuntimeMethod* method)
+// System.Void Game::DrawCenterSecondary(System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_DrawCenterSecondary_m9164015BE41A89A1E51D61599FBD954FD880EAD4 (Game_tBF310511B1E996F85E0F6C8DDB925EB46D2E78EE * __this, String_t* ___str0, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral10291B3A4B1D2933821EE5230552A31F47DBEE6B);
 		s_Il2CppMethodInitialized = true;
 	}
 	int32_t V_0 = 0;
-	String_t* V_1 = NULL;
+	float V_1 = 0.0f;
 	float V_2 = 0.0f;
-	float V_3 = 0.0f;
 	{
 		// gc.SetFontSize(60);
 		RuntimeObject* L_0;
@@ -3863,58 +3828,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_DrawMissCount_m157C341A10D447D00454
 		V_0 = ((int32_t)60);
 		NullCheck(L_0);
 		InterfaceActionInvoker1< int32_t* >::Invoke(5 /* System.Void GameCanvas.IGraphicsEx::SetFontSize(System.Int32& modreq(System.Runtime.InteropServices.InAttribute)) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_0, (&V_0));
-		// gc.DrawString("MISS:" + missCount.ToString(), 360, 610);
+		// gc.DrawString(str, 360, 610);
 		RuntimeObject* L_1;
 		L_1 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
-		String_t* L_2;
-		L_2 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)(&___missCount0), /*hidden argument*/NULL);
-		String_t* L_3;
-		L_3 = String_Concat_m10758B01687A2181C8727AD9FD9CCF5325C61C2A(_stringLiteral10291B3A4B1D2933821EE5230552A31F47DBEE6B, L_2, /*hidden argument*/NULL);
-		V_1 = L_3;
-		V_2 = (360.0f);
-		V_3 = (610.0f);
+		V_1 = (360.0f);
+		V_2 = (610.0f);
 		NullCheck(L_1);
-		InterfaceActionInvoker4< String_t**, float*, float*, float >::Invoke(2 /* System.Void GameCanvas.IGraphicsEx::DrawString(System.String& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_1, (&V_1), (&V_2), (&V_3), (0.0f));
-		// }
-		return;
-	}
-}
-// System.Void Game::DrawMissAndSplashedCount(System.Int32,System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_DrawMissAndSplashedCount_mA7A041EF2B11818B3189E1A08E76D9D251428D2C (Game_tBF310511B1E996F85E0F6C8DDB925EB46D2E78EE * __this, int32_t ___missCount0, int32_t ___progress1, const RuntimeMethod* method)
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral10291B3A4B1D2933821EE5230552A31F47DBEE6B);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralDC27A8C6EC24F2B47A3CCCF2BBD734F3B41F3CBD);
-		s_Il2CppMethodInitialized = true;
-	}
-	int32_t V_0 = 0;
-	String_t* V_1 = NULL;
-	float V_2 = 0.0f;
-	float V_3 = 0.0f;
-	{
-		// gc.SetFontSize(60);
-		RuntimeObject* L_0;
-		L_0 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
-		V_0 = ((int32_t)60);
-		NullCheck(L_0);
-		InterfaceActionInvoker1< int32_t* >::Invoke(5 /* System.Void GameCanvas.IGraphicsEx::SetFontSize(System.Int32& modreq(System.Runtime.InteropServices.InAttribute)) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_0, (&V_0));
-		// gc.DrawString("MISS:" + missCount.ToString() + "   SPLASHED:" + progress.ToString(), 360, 610);
-		RuntimeObject* L_1;
-		L_1 = BehaviourBase_get_gc_m107F5C296EA19D7DD7B33B0335E6F44A954A47F9_inline(__this, /*hidden argument*/NULL);
-		String_t* L_2;
-		L_2 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)(&___missCount0), /*hidden argument*/NULL);
-		String_t* L_3;
-		L_3 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)(&___progress1), /*hidden argument*/NULL);
-		String_t* L_4;
-		L_4 = String_Concat_m5D784E6CEEBE99ED8749AA4B9491D926273FD749(_stringLiteral10291B3A4B1D2933821EE5230552A31F47DBEE6B, L_2, _stringLiteralDC27A8C6EC24F2B47A3CCCF2BBD734F3B41F3CBD, L_3, /*hidden argument*/NULL);
-		V_1 = L_4;
-		V_2 = (360.0f);
-		V_3 = (610.0f);
-		NullCheck(L_1);
-		InterfaceActionInvoker4< String_t**, float*, float*, float >::Invoke(2 /* System.Void GameCanvas.IGraphicsEx::DrawString(System.String& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_1, (&V_1), (&V_2), (&V_3), (0.0f));
+		InterfaceActionInvoker4< String_t**, float*, float*, float >::Invoke(2 /* System.Void GameCanvas.IGraphicsEx::DrawString(System.String& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single& modreq(System.Runtime.InteropServices.InAttribute),System.Single) */, IGraphicsEx_t113E3F83C1D7F5AAF1258D39B80177E54F727116_il2cpp_TypeInfo_var, L_1, (&___str0), (&V_1), (&V_2), (0.0f));
 		// }
 		return;
 	}

@@ -367,8 +367,8 @@ public sealed class Game : GameBase
                 DrawResultText(difficulty, missCount);
                 if (sec > clearTime + 120)
                 {
-                    DrawTime(clearTime);
-                    DrawMissAndSplashedCount(missCount, progress);
+                    DrawCenter(((float)clearTime / 60).ToString("0.00"));
+                    DrawCenterSecondary("MISS:" + missCount.ToString() + "   SPLASHED:" + progress.ToString());
                 }
                 if (sec > clearTime + 180)
                 {
@@ -389,8 +389,8 @@ public sealed class Game : GameBase
                 DrawResultText(difficulty, missCount);
                 if (sec > 120)
                 {
-                    DrawSplashedCount(splashedCount);
-                    DrawMissCount(missCount);
+                    DrawCenter(splashedCount.ToString());
+                    DrawCenterSecondary(missCount.ToString());
                 }
                 if (sec > 180)
                 {
@@ -566,31 +566,19 @@ public sealed class Game : GameBase
         }
     }
 
-    void DrawSplashedCount(int splashedCount)
-    {
-        gc.SetFontSize(180);
-        gc.SetColor(0, 0, 0);
-        gc.SetStringAnchor(GcAnchor.UpperCenter);
-        gc.DrawString(splashedCount.ToString(), 360, 400);
-    }
-    void DrawTime(int clearTime)
+    void DrawCenter(string str)
     {
         gc.SetFontSize(clearTime);
         gc.SetColor(0, 0, 0);
         gc.SetStringAnchor(GcAnchor.UpperCenter);
-        gc.DrawString(((float)clearTime / 60).ToString("0.00"), 360, 400);
+        gc.SetFontSize(180);
+        gc.DrawString(str, 360, 400);
     }
 
-    void DrawMissCount(int missCount)
+    void DrawCenterSecondary(string str)
     {
         gc.SetFontSize(60);
-        gc.DrawString("MISS:" + missCount.ToString(), 360, 610);
-    }
-
-    void DrawMissAndSplashedCount(int missCount, int progress)
-    {
-        gc.SetFontSize(60);
-        gc.DrawString("MISS:" + missCount.ToString() + "   SPLASHED:" + progress.ToString(), 360, 610);
+        gc.DrawString(str, 360, 610);
     }
 
     void DrawTapToReturn()

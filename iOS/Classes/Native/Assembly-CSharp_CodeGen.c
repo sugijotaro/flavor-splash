@@ -74,19 +74,15 @@ extern void Game_DrawBackground_mC389BAABCF1EFF547CCC3EB6A1837CC8828CA26E (void)
 extern void Game_DrawDifficulty_mC2D07DB107E30CCC8A72F61F7E7EFA05D9EBEE4D (void);
 // 0x0000001F System.Void Game::DrawResultText(System.Int32,System.Int32)
 extern void Game_DrawResultText_m02276001AE057A9482A9F4FEA32E0F47D0015F91 (void);
-// 0x00000020 System.Void Game::DrawSplashedCount(System.Int32)
-extern void Game_DrawSplashedCount_mDDF98FB2BD19D6CD06BA139423E3B19B12472DF0 (void);
-// 0x00000021 System.Void Game::DrawTime(System.Int32)
-extern void Game_DrawTime_m550738EF889000A0D190C69CF8178154AE844148 (void);
-// 0x00000022 System.Void Game::DrawMissCount(System.Int32)
-extern void Game_DrawMissCount_m157C341A10D447D00454C0EAABEE786EE277BD33 (void);
-// 0x00000023 System.Void Game::DrawMissAndSplashedCount(System.Int32,System.Int32)
-extern void Game_DrawMissAndSplashedCount_mA7A041EF2B11818B3189E1A08E76D9D251428D2C (void);
-// 0x00000024 System.Void Game::DrawTapToReturn()
+// 0x00000020 System.Void Game::DrawCenter(System.String)
+extern void Game_DrawCenter_mD043E4BD4469F35EBD93AB5F95E44DB0FF73E3F3 (void);
+// 0x00000021 System.Void Game::DrawCenterSecondary(System.String)
+extern void Game_DrawCenterSecondary_m9164015BE41A89A1E51D61599FBD954FD880EAD4 (void);
+// 0x00000022 System.Void Game::DrawTapToReturn()
 extern void Game_DrawTapToReturn_m6F340BCA590D481FAFE3E18C20CCF3245B00EAF1 (void);
-// 0x00000025 System.Void Game::.ctor()
+// 0x00000023 System.Void Game::.ctor()
 extern void Game__ctor_m3A756F7AD7689FE1BB2C194589022EF7AB69966A (void);
-static Il2CppMethodPointer s_methodPointers[37] = 
+static Il2CppMethodPointer s_methodPointers[35] = 
 {
 	EmbeddedAttribute__ctor_m90D0B6DEB625101355554D49B2EE2FB67C875860,
 	NullableAttribute__ctor_m68337A4A4913B9D45F4B7249895084D57F47B445,
@@ -119,14 +115,12 @@ static Il2CppMethodPointer s_methodPointers[37] =
 	Game_DrawBackground_mC389BAABCF1EFF547CCC3EB6A1837CC8828CA26E,
 	Game_DrawDifficulty_mC2D07DB107E30CCC8A72F61F7E7EFA05D9EBEE4D,
 	Game_DrawResultText_m02276001AE057A9482A9F4FEA32E0F47D0015F91,
-	Game_DrawSplashedCount_mDDF98FB2BD19D6CD06BA139423E3B19B12472DF0,
-	Game_DrawTime_m550738EF889000A0D190C69CF8178154AE844148,
-	Game_DrawMissCount_m157C341A10D447D00454C0EAABEE786EE277BD33,
-	Game_DrawMissAndSplashedCount_mA7A041EF2B11818B3189E1A08E76D9D251428D2C,
+	Game_DrawCenter_mD043E4BD4469F35EBD93AB5F95E44DB0FF73E3F3,
+	Game_DrawCenterSecondary_m9164015BE41A89A1E51D61599FBD954FD880EAD4,
 	Game_DrawTapToReturn_m6F340BCA590D481FAFE3E18C20CCF3245B00EAF1,
 	Game__ctor_m3A756F7AD7689FE1BB2C194589022EF7AB69966A,
 };
-static const int32_t s_InvokerIndices[37] = 
+static const int32_t s_InvokerIndices[35] = 
 {
 	2245,
 	1757,
@@ -159,10 +153,8 @@ static const int32_t s_InvokerIndices[37] =
 	2245,
 	1801,
 	928,
-	1801,
-	1801,
-	1801,
-	928,
+	1813,
+	1813,
 	2245,
 	2245,
 };
@@ -171,7 +163,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	37,
+	35,
 	s_methodPointers,
 	0,
 	NULL,
