@@ -84,8 +84,6 @@ public sealed class Game : GameBase
                     {
                         isGameFinished = true;
                         clearTime = sec;
-                        Debug.Log("clearTime:");
-                        Debug.Log(clearTime);
                         status = 3;
                     }
                 }
