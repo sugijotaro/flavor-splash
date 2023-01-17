@@ -39,6 +39,7 @@ public sealed class Game : GameBase
     {
         gc.ChangeCanvasSize(720, 1280);
         gc.IsAccelerometerEnabled = true;
+        gc.PlaySound(GcSound.TitleBGM, GcSoundTrack.BGM1, true);
     }
 
     public override void UpdateGame()
@@ -54,6 +55,7 @@ public sealed class Game : GameBase
                 if (IsOnDifficultyToggle(y))
                 {
                     ToggleDifficulty(x);
+                    gc.PlaySE(GcSound.Click1);
                 }
                 else if (IsOnTimeAttack(y))
                 {
@@ -154,8 +156,9 @@ public sealed class Game : GameBase
 
                 preFrameTapped = false;
 
+                gc.StopSound(GcSoundTrack.BGM2);
+                gc.PlaySound(GcSound.TitleBGM, GcSoundTrack.BGM1, true);
                 status = 0;
-
             }
         }
 
@@ -195,6 +198,8 @@ public sealed class Game : GameBase
             foodsArray[i] = possibleValues[randomIndex];
         }
         sec = 0;
+        gc.StopSound(GcSoundTrack.BGM1);
+        gc.PlaySound(GcSound.GameBGM, GcSoundTrack.BGM2, true);
         status = 1;
     }
 
@@ -209,6 +214,8 @@ public sealed class Game : GameBase
         splashedCount = 0;
         int randomIndex = UnityEngine.Random.Range(0, possibleValues.Length);
         currentFood = possibleValues[randomIndex];
+        gc.StopSound(GcSoundTrack.BGM1);
+        gc.PlaySound(GcSound.GameBGM, GcSoundTrack.BGM2, true);
         status = 2;
     }
 
@@ -271,6 +278,7 @@ public sealed class Game : GameBase
 
     void FoodSplashed()
     {
+        gc.PlaySE(GcSound.Shake);
         if (status == 1)
         {
             if (foodsArray[progress] == selectedCondiments)

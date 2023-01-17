@@ -44,16 +44,16 @@ static Il2CppMethodPointer s_methodPointers[11] =
 static const int32_t s_InvokerIndices[11] = 
 {
 	-1,
-	3412,
+	3415,
 	-1,
 	-1,
 	-1,
 	-1,
 	-1,
 	-1,
-	2514,
-	3694,
-	1008,
+	2515,
+	3697,
+	1009,
 };
 static const Il2CppTokenRangePair s_rgctxIndices[5] = 
 {
@@ -68,12 +68,12 @@ static const Il2CppRGCTXDefinition s_rgctxValues[9] =
 	{ (Il2CppRGCTXDataType)2, 1179 },
 	{ (Il2CppRGCTXDataType)1, 472 },
 	{ (Il2CppRGCTXDataType)2, 1180 },
-	{ (Il2CppRGCTXDataType)3, 13768 },
-	{ (Il2CppRGCTXDataType)3, 13995 },
-	{ (Il2CppRGCTXDataType)3, 14164 },
+	{ (Il2CppRGCTXDataType)3, 13772 },
+	{ (Il2CppRGCTXDataType)3, 13999 },
+	{ (Il2CppRGCTXDataType)3, 14168 },
 	{ (Il2CppRGCTXDataType)2, 2237 },
-	{ (Il2CppRGCTXDataType)3, 10407 },
-	{ (Il2CppRGCTXDataType)3, 13309 },
+	{ (Il2CppRGCTXDataType)3, 10411 },
+	{ (Il2CppRGCTXDataType)3, 13313 },
 };
 extern const CustomAttributesCacheGenerator g_Unity_Burst_AttributeGenerators[];
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_Unity_Burst_CodeGenModule;

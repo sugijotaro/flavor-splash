@@ -31,6 +31,7 @@
 		<type fullname="UnityEngine.Texture" preserve="nothing"/>
 		<type fullname="UnityEngine.Transform" preserve="nothing"/>
 		<type fullname="UnityEngine.GameObject" preserve="nothing"/>
+		<type fullname="UnityEngine.AudioClip" preserve="nothing"/>
 		<type fullname="UnityEngine.Audio.AudioMixerGroup" preserve="nothing"/>
 		<type fullname="UnityEngine.Audio.AudioMixer" preserve="nothing"/>
 		<type fullname="UnityEngine.Audio.AudioMixerSnapshot" preserve="nothing"/>
@@ -43,6 +44,7 @@
 		<type fullname="GameCanvas.GcReferenceAtlas" preserve="nothing"/>
 		<type fullname="GameCanvas.GcReferenceFont" preserve="nothing"/>
 		<type fullname="GameCanvas.GcReferenceMixer" preserve="nothing"/>
+		<type fullname="GameCanvas.GcReferenceSound" preserve="nothing"/>
 	</assembly>
 	<assembly fullname="Unity.InputSystem">
 		<type fullname="UnityEngine.InputSystem.EnhancedTouch.TouchSimulation" preserve="nothing"/>

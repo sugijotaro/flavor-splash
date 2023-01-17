@@ -94,11 +94,11 @@ static Il2CppMethodPointer s_methodPointers[28] =
 };
 static const int32_t s_InvokerIndices[28] = 
 {
-	2245,
-	2245,
-	1757,
-	1813,
-	1757,
+	2246,
+	2246,
+	1758,
+	1814,
+	1758,
 	-1,
 	-1,
 	-1,
@@ -106,22 +106,22 @@ static const int32_t s_InvokerIndices[28] =
 	-1,
 	-1,
 	-1,
-	1594,
-	629,
-	2245,
-	2245,
-	2245,
-	2245,
-	2245,
-	2204,
-	2204,
-	1213,
-	1213,
-	2245,
-	2245,
-	2150,
-	1757,
-	2245,
+	1595,
+	630,
+	2246,
+	2246,
+	2246,
+	2246,
+	2246,
+	2205,
+	2205,
+	1214,
+	1214,
+	2246,
+	2246,
+	2151,
+	1758,
+	2246,
 };
 static const Il2CppTokenRangePair s_rgctxIndices[1] = 
 {
@@ -129,11 +129,11 @@ static const Il2CppTokenRangePair s_rgctxIndices[1] =
 };
 static const Il2CppRGCTXDefinition s_rgctxValues[5] = 
 {
-	{ (Il2CppRGCTXDataType)3, 6896 },
+	{ (Il2CppRGCTXDataType)3, 6900 },
 	{ (Il2CppRGCTXDataType)2, 371 },
-	{ (Il2CppRGCTXDataType)3, 6895 },
-	{ (Il2CppRGCTXDataType)3, 13901 },
-	{ (Il2CppRGCTXDataType)3, 13903 },
+	{ (Il2CppRGCTXDataType)3, 6899 },
+	{ (Il2CppRGCTXDataType)3, 13905 },
+	{ (Il2CppRGCTXDataType)3, 13907 },
 };
 extern const CustomAttributesCacheGenerator g_GameCanvas_ScriptableObject_AttributeGenerators[];
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_GameCanvas_ScriptableObject_CodeGenModule;

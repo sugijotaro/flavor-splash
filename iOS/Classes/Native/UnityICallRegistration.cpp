@@ -130,6 +130,14 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_AudioSource_get_isPlaying();
 		Register_UnityEngine_AudioSource_get_isPlaying();
 
+		//System.Void UnityEngine.AudioSource::PlayHelper(UnityEngine.AudioSource,System.UInt64)
+		void Register_UnityEngine_AudioSource_PlayHelper();
+		Register_UnityEngine_AudioSource_PlayHelper();
+
+		//System.Void UnityEngine.AudioSource::PlayOneShotHelper(UnityEngine.AudioSource,UnityEngine.AudioClip,System.Single)
+		void Register_UnityEngine_AudioSource_PlayOneShotHelper();
+		Register_UnityEngine_AudioSource_PlayOneShotHelper();
+
 		//System.Void UnityEngine.AudioSource::SetPitch(UnityEngine.AudioSource,System.Single)
 		void Register_UnityEngine_AudioSource_SetPitch();
 		Register_UnityEngine_AudioSource_SetPitch();
@@ -137,6 +145,10 @@ void RegisterAllStrippedInternalCalls()
 		//System.Void UnityEngine.AudioSource::Stop(System.Boolean)
 		void Register_UnityEngine_AudioSource_Stop();
 		Register_UnityEngine_AudioSource_Stop();
+
+		//System.Void UnityEngine.AudioSource::UnPause()
+		void Register_UnityEngine_AudioSource_UnPause();
+		Register_UnityEngine_AudioSource_UnPause();
 
 		//System.Void UnityEngine.AudioSource::set_bypassEffects(System.Boolean)
 		void Register_UnityEngine_AudioSource_set_bypassEffects();
@@ -161,6 +173,10 @@ void RegisterAllStrippedInternalCalls()
 		//System.Void UnityEngine.AudioSource::set_ignoreListenerVolume(System.Boolean)
 		void Register_UnityEngine_AudioSource_set_ignoreListenerVolume();
 		Register_UnityEngine_AudioSource_set_ignoreListenerVolume();
+
+		//System.Void UnityEngine.AudioSource::set_loop(System.Boolean)
+		void Register_UnityEngine_AudioSource_set_loop();
+		Register_UnityEngine_AudioSource_set_loop();
 
 		//System.Void UnityEngine.AudioSource::set_mute(System.Boolean)
 		void Register_UnityEngine_AudioSource_set_mute();

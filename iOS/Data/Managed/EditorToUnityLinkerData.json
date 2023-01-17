@@ -340,6 +340,15 @@
             ]
         },
         {
+            "managedAssemblyName": "UnityEngine.dll",
+            "nativeClass": "AudioClip",
+            "fullManagedTypeName": "UnityEngine.AudioClip",
+            "moduleName": "Audio",
+            "usedInScenes": [
+                "Assets/Game.unity"
+            ]
+        },
+        {
             "managedAssemblyName": "",
             "nativeClass": "NavMeshSettings",
             "fullManagedTypeName": "",
@@ -352,6 +361,15 @@
             "managedAssemblyName": "UnityEngine.dll",
             "nativeClass": "AudioMixerGroup",
             "fullManagedTypeName": "UnityEngine.Audio.AudioMixerGroup",
+            "moduleName": "Audio",
+            "usedInScenes": [
+                "Assets/Game.unity"
+            ]
+        },
+        {
+            "managedAssemblyName": "",
+            "nativeClass": "SampleClip",
+            "fullManagedTypeName": "",
             "moduleName": "Audio",
             "usedInScenes": [
                 "Assets/Game.unity"
@@ -418,6 +436,13 @@
             "managedAssemblyName": "GameCanvas.ScriptableObject.dll",
             "nativeClass": "",
             "fullManagedTypeName": "GameCanvas.GcReferenceMixer",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "GameCanvas.ScriptableObject.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "GameCanvas.GcReferenceSound",
             "moduleName": "",
             "usedInScenes": []
         },
