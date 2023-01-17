@@ -32,6 +32,9 @@ public sealed class Game : GameBase
     float shakeThreshold = 2.0f;
     float acceleration = 0.0f;
 
+    bool isDebug = false;
+    bool isShakeEnable = true;
+
     public override void InitGame()
     {
         gc.ChangeCanvasSize(720, 1280);
@@ -232,7 +235,10 @@ public sealed class Game : GameBase
             {
                 if (progress < 30)
                 {
-                    FoodSplashed();
+                    if (!isShakeEnable)
+                    {
+                        FoodSplashed();
+                    }
                 }
             }
         }
@@ -329,7 +335,10 @@ public sealed class Game : GameBase
             {
                 DrawFoods(foodsArray[progress]);
             }
-            // DrawAccelerationStatus();
+            if (isDebug)
+            {
+                DrawAccelerationStatus();
+            }
         }
         else if (status == 2)
         {
@@ -340,7 +349,10 @@ public sealed class Game : GameBase
             DrawDifficultyDuringGame(status, difficulty);
             DrawCondiments();
             DrawFoods(currentFood);
-            // DrawAccelerationStatus();
+            if (isDebug)
+            {
+                DrawAccelerationStatus();
+            }
         }
         else if (status == 3)
         {
