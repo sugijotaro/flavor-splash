@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | t22445js</title>
+  </head>
+  <body style="text-align: center">
+    <canvas id="unity-canvas" width=1080 height=608 style="width: 1080px; height: 608px; background: #231F20"></canvas>
+    <script src="Build/flavor-splash.loader.js"></script>
+    <script>
+      createUnityInstance(document.querySelector("#unity-canvas"), {
+        dataUrl: "Build/flavor-splash.data.gz",
+        frameworkUrl: "Build/flavor-splash.framework.js.gz",
+        codeUrl: "Build/flavor-splash.wasm.gz",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "Jotaro Sugiyama",
+        productName: "t22445js",
+        productVersion: "1.0.0",
+        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+      });
+    </script>
+  </body>
+</html>

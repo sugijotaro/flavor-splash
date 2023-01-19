@@ -33,7 +33,7 @@ public sealed class Game : GameBase
     float acceleration = 0.0f;
 
     bool isDebug = false;
-    bool isShakeEnable = true;
+    bool isShakeEnable = false;
 
     public override void InitGame()
     {
