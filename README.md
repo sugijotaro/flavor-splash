@@ -21,14 +21,13 @@ Flavor Splashは、次から次へと流れてくる`ご飯`、`フラペチー�
 ### 2. 次々と流れてくる食べ物に調味料を振りかけよう！
 
 `ご飯`、`フラペチーノ`、`スイカ`がランダムに流れてきます。
-
-<img src="https://user-images.githubusercontent.com/52352924/213082029-8eedc183-5b26-40ff-80ee-2198e41ff476.jpg" width="240px"><img src="https://user-images.githubusercontent.com/52352924/213082041-9dacdedb-7389-44e3-8e52-900eb8be245f.jpg" width="240px"><img src="https://user-images.githubusercontent.com/52352924/213082048-75e48f7c-8693-4439-afd0-a480f80ed4d2.jpg" width="240px">
+![](https://user-images.githubusercontent.com/52352924/213354824-8f465f3f-d187-4cc3-b3ba-a8809251c586.png)
 
 流れてきた食べのもに適切な調味料を選択します
 
 `ご飯`には`ふりかけ`を、`フラペチーノ`には`ダークパウダー`を、`スイカ`には`塩`を選択します
 
-<img src="https://user-images.githubusercontent.com/52352924/213082037-9e16147e-2140-4f71-86e0-0a93ba8ca4b9.jpg" width="240px"><img src="https://user-images.githubusercontent.com/52352924/213082046-81b8dd6c-46e2-4aaa-a23f-2503fbba3182.jpg" width="240px"><img src="https://user-images.githubusercontent.com/52352924/213082052-caa5a130-d0af-4fea-8def-9d6d238c85d3.jpg" width="240px">
+![](https://user-images.githubusercontent.com/52352924/213354810-e0acffe4-5108-4293-9ca9-8b6d3e38d020.png)
 
 スマートフォン自体を振ることによって、調味料を振りかけることができます
 
