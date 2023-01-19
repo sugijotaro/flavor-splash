@@ -1,6 +1,6 @@
 [<img alt="Flavor Splash" align="right" src="Assets/GameCanvas/Icons/icon_android_full.png"/>](https://github.com/sfc-sdp/GameCanvas-Unity/releases/latest)
 # Flavor Splash
-[![GameCanvas API v6.0](https://img.shields.io/badge/GameCanvas%20API-v6.0-yellow.svg)](https://sfc-sdp.github.io/GameCanvas-Unity/)
+[![GameCanvas API v6.1.2](https://img.shields.io/badge/GameCanvas%20API-v6.1.2-yellow.svg)](https://sfc-sdp.github.io/GameCanvas-Unity/)
 
 Flavor Splashは、次から次へと流れてくる`ご飯`、`フラペチーノ`、`スイカ`に、それぞれ`ふりかけ`、`ダークパウダー`、`塩`を振りかけるスマートフォン向けゲームです。
 
@@ -53,6 +53,12 @@ HARDCOREモードの場合は、以上の条件に加え、一度でもミスを
 特に、フラペチーノの画像は自ら作りました。
 
 ## 備考
+<details>
+<summary>開発環境</summary>
+
+Unity 2020.3.40f1
+GameCanvas 6.1.2
+</details>
 <details>
 <summary>使用した素材</summary>
 
