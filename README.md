@@ -20,12 +20,12 @@ Flavor Splashは、次から次へと流れてくる`ご飯`、`フラペチー�
 
 `ご飯`、`フラペチーノ`、`スイカ`がランダムに流れてきます。
 
-![](https://user-images.githubusercontent.com/52352924/213354824-8f465f3f-d187-4cc3-b3ba-a8809251c586.png)
+![](https://user-images.githubusercontent.com/52352924/213354810-e0acffe4-5108-4293-9ca9-8b6d3e38d020.png)
 
 流れてきた食べのもに適切な調味料を選択します  
 `ご飯`には`ふりかけ`を、`フラペチーノ`には`ダークパウダー`を、`スイカ`には`塩`を選択します
 
-![](https://user-images.githubusercontent.com/52352924/213354810-e0acffe4-5108-4293-9ca9-8b6d3e38d020.png)
+![](https://user-images.githubusercontent.com/52352924/213354824-8f465f3f-d187-4cc3-b3ba-a8809251c586.png)
 
 スマートフォン自体を振ることによって、調味料を振りかけることができます  
 HARDCOREモードでは、調味料を違う食品に振りかけたり、調味料を振りかけすぎると、その時点で失格となります
