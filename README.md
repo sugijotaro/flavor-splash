@@ -56,7 +56,7 @@ HARDCOREモードの場合は、以上の条件に加え、一度でもミスを
 <details>
 <summary>開発環境</summary>
 
-Unity 2020.3.40f1
+Unity 2020.3.40f1  
 GameCanvas 6.1.2
 </details>
 <details>
