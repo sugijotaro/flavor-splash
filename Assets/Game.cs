@@ -22,6 +22,7 @@ public sealed class Game : GameBase
     int[] foodsArray = new int[30];
     int progress = 0;
 
+    int SplashIntervaIinitialValue = 15;
     int splashIntervalCount = 15;
     bool isSplashTapInterval = false;
     bool isSplashShakeInterval = false;
@@ -75,7 +76,7 @@ public sealed class Game : GameBase
                     splashIntervalCount -= 1;
                     if (splashIntervalCount == 0)
                     {
-                        splashIntervalCount = 15;
+                        splashIntervalCount = SplashIntervaIinitialValue;
                         isSplashTapInterval = false;
                         if (progress < 30)
                         {
@@ -119,7 +120,7 @@ public sealed class Game : GameBase
                     splashIntervalCount -= 1;
                     if (splashIntervalCount == 0)
                     {
-                        splashIntervalCount = 15;
+                        splashIntervalCount = SplashIntervaIinitialValue;
                         isSplashTapInterval = false;
                         int randomIndex = UnityEngine.Random.Range(0, possibleValues.Length);
                         currentFood = possibleValues[randomIndex];
@@ -339,7 +340,7 @@ public sealed class Game : GameBase
         foodsArray = new int[30];
         progress = 0;
 
-        splashIntervalCount = 15;
+        splashIntervalCount = SplashIntervaIinitialValue;
         isSplashTapInterval = false;
         isSplashShakeInterval = false;
         isGameFinished = false;
