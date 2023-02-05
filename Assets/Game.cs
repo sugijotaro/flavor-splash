@@ -47,108 +47,121 @@ public sealed class Game : GameBase
     {
         sec += 1;
 
-        if (gameState == GameState.GSTATE_TITLE)
+        switch (gameState)
         {
-            if (!preFrameTapped)
-            {
-                float x = gc.GetPointerX(1);
-                float y = gc.GetPointerY(1);
-                if (IsOnDifficultyToggle(y))
+            case GameState.GSTATE_TITLE:
+                if (!preFrameTapped)
                 {
-                    ToggleDifficulty(x);
-                    gc.PlaySE(GcSound.Click1);
-                }
-                else if (IsOnTimeAttack(y))
-                {
-                    StartRandomizedTimeAttack();
-                }
-                else if (IsOnTimeLimit(y))
-                {
-                    StartTimeLimit();
-                }
-            }
-        }
-        else if (gameState == GameState.GSTATE_GAME_TIME_ATTACK)
-        {
-            if (isSplashTapInterval)
-            {
-                splashIntervalCount -= 1;
-                if (splashIntervalCount == 0)
-                {
-                    splashIntervalCount = 15;
-                    isSplashTapInterval = false;
-                    if (progress < 30)
+                    float x = gc.GetPointerX(1);
+                    float y = gc.GetPointerY(1);
+                    if (IsOnDifficultyToggle(y))
                     {
-                        progress += 1;
+                        ToggleDifficulty(x);
+                        gc.PlaySE(GcSound.Click1);
                     }
-                    if (isGameFinished || progress == 30)
+                    else if (IsOnTimeAttack(y))
                     {
-                        isGameFinished = true;
-                        clearTime = sec;
-                        gameState = GameState.GSTATE_GAMEOVER_TIME_ATTACK;
+                        StartRandomizedTimeAttack();
+                    }
+                    else if (IsOnTimeLimit(y))
+                    {
+                        StartTimeLimit();
                     }
                 }
-            }
-            if (!preFrameTapped)
-            {
-                CheckTap(gc.GetPointerX(1), gc.GetPointerY(1));
-            }
-            if (acceleration < 2.0f)
-            {
-                CheckShake();
-            }
-            else
-            {
-                acceleration = 0.0f;
-            }
-            if (gc.GetPointerDuration(0) >= 2)
-            {
-                BackToTitle();
-            }
-        }
-        else if (gameState == GameState.GSTATE_GAME_TIME_LIMIT)
-        {
-            countdown -= 1;
-            if (countdown == 0)
-            {
-                isGameFinished = true;
-                sec = 0;
-                gameState = GameState.GSTATE_GAMEOVER_TIME_LIMIT;
-            }
-            if (isSplashTapInterval)
-            {
-                splashIntervalCount -= 1;
-                if (splashIntervalCount == 0)
+                break;
+            case GameState.GSTATE_GAME_TIME_ATTACK:
+                if (isSplashTapInterval)
                 {
-                    splashIntervalCount = 15;
-                    isSplashTapInterval = false;
-                    int randomIndex = UnityEngine.Random.Range(0, possibleValues.Length);
-                    currentFood = possibleValues[randomIndex];
+                    splashIntervalCount -= 1;
+                    if (splashIntervalCount == 0)
+                    {
+                        splashIntervalCount = 15;
+                        isSplashTapInterval = false;
+                        if (progress < 30)
+                        {
+                            progress += 1;
+                        }
+                        if (isGameFinished || progress == 30)
+                        {
+                            isGameFinished = true;
+                            clearTime = sec;
+                            gameState = GameState.GSTATE_GAMEOVER_TIME_ATTACK;
+                        }
+                    }
                 }
-            }
-            if (!preFrameTapped)
-            {
-                CheckTap(gc.GetPointerX(1), gc.GetPointerY(1));
-            }
-            if (acceleration < 2.0f)
-            {
-                CheckShake();
-            }
-            else
-            {
-                acceleration = 0.0f;
-            }
-            if (gc.GetPointerDuration(0) >= 2)
-            {
-                BackToTitle();
-            }
-        }
-        else if (gameState == GameState.GSTATE_GAMEOVER_TIME_ATTACK && sec > clearTime + 180 || gameState == GameState.GSTATE_GAMEOVER_TIME_LIMIT && sec > 180)
-        {
-            if (gc.GetPointerFrameCount(0) == 1)
-            {
-                BackToTitle();
-            }
+                if (!preFrameTapped)
+                {
+                    CheckTap(gc.GetPointerX(1), gc.GetPointerY(1));
+                }
+                if (acceleration < 2.0f)
+                {
+                    CheckShake();
+                }
+                else
+                {
+                    acceleration = 0.0f;
+                }
+                if (gc.GetPointerDuration(0) >= 2)
+                {
+                    BackToTitle();
+                }
+                break;
+            case GameState.GSTATE_GAME_TIME_LIMIT:
+                countdown -= 1;
+                if (countdown == 0)
+                {
+                    isGameFinished = true;
+                    sec = 0;
+                    gameState = GameState.GSTATE_GAMEOVER_TIME_LIMIT;
+                }
+                if (isSplashTapInterval)
+                {
+                    splashIntervalCount -= 1;
+                    if (splashIntervalCount == 0)
+                    {
+                        splashIntervalCount = 15;
+                        isSplashTapInterval = false;
+                        int randomIndex = UnityEngine.Random.Range(0, possibleValues.Length);
+                        currentFood = possibleValues[randomIndex];
+                    }
+                }
+                if (!preFrameTapped)
+                {
+                    CheckTap(gc.GetPointerX(1), gc.GetPointerY(1));
+                }
+                if (acceleration < 2.0f)
+                {
+                    CheckShake();
+                }
+                else
+                {
+                    acceleration = 0.0f;
+                }
+                if (gc.GetPointerDuration(0) >= 2)
+                {
+                    BackToTitle();
+                }
+                break;
+            case GameState.GSTATE_GAMEOVER_TIME_ATTACK:
+                if (sec > clearTime + 180)
+                {
+                    if (gc.GetPointerFrameCount(0) == 1)
+                    {
+                        BackToTitle();
+                    }
+                }
+                break;
+            case GameState.GSTATE_GAMEOVER_TIME_LIMIT:
+                if (sec > 180)
+                {
+                    if (gc.GetPointerFrameCount(0) == 1)
+                    {
+                        BackToTitle();
+                    }
+                }
+                break;
+            default:
+                break;
         }
 
         if (gc.GetPointerFrameCount(0) >= 1)
@@ -269,46 +282,49 @@ public sealed class Game : GameBase
 
     {
         gc.PlaySE(GcSound.Shake);
-        if (gameState == GameState.GSTATE_GAME_TIME_ATTACK)
+        switch (gameState)
         {
-            if (foodsArray[progress] == selectedCondiments)
-            {
-                isSplashTapInterval = true;
-                foodsArray[progress] = foodsArray[progress] * 31;
-            }
-            else
-            {
-                if (difficulty == 1)
+            case GameState.GSTATE_GAME_TIME_ATTACK:
+                if (foodsArray[progress] == selectedCondiments)
                 {
-                    splashIntervalCount = 1;
                     isSplashTapInterval = true;
-                    isSplashShakeInterval = true;
-                    isGameFinished = true;
+                    foodsArray[progress] = foodsArray[progress] * 31;
                 }
-                missCount += 1;
-            }
-        }
-        else if (gameState == GameState.GSTATE_GAME_TIME_LIMIT)
-        {
-            if (currentFood == selectedCondiments)
-            {
-                isSplashTapInterval = true;
-                currentFood = currentFood * 31;
-                splashedCount += 1;
-            }
-            else
-            {
-                if (difficulty == 1)
+                else
                 {
-                    splashIntervalCount = 1;
-                    isSplashTapInterval = true;
-                    isSplashShakeInterval = true;
-                    isGameFinished = true;
-                    sec = 0;
-                    gameState = GameState.GSTATE_GAMEOVER_TIME_LIMIT;
+                    if (difficulty == 1)
+                    {
+                        splashIntervalCount = 1;
+                        isSplashTapInterval = true;
+                        isSplashShakeInterval = true;
+                        isGameFinished = true;
+                    }
+                    missCount += 1;
                 }
-                missCount += 1;
-            }
+                break;
+            case GameState.GSTATE_GAME_TIME_LIMIT:
+                if (currentFood == selectedCondiments)
+                {
+                    isSplashTapInterval = true;
+                    currentFood = currentFood * 31;
+                    splashedCount += 1;
+                }
+                else
+                {
+                    if (difficulty == 1)
+                    {
+                        splashIntervalCount = 1;
+                        isSplashTapInterval = true;
+                        isSplashShakeInterval = true;
+                        isGameFinished = true;
+                        sec = 0;
+                        gameState = GameState.GSTATE_GAMEOVER_TIME_LIMIT;
+                    }
+                    missCount += 1;
+                }
+                break;
+            default:
+                break;
         }
     }
 
@@ -337,89 +353,89 @@ public sealed class Game : GameBase
 
     public override void DrawGame()
     {
-        if (gameState == GameState.GSTATE_TITLE)
+        switch (gameState)
         {
-            DrawBackground();
-            DrawFlavorSplash();
-            DrawDifficultyText();
-            DrawDifficultyIcon(difficulty);
-        }
-        else if (gameState == GameState.GSTATE_GAME_TIME_ATTACK)
-        {
-            DrawBackground();
-            DrawSelectedCondiments(selectedCondiments);
-            DrawProgress(progress);
-            DrawTimeCountDown(sec);
-            DrawDifficultyDuringGame(difficulty);
-            DrawCondiments();
-            if (progress < 30)
-            {
-                DrawFoods(foodsArray[progress]);
-            }
-            if (isDebug)
-            {
-                DrawAccelerationStatus();
-            }
-        }
-        else if (gameState == GameState.GSTATE_GAME_TIME_LIMIT)
-        {
-            DrawBackground();
-            DrawSelectedCondiments(selectedCondiments);
-            DrawSplashedCountDuringGame(splashedCount);
-            DrawTimeCountDown(countdown);
-            DrawDifficultyDuringGame(difficulty);
-            DrawCondiments();
-            DrawFoods(currentFood);
-            if (isDebug)
-            {
-                DrawAccelerationStatus();
-            }
-        }
-        else if (gameState == GameState.GSTATE_GAMEOVER_TIME_ATTACK)
-        {
-            if (sec < clearTime + 60)
-            {
-                DrawFinish();
-                gc.PlaySE(GcSound.Whistle);
-            }
-            else
-            {
+            case GameState.GSTATE_TITLE:
                 DrawBackground();
-                DrawDifficulty(difficulty);
-                DrawResultText(difficulty, missCount);
-                if (sec > clearTime + 120)
-                {
-                    DrawCenter(((float)clearTime / 60).ToString("0.00"));
-                    DrawCenterSecondary("MISS:" + missCount.ToString() + "   SPLASHED:" + progress.ToString());
-                }
-                if (sec > clearTime + 180)
-                {
-                    DrawTapToReturn();
-                }
-            }
-        }
-        else if (gameState == GameState.GSTATE_GAMEOVER_TIME_LIMIT)
-        {
-            if (sec < 60)
-            {
-                DrawFinish();
-                gc.PlaySE(GcSound.Whistle);
-            }
-            else
-            {
+                DrawFlavorSplash();
+                DrawDifficultyText();
+                DrawDifficultyIcon(difficulty);
+                break;
+            case GameState.GSTATE_GAME_TIME_ATTACK:
                 DrawBackground();
-                DrawDifficulty(difficulty);
-                DrawResultText(difficulty, missCount);
-                if (sec > 120)
+                DrawSelectedCondiments(selectedCondiments);
+                DrawProgress(progress);
+                DrawTimeCountDown(sec);
+                DrawDifficultyDuringGame(difficulty);
+                DrawCondiments();
+                if (progress < 30)
                 {
-                    DrawCenter(splashedCount.ToString());
-                    DrawCenterSecondary(missCount.ToString());
+                    DrawFoods(foodsArray[progress]);
                 }
-                if (sec > 180)
+                if (isDebug)
                 {
-                    DrawTapToReturn();
+                    DrawAccelerationStatus();
                 }
-            }
+                break;
+            case GameState.GSTATE_GAME_TIME_LIMIT:
+                DrawBackground();
+                DrawSelectedCondiments(selectedCondiments);
+                DrawSplashedCountDuringGame(splashedCount);
+                DrawTimeCountDown(countdown);
+                DrawDifficultyDuringGame(difficulty);
+                DrawCondiments();
+                DrawFoods(currentFood);
+                if (isDebug)
+                {
+                    DrawAccelerationStatus();
+                }
+                break;
+            case GameState.GSTATE_GAMEOVER_TIME_ATTACK:
+                if (sec < clearTime + 60)
+                {
+                    DrawFinish();
+                    gc.PlaySE(GcSound.Whistle);
+                }
+                else
+                {
+                    DrawBackground();
+                    DrawDifficulty(difficulty);
+                    DrawResultText(difficulty, missCount);
+                    if (sec > clearTime + 120)
+                    {
+                        DrawCenter(((float)clearTime / 60).ToString("0.00"));
+                        DrawCenterSecondary("MISS:" + missCount.ToString() + "   SPLASHED:" + progress.ToString());
+                    }
+                    if (sec > clearTime + 180)
+                    {
+                        DrawTapToReturn();
+                    }
+                }
+                break;
+            case GameState.GSTATE_GAMEOVER_TIME_LIMIT:
+                if (sec < 60)
+                {
+                    DrawFinish();
+                    gc.PlaySE(GcSound.Whistle);
+                }
+                else
+                {
+                    DrawBackground();
+                    DrawDifficulty(difficulty);
+                    DrawResultText(difficulty, missCount);
+                    if (sec > 120)
+                    {
+                        DrawCenter(splashedCount.ToString());
+                        DrawCenterSecondary(missCount.ToString());
+                    }
+                    if (sec > 180)
+                    {
+                        DrawTapToReturn();
+                    }
+                }
+                break;
+            default:
+                break;
         }
     }
 
@@ -491,28 +507,32 @@ public sealed class Game : GameBase
     void DrawDifficultyDuringGame(int difficulty)
     {
         gc.SetStringAnchor(GcAnchor.UpperCenter);
-        if (gameState == GameState.GSTATE_GAME_TIME_ATTACK)
+
+        switch (gameState)
         {
-            gc.SetStringAnchor(GcAnchor.UpperCenter);
-            if (difficulty == 0)
-            {
-                gc.DrawString("TIME ATTACK  NORMAL", 360, 100);
-            }
-            else if (difficulty == 1)
-            {
-                gc.DrawString("TIME ATTACK  HARDCORE", 360, 100);
-            }
-        }
-        else if (gameState == GameState.GSTATE_GAME_TIME_LIMIT)
-        {
-            if (difficulty == 0)
-            {
-                gc.DrawString("TIME LIMIT  NORMAL", 360, 100);
-            }
-            else if (difficulty == 1)
-            {
-                gc.DrawString("TIME LIMIT  HARDCORE", 360, 100);
-            }
+            case GameState.GSTATE_GAME_TIME_ATTACK:
+                gc.SetStringAnchor(GcAnchor.UpperCenter);
+                if (difficulty == 0)
+                {
+                    gc.DrawString("TIME ATTACK  NORMAL", 360, 100);
+                }
+                else if (difficulty == 1)
+                {
+                    gc.DrawString("TIME ATTACK  HARDCORE", 360, 100);
+                }
+                break;
+            case GameState.GSTATE_GAME_TIME_LIMIT:
+                if (difficulty == 0)
+                {
+                    gc.DrawString("TIME LIMIT  NORMAL", 360, 100);
+                }
+                else if (difficulty == 1)
+                {
+                    gc.DrawString("TIME LIMIT  HARDCORE", 360, 100);
+                }
+                break;
+            default:
+                break;
         }
     }
 
